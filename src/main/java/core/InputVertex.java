@@ -2,11 +2,6 @@ package core;
 
 import java.util.ArrayList;
 
-/**
- * {InputVertex}
- * Author: Yaman Yağız Taşbağ
- * Version: {30.04.2017}
- */
 public class InputVertex extends CVertex {
 
     public double getDerivative(int ID)
