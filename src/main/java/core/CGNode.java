@@ -1,5 +1,4 @@
 package core;
-import org.jgrapht.*;
 
 import java.util.ArrayList;
 
@@ -12,23 +11,26 @@ public class CGNode implements Dsf
     private int val;
     private boolean selected;
 
-    public double getDerivative(int ID) {
+    public double getDerivative(int ID)
+    {
         return ID;
     }
 
-    public boolean contains ( int ID) {
+    public boolean contains ( int ID)
+    {
         return false;
     }
 
-    public boolean isSelected() {
+    public boolean isSelected()
+    {
         return selected;
     }
 
-    public boolean setSelected(boolean s) {
-        return false;
+    public void setSelected(boolean s) {
+        selected = s;
     }
 
-    public ArrayList<Double> getoutput() {
+    public ArrayList<Double> getOutput() {
         return null;
     }
 

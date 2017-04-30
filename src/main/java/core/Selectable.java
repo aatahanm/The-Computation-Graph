@@ -8,5 +8,5 @@ package core;
 public interface Selectable
 {
     boolean isSelected();
-    boolean setSelected ( boolean s);
+    void setSelected ( boolean s);
 }
