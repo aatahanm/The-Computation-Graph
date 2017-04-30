@@ -5,11 +5,16 @@ import java.util.ArrayList;
 /**
  * Created by mertcinar on 30/04/2017.
  */
-public class CGNode implements Dsf
+public abstract class CVertex implements Dsf
 {
-    private int ID;
-    private int val;
+    private final int ID;
     private boolean selected;
+    private ArrayList<Double> input;
+
+    public CVertex()
+    {
+        ID = STATICS.getID();
+    }
 
     public double getDerivative(int ID)
     {
@@ -30,12 +35,15 @@ public class CGNode implements Dsf
         selected = s;
     }
 
-    public ArrayList<Double> getOutput() {
-        return null;
+    public ArrayList<Double> getOutput()
+    {
+        return calcOutput();
     }
 
     public void setInput(ArrayList<Double> al)
     {
-
+        input = al;
     }
+
+    abstract ArrayList<Double> calcOutput();
 }
