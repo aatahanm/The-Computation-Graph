@@ -9,24 +9,18 @@ public abstract class CVertex implements Dsf
 {
     private final int ID;
     private boolean selected;
-    private ArrayList<Double> input;
+    ArrayList<Double> input;
     TreeSet<Integer> containSet;
+    int inpCount = 0;
+
     public CVertex()
     {
         ID = STATICS.getID();
         containSet = new TreeSet<Integer>();
         containSet.add ( ID);
     }
+    public abstract double getDerivative(int ID);
 
-    public double getDerivative(int ID)
-    {
-        if ( containSet.contains ( ID))
-            return calcDerivative ( ID);
-        else
-            return 0;
-    }
-
-    abstract double calcDerivative ( int ID);
     public boolean contains ( int ID)
     {
         return false;
@@ -61,5 +55,12 @@ public abstract class CVertex implements Dsf
     public boolean removeContainment ( int ID)
     {
         return containSet.remove ( ID);
+    }
+
+    boolean checkConditions()
+    {
+        boolean ret;
+        ret = input.size() == inpCount;
+        return ret;
     }
 }
