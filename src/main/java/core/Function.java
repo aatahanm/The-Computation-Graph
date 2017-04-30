@@ -9,6 +9,6 @@ import java.util.ArrayList;
  */
 public interface Function
 {
-    ArrayList<Double> getoutput();
+    ArrayList<Double> getOutput();
     void setInput ( ArrayList<Double> al);
 }
