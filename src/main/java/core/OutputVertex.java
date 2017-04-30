@@ -1,7 +1,5 @@
 package core;
 
-import core.functions.CVertex;
-
 import java.util.ArrayList;
 
 public class OutputVertex extends CVertex
@@ -19,7 +17,7 @@ public class OutputVertex extends CVertex
 
     }
 
-    ArrayList<Double> calcOutput() {
+    public ArrayList<Double> calcOutput() {
     return null;
     }
 

@@ -1,7 +1,5 @@
 package core;
 
-import core.functions.CVertex;
-
 import java.util.ArrayList;
 
 public class InputVertex extends CVertex {
@@ -11,7 +9,7 @@ public class InputVertex extends CVertex {
         return 0;
     }
 
-    ArrayList<Double> calcOutput()
+    public ArrayList<Double> calcOutput()
     {
         if ( super.input.size() != 1)
             return null;
