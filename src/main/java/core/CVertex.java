@@ -2,9 +2,6 @@ package core;
 
 import java.util.*;
 
-/**
- * Created by mertcinar on 30/04/2017.
- */
 public abstract class CVertex implements Dsf
 {
     private final int ID;

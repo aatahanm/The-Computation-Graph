@@ -2,11 +2,6 @@ package core;
 
 import java.util.ArrayList;
 
-/**
- * {OutputVertex}
- * Author: Yaman Yağız Taşbağ
- * Version: {30.04.2017}
- */
 public class OutputVertex extends CVertex
 {
     public OutputVertex()
