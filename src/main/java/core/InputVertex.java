@@ -1,5 +1,7 @@
 package core;
 
+import core.functions.CVertex;
+
 import java.util.ArrayList;
 
 public class InputVertex extends CVertex {

@@ -1,4 +1,7 @@
-package core;
+package core.functions;
+
+import core.Dsf;
+import core.STATICS;
 
 import java.util.*;
 
@@ -42,7 +45,7 @@ public abstract class CVertex implements Dsf
         input = al;
     }
 
-    abstract ArrayList<Double> calcOutput();
+    abstract public ArrayList<Double> calcOutput();
 
     public boolean addContainment ( int ID )
     {
