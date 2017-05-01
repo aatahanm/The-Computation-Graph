@@ -2,9 +2,9 @@ package core;
 
 import java.util.ArrayList;
 
-public class Addition extends CVertex{
+public class AdditionVertex extends CVertex{
 
-    public Addition(){
+    public AdditionVertex(){
         super.inpCount = 2;
     }
 

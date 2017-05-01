@@ -34,4 +34,17 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
     {
 
     }
+
+    public void removeSelected()
+    {
+        for ( CVertex v : this)
+        {
+            if ( v.isSelected())
+            {
+                removeAllEdges(incomingEdgesOf(v));
+                removeAllEdges(outgoingEdgesOf(v));
+                removeVertex(v);
+            }
+        }
+    }
 }
