@@ -4,12 +4,17 @@ import java.util.ArrayList;
 
 public class InputVertex extends CVertex {
 
-    public Function getDerivative(int ID)
+    public ArrayList<Double> getDerivative ( int ID)
     {
-        return null;
+        ArrayList<Double> al;
+        al = new ArrayList<Double>();
+        al.add(0.0);
+        return al;
     }
 
-    public ArrayList<Double> getOutput(ArrayList<Double> al) {
-        return null;
+    public ArrayList<Double> calcOutput()
+    {
+
+        return super.input;
     }
 }

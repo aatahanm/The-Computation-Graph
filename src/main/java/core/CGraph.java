@@ -2,7 +2,7 @@ package core;
 
 import org.jgrapht.experimental.dag.DirectedAcyclicGraph;
 
-public class CGraph<CVertex, CEdge> extends DirectedAcyclicGraph
+public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
 {
     public CGraph(Class edgeClass) {
         super(edgeClass);

@@ -9,16 +9,16 @@ public class OutputVertex extends CVertex
         super.inpCount = 1;
     }
 
-    public double getDerivative(int ID)
+    public ArrayList<Double> getDerivative ( int ID)
     {
-        if ( !super.checkConditions())
-            return 0;
-        return 0;
-
+        ArrayList<Double> al;
+        al = new ArrayList<Double>();
+        al.add(0.0);
+        return al;
     }
-
-    public ArrayList<Double> calcOutput() {
-    return null;
+    public ArrayList<Double> calcOutput()
+    {
+        return super.input;
     }
 
 }

@@ -5,15 +5,15 @@ import java.util.*;
 
 public abstract class CVertex implements Dsf
 {
-    private final int ID;
+    final int ID;
     private boolean selected;
     int inpCount = 0;
+    ArrayList<Double> input;
 
     public CVertex()
     {
         ID = STATICS.getID();
     }
-    public abstract Function getDerivative(int ID);
 
     public boolean isSelected()
     {
@@ -24,6 +24,16 @@ public abstract class CVertex implements Dsf
         selected = s;
     }
 
-    abstract ArrayList<Double> getOutput ( ArrayList<Double> al);
+    public ArrayList<Double> getOutput()
+    {
+            return calcOutput();
+    }
+
+    public void setInput(ArrayList<Double> al)
+    {
+            input = al;
+    }
+
+    abstract ArrayList<Double> calcOutput();
 
 }

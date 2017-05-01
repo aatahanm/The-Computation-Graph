@@ -1,6 +1,8 @@
 package core;
 
+import java.util.ArrayList;
+
 public interface Derivable
 {
-    Function getDerivative ( int ID);
+    ArrayList<Double> getDerivative (int ID);
 }
