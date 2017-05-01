@@ -9,15 +9,7 @@ public class InputVertex extends CVertex {
         return null;
     }
 
-    public ArrayList<Double> calcOutput()
-    {
-        if ( super.input.size() != 1)
-            return null;
-
-        ArrayList<Double> out;
-        out = new ArrayList<Double>();
-        out.add ( super.input.get(0));
-        return out;
+    public ArrayList<Double> getOutput(ArrayList<Double> al) {
+        return null;
     }
-
 }

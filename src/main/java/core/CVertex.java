@@ -24,6 +24,6 @@ public abstract class CVertex implements Dsf
         selected = s;
     }
 
-    abstract public ArrayList<Double> getOutput();
+    abstract ArrayList<Double> getOutput ( ArrayList<Double> al);
 
 }
