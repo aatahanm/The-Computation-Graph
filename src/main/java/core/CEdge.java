@@ -5,24 +5,34 @@ import org.jgrapht.graph.DefaultEdge;
 public class CEdge extends DefaultEdge implements Selectable
 {
     private final int ID;
-    private int inputOrder;
+    private int toOrder;
+    private int fromOrder;
     private boolean selected;
 
     public CEdge()
     {
         ID = STATICS.getID();
-        inputOrder = 0;
         selected = false;
     }
 
-    int getOrder()
+    int getToOrder()
     {
-        return inputOrder;
+        return toOrder;
     }
 
-    void setOrder ( int order)
+    void setToOrder ( int order)
     {
-        inputOrder = order;
+        toOrder = order;
+    }
+
+    int getFromOrder()
+    {
+        return fromOrder;
+    }
+
+    void setFromOrder ( int order)
+    {
+        fromOrder = order;
     }
 
     public boolean isSelected() {
@@ -31,5 +41,15 @@ public class CEdge extends DefaultEdge implements Selectable
 
     public void setSelected(boolean s) {
         selected = s;
+    }
+
+    public Object getSource()
+    {
+        return super.getSource();
+    }
+
+    public Object getTarget()
+    {
+        return super.getTarget();
     }
 }

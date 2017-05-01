@@ -4,9 +4,9 @@ import org.jgrapht.experimental.dag.DirectedAcyclicGraph;
 
 import java.util.ArrayList;
 
+
 public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
 {
-    ArrayList<CVertex> leafNodes;
     ArrayList<CVertex> outNodes;
     public CGraph(Class edgeClass) {
         super(edgeClass);
@@ -14,12 +14,9 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
 
     public void calcGraph()
     {
-        leafNodes = new ArrayList<CVertex>();
         outNodes = new ArrayList<CVertex>();
         for ( CVertex v : this)
-            if ( inDegreeOf(v) == 0)
-                leafNodes.add(v);
-            else if ( outDegreeOf(v) == 0 && v instanceof OutputVertex)
+             if ( outDegreeOf(v) == 0 && v instanceof OutputVertex)
                 outNodes.add(v);
 
         calcOutputs();
@@ -27,7 +24,13 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
 
     public void calcOutputs()
     {
-
+        for ( CVertex v : this) // this is in TopSort according to the java doc of the library
+        {
+            for ( CEdge e : outgoingEdgesOf(v))
+            {
+                ((CVertex)e.getTarget()).input.set(e.getToOrder(),v.getOutput().get(e.getFromOrder()));
+            }
+        }
     }
 
     public void calcDerivative ( int ID)
