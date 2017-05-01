@@ -13,7 +13,7 @@ public class OutputVertex extends CVertex
     {
         ArrayList<Double> al;
         al = new ArrayList<Double>();
-        al.add(0.0);
+        al.add(1.0);
         return al;
     }
     public ArrayList<Double> calcOutput()
