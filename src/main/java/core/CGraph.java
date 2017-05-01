@@ -33,6 +33,14 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
         }
     }
 
+    //TODO
+    /*
+    The algorithm will work by recursion
+    the idea is using the dot product and multivariable differentiation with partial derivatives
+    the output of the getDerivative function is the coefficient of the partial derivative
+    Ft(h,g,j) = ▽F(h,g,f) * (h',g',f')
+                            |_________| -> this part is done recursively
+     */
     public void calcDerivative ( int ID)
     {
 
