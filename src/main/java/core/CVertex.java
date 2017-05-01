@@ -1,7 +1,5 @@
 package core;
 
-import core.Dsf;
-import core.STATICS;
 
 import java.util.*;
 
@@ -9,22 +7,13 @@ public abstract class CVertex implements Dsf
 {
     private final int ID;
     private boolean selected;
-    ArrayList<Double> input;
-    TreeSet<Integer> containSet;
     int inpCount = 0;
 
     public CVertex()
     {
         ID = STATICS.getID();
-        containSet = new TreeSet<Integer>();
-        containSet.add ( ID);
     }
-    public abstract double getDerivative(int ID);
-
-    public boolean contains ( int ID)
-    {
-        return false;
-    }
+    public abstract Function getDerivative(int ID);
 
     public boolean isSelected()
     {
@@ -35,32 +24,6 @@ public abstract class CVertex implements Dsf
         selected = s;
     }
 
-    public ArrayList<Double> getOutput()
-    {
-        return calcOutput();
-    }
+    abstract public ArrayList<Double> getOutput();
 
-    public void setInput(ArrayList<Double> al)
-    {
-        input = al;
-    }
-
-    abstract public ArrayList<Double> calcOutput();
-
-    public boolean addContainment ( int ID )
-    {
-        return containSet.add ( ID);
-    }
-
-    public boolean removeContainment ( int ID)
-    {
-        return containSet.remove ( ID);
-    }
-
-    boolean checkConditions()
-    {
-        boolean ret;
-        ret = input.size() == inpCount;
-        return ret;
-    }
 }

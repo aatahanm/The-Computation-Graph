@@ -7,7 +7,7 @@ import org.jgrapht.experimental.dag.DirectedAcyclicGraph;
  * Author: Yaman Yağız Taşbağ
  * Version: {30.04.2017}
  */
-public class CGraph<CVertex, CEdge> extends DirectedAcyclicGraph
+public class CGraph extends DirectedAcyclicGraph <CVertex, CEdge>
 {
     public CGraph(Class edgeClass) {
         super(edgeClass);

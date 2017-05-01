@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class InputVertex extends CVertex {
 
-    public double getDerivative(int ID)
+    public Function getDerivative(int ID)
     {
-        return 0;
+        return null;
     }
 
     public ArrayList<Double> calcOutput()
