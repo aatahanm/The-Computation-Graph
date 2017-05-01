@@ -2,11 +2,6 @@ package core;
 
 import java.util.ArrayList;
 
-/**
- * {ConstantVertex}
- * Author: Yaman Yağız Taşbağ
- * Version: {1.05.2017}
- */
 public class ConstantVertex extends CVertex
 {
 
