@@ -1,8 +1,16 @@
 package tcgGUI;
 
+import com.mxgraph.layout.mxCircleLayout;
+import com.mxgraph.swing.mxGraphComponent;
+import core.CEdge;
 import core.CGraph;
+import core.CVertex;
+import core.ConstantVertex;
 import org.jgrapht.ListenableGraph;
+import org.jgrapht.ext.JGraphModelAdapter;
+import org.jgrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.DefaultListenableGraph;
 import org.jgrapht.graph.ListenableDirectedGraph;
 
 import javax.swing.*;
@@ -14,18 +22,24 @@ import javax.swing.*;
  */
 public class NodeEditor extends JPanel
 {
-
+    private JGraphXAdapter<CVertex, CEdge> jgxAdapter;
+    public NodeEditor()
+    {
+        init();
+    }
     public void init()
     {
-        // create a JGraphT graph
-        ListenableGraph g = new ListenableDirectedGraph( DefaultEdge.class );
+        ListenableGraph<CVertex, CEdge> g = new DefaultListenableGraph(new CGraph(CEdge.class));
+        jgxAdapter = new JGraphXAdapter(g);
+        add(new mxGraphComponent(jgxAdapter));
+        ConstantVertex c = new ConstantVertex(5);
+        ConstantVertex c2 = new ConstantVertex(3);
+        g.addVertex(c);
+        g.addVertex(c2);
+        g.addEdge(c,c2, new CEdge(0,0));
+        mxCircleLayout layout = new mxCircleLayout(jgxAdapter);
+        layout.execute(jgxAdapter.getDefaultParent());
 
-        // create a visualization using JGraph, via an adapter
-        JGraphModelAdapter m_jgAdapter = new JGraphModelAdapter(g);
-
-        CGraph jgraph = new CGraph( m_jgAdapter );
-
-        add(jgraph);
     }
 
     public void calc()
