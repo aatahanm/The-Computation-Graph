@@ -23,6 +23,10 @@ import javax.swing.*;
 public class NodeEditor extends JPanel
 {
     private JGraphXAdapter<CVertex, CEdge> jgxAdapter;
+    public NodeEditor()
+    {
+        init();
+    }
     public void init()
     {
         ListenableGraph<CVertex, CEdge> g = new DefaultListenableGraph(new CGraph(CEdge.class));
