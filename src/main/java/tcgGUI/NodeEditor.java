@@ -14,6 +14,7 @@ import org.jgrapht.graph.DefaultListenableGraph;
 import org.jgrapht.graph.ListenableDirectedGraph;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * {NodeEditor}
@@ -25,7 +26,6 @@ public class NodeEditor extends JPanel
     private JGraphXAdapter<CVertex, CEdge> jgxAdapter;
     public NodeEditor()
     {
-        init();
         System.out.println(">>>>>>>eben");
     }
     public void init()
@@ -33,6 +33,8 @@ public class NodeEditor extends JPanel
         ListenableGraph<CVertex, CEdge> g = new DefaultListenableGraph(new CGraph(CEdge.class));
         jgxAdapter = new JGraphXAdapter(g);
         add(new mxGraphComponent(jgxAdapter));
+        setSize(1000,1000);
+        System.out.println(getParent().getSize());
         ConstantVertex c = new ConstantVertex(5);
         ConstantVertex c2 = new ConstantVertex(3);
         g.addVertex(c);
@@ -40,6 +42,8 @@ public class NodeEditor extends JPanel
         g.addEdge(c,c2, new CEdge(0,0));
         mxCircleLayout layout = new mxCircleLayout(jgxAdapter);
         layout.execute(jgxAdapter.getDefaultParent());
+        System.out.println(g.vertexSet());
+        setBackground(Color.BLACK);
 
     }
 

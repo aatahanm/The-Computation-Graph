@@ -34,7 +34,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
       nodesJScrollBar = new javax.swing.JScrollBar();
       editor = new NodeEditor();
-      workAreaJPanel = editor;
+      workAreaJPanel = new JPanel();
       nodeJPanelBackground = new javax.swing.JPanel();
       nodesJTabbedPane = new javax.swing.JTabbedPane();
       allNodes = new javax.swing.JPanel();
@@ -51,7 +51,8 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       jMenuItemRun = new javax.swing.JMenuItem();
       jMenuItemInput = new javax.swing.JMenuItem();
       jMenuItemBlackBox = new javax.swing.JMenuItem();
-
+      workAreaJPanel.add(editor);
+      editor.init();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setTitle("The Computation Graph");
