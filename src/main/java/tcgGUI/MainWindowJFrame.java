@@ -230,7 +230,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
    private void jMenuItemRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
 
-      edit.calc();;
+      editor.calc();
    }
 
    private void jMenuItemInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
