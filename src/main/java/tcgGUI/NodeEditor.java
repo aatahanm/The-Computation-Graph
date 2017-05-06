@@ -26,6 +26,7 @@ public class NodeEditor extends JPanel
     public NodeEditor()
     {
         init();
+        System.out.println(">>>>>>>eben");
     }
     public void init()
     {
