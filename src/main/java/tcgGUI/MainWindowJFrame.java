@@ -33,7 +33,8 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private void initComponents() {
 
       nodesJScrollBar = new javax.swing.JScrollBar();
-      workAreaJPanel = new javax.swing.JPanel();
+      editor = new NodeEditor();
+      workAreaJPanel = editor;
       nodeJPanelBackground = new javax.swing.JPanel();
       nodesJTabbedPane = new javax.swing.JTabbedPane();
       allNodes = new javax.swing.JPanel();
@@ -50,6 +51,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       jMenuItemRun = new javax.swing.JMenuItem();
       jMenuItemInput = new javax.swing.JMenuItem();
       jMenuItemBlackBox = new javax.swing.JMenuItem();
+
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setTitle("The Computation Graph");
@@ -227,8 +229,8 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    }
 
    private void jMenuItemRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-      NodeEditor edit = new NodeEditor();
-      edit.calc();
+
+      edit.calc();;
    }
 
    private void jMenuItemInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -296,5 +298,6 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private javax.swing.JPanel workAreaJPanel;
    private JFileChooser inputFromFile;
    private JFileChooser openFileChooser;
+   private NodeEditor editor;
    // End of variables declaration//GEN-END:variables
 }
