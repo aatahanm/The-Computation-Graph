@@ -33,7 +33,7 @@ public class NodeEditor extends JPanel
         ListenableGraph<CVertex, CEdge> g = new DefaultListenableGraph(new CGraph(CEdge.class));
         jgxAdapter = new JGraphXAdapter(g);
         add(new mxGraphComponent(jgxAdapter));
-        setSize(1000,1000);
+        setSize(500,500);
         System.out.println(getParent().getSize());
         ConstantVertex c = new ConstantVertex(5);
         ConstantVertex c2 = new ConstantVertex(3);
