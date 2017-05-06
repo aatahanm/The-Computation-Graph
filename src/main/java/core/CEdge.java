@@ -14,6 +14,13 @@ public class CEdge extends DefaultEdge implements Selectable
         ID = STATICS.getID();
         selected = false;
     }
+    public CEdge(int toOrder, int fromOrder)
+    {
+        ID = STATICS.getID();
+        selected = false;
+        this.toOrder = toOrder;
+        this.fromOrder = fromOrder;
+    }
 
     int getToOrder()
     {

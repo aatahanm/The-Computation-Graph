@@ -1,6 +1,7 @@
 package core;
 
 import org.jgrapht.experimental.dag.DirectedAcyclicGraph;
+import org.jgrapht.ext.JGraphModelAdapter;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,7 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
     public CGraph(Class edgeClass) {
         super(edgeClass);
     }
+
 
     public void calcGraph()
     {
