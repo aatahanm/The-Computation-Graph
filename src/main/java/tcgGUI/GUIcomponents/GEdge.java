@@ -30,4 +30,10 @@ public class GEdge
         g2.draw(new Line2D.Float(from.getX(), from.getY(), to.getX(), to.getY()));
         g2.setStroke(t);
     }
+    public boolean contains ( int x, int y)
+    {
+        double m = (to.getY()-from.getY())/(to.getX()-from.getY());
+        double c = to.getY() - m * to.getX();
+        return Math.abs(m*x - y + c)/Math.sqrt(m*m + 1) <= THICKNESS;
+    }
 }

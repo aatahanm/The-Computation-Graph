@@ -32,7 +32,10 @@ public class GVertex
     {
         Color t;
         t = g.getColor();
-        g.setColor(Color.black);
+        if ( v.isSelected())
+            g.setColor(Color.pink);
+        else
+            g.setColor(Color.black);
         g.fillOval(x - RADIUS / 2, y - RADIUS / 2, RADIUS, RADIUS);
         g.setColor(Color.white);
         g.drawString ( v.toString(), x - RADIUS / 2 , y - RADIUS / 2);
@@ -50,5 +53,9 @@ public class GVertex
     public CVertex getVertex()
     {
         return v;
+    }
+    public boolean contains ( int x, int y)
+    {
+        return ( (this.x - x)*(this.x - x) + (this.y - y)*(this.y - y) <= RADIUS * RADIUS);
     }
 }
