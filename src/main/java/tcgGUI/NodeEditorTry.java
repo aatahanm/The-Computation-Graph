@@ -1,62 +1,35 @@
 package tcgGUI;
-
-import core.CEdge;
 import core.CGraph;
-import core.CVertex;
-import sun.font.GlyphLayout;
+;
 import tcgGUI.GUIcomponents.GEdge;
+import tcgGUI.GUIcomponents.GGraph;
 import tcgGUI.GUIcomponents.GVertex;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Set;
-import java.util.TreeSet;
+
 
 public class NodeEditorTry extends JPanel
 {
-    private ArrayList<GVertex> vertices;
-    private ArrayList<GEdge> edges;
-    private CGraph graph;
+    GGraph graph;
     public NodeEditorTry ( CGraph graph)
     {
+        this.graph = new GGraph(graph);
         setSize(600,600);
-        vertices = new ArrayList<GVertex>();
-        edges = new ArrayList<GEdge>();
-        Random random = new Random();
-        this.graph = graph;
-        for (CVertex v : graph.vertexSet())
-        {
-            vertices.add ( new GVertex(random.nextInt(200),random.nextInt(200), v));
-        }
-        for (CEdge e : graph.edgeSet())
-        {
-            edges.add(new GEdge( getGVertex(e.getSource()), getGVertex(e.getTarget()), e) );
-        }
         Listener l = new Listener();
         addMouseListener(l);
         addMouseMotionListener(l);
     }
-    public GVertex getGVertex ( CVertex v)
-    {
-        for ( GVertex gv : vertices)
-        {
-            if ( gv.getVertex() == v)
-                return gv;
-        }
-        return null;
-    }
+
     @Override
     public void paintComponent ( Graphics g)
     {
         super.paintComponent(g);
-        for ( GVertex v : vertices)
+        for ( GVertex v : graph.getVertices())
             v.paint(g);
-        for ( GEdge e : edges)
+        for ( GEdge e : graph.getEdges())
             e.paint(g);
     }
 
@@ -69,14 +42,14 @@ public class NodeEditorTry extends JPanel
         {
             deselect();
             currentVertex = null;
-            for (GVertex gv : vertices)
+            for (GVertex gv : graph.getVertices())
                 if(gv.contains(event.getX(), event.getY()))
                 {
                     gv.setSelected(true);
                     currentVertex = gv;
                     break;
                 }
-            for (GEdge e : edges){
+            for (GEdge e : graph.getEdges()){
                 if(e.contains(event.getX(), event.getY())){
                     e.setSelected(true);
                     break;
@@ -86,10 +59,10 @@ public class NodeEditorTry extends JPanel
         }
 
         public void deselect(){
-            for (GVertex v : vertices){
+            for (GVertex v : graph.getVertices()){
                 v.setSelected(false);
             }
-            for (GEdge e : edges){
+            for (GEdge e : graph.getEdges()){
                 e.setSelected(false);
             }
             repaint();
