@@ -57,6 +57,7 @@ public class NodeEditor extends JApplet
         getContentPane().add(new mxGraphComponent(jgxAdapter));
         setSize(860,560);
 
+
         mxCircleLayout layout = new mxCircleLayout(jgxAdapter);
         layout.execute(jgxAdapter.getDefaultParent());
     }
