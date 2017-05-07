@@ -40,7 +40,6 @@ public class GVertex
         g.setColor(Color.white);
         g.drawString ( v.toString(), x - RADIUS / 2 , y - RADIUS / 2);
         g.setColor(t);
-        System.out.println(x +" "+y);
     }
     public int getX()
     {

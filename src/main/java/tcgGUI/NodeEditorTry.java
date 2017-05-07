@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
@@ -36,7 +37,9 @@ public class NodeEditorTry extends JPanel
         {
             edges.add(new GEdge( getGVertex(e.getSource()), getGVertex(e.getTarget()), e) );
         }
-        addMouseListener(new Listener());
+        Listener l = new Listener();
+        addMouseListener(l);
+        addMouseMotionListener(l);
     }
     public GVertex getGVertex ( CVertex v)
     {
@@ -79,6 +82,7 @@ public class NodeEditorTry extends JPanel
             if (currentVertex != null) {
                 currentVertex.setX(event.getX());
                 currentVertex.setY(event.getY());
+
                 repaint();
             }
         }
