@@ -21,20 +21,22 @@ import java.awt.*;
  * Author: Yaman Yağız Taşbağ
  * Version: {6.05.2017}
  */
-public class NodeEditor extends JPanel
+public class NodeEditor extends JApplet
 {
     private JGraphXAdapter<CVertex, CEdge> jgxAdapter;
     public NodeEditor()
     {
-        System.out.println(">>>>>>>eben");
+
     }
     public void init()
     {
         ListenableGraph<CVertex, CEdge> g = new DefaultListenableGraph(new CGraph(CEdge.class));
         jgxAdapter = new JGraphXAdapter(g);
-        add(new mxGraphComponent(jgxAdapter));
-        setSize(500,500);
-        System.out.println(getParent().getSize());
+        getContentPane().add(new mxGraphComponent(jgxAdapter));
+
+        setSize(860,560);
+
+
         ConstantVertex c = new ConstantVertex(5);
         ConstantVertex c2 = new ConstantVertex(3);
         g.addVertex(c);
@@ -42,8 +44,7 @@ public class NodeEditor extends JPanel
         g.addEdge(c,c2, new CEdge(0,0));
         mxCircleLayout layout = new mxCircleLayout(jgxAdapter);
         layout.execute(jgxAdapter.getDefaultParent());
-        System.out.println(g.vertexSet());
-        setBackground(Color.BLACK);
+
 
     }
 

@@ -9,6 +9,8 @@ package tcgGUI;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
+import java.awt.*;
+import java.awt.Dimension;
 
 /**
  *
@@ -51,7 +53,9 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       jMenuItemRun = new javax.swing.JMenuItem();
       jMenuItemInput = new javax.swing.JMenuItem();
       jMenuItemBlackBox = new javax.swing.JMenuItem();
+
       workAreaJPanel.add(editor);
+
       editor.init();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,12 +87,14 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
       nodeJPanelBackground.setBackground(new java.awt.Color(204, 204, 255));
 
-
       nodesJTabbedPane.add("All", allNodes);
+      allNodes.setBackground(Color.WHITE);
 
       nodesJTabbedPane.add("Standart", standartNodes);
+      standartNodes.setBackground(Color.WHITE);
 
       nodesJTabbedPane.add("Added", addedNodes);
+      addedNodes.setBackground(Color.WHITE);
 
       jLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
       jLabel.setText("Nodes");
@@ -242,6 +248,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       }
    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+
    /**
     * @param args the command line arguments
     */
@@ -277,6 +284,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
          }
       });
    }
+
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JMenu actionsJMenu;

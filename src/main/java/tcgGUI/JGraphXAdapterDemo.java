@@ -37,6 +37,7 @@ public class JGraphXAdapterDemo
     public static void main(String[] args)
     {
         JGraphXAdapterDemo applet = new JGraphXAdapterDemo();
+
         applet.init();
 
         JFrame frame = new JFrame();
@@ -45,6 +46,8 @@ public class JGraphXAdapterDemo
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
+
     }
 
     /**
