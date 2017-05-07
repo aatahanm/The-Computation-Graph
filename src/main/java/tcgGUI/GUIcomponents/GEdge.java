@@ -12,7 +12,7 @@ import java.awt.geom.Line2D;
  */
 public class GEdge
 {
-    public final int THICKNESS = 2;
+    public final int THICKNESS = 4;
     private GVertex from;
     private GVertex to;
     private CEdge edge;
@@ -38,7 +38,10 @@ public class GEdge
     }
     public boolean contains ( int x, int y)
     {
-        Polygon p = new Polygon({from.getX(), to.getX(), from.getX()+THICKNESS},);
+        int xs[] ={from.getX(), to.getX(), from.getX()+THICKNESS, to.getX() + THICKNESS};
+        int ys[] ={from.getY(), to.getY(), from.getY()+THICKNESS, to.getY() + THICKNESS};
+        Polygon p = new Polygon( xs, ys,4);
+        return p.contains(x,y);
     }
 
     public void setSelected(boolean selected){
