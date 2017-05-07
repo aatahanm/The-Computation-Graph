@@ -1,10 +1,12 @@
 package core;
 
 
+import java.io.Serializable;
 import java.util.*;
 
-public abstract class CVertex implements Dsf
+public abstract class CVertex implements Dsf, Serializable
 {
+    private static final long serialVersionUID = 52177932855L;
     final int ID;
     private boolean selected;
     int inpCount = 0;
