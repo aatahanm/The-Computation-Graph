@@ -17,6 +17,7 @@ public class GGraph
     private ArrayList<GVertex> vertices;
     private ArrayList<GEdge> edges;
     private CGraph graph;
+
     public GGraph ( CGraph graph)
     {
         vertices = new ArrayList<GVertex>();
@@ -31,6 +32,18 @@ public class GGraph
         {
             edges.add(new GEdge( getGVertex(e.getSource()), getGVertex(e.getTarget()), e) );
         }
+    }
+
+    public void addVertex( int x, int y, CVertex v)
+    {
+        graph.addVertex(v);
+        vertices.add(new GVertex(x,y,v));
+    }
+
+    public void addEdge ( CVertex from, CVertex to, CEdge e)
+    {
+        graph.addEdge(from, to, e);
+        edges.add(new GEdge(getGVertex(from), getGVertex(to), e));
     }
 
     public GVertex getGVertex ( CVertex v)
