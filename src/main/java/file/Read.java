@@ -8,10 +8,10 @@ import java.io.*;
 
 public class Read {
 
-    private String path;
+    private File file;
 
-    public Read(String path){
-        this.path = path;
+    public Read(File file){
+        this.file = file;
     }
 
     public JSONObject parseToJSON() throws JSONException, IOException {
@@ -19,7 +19,6 @@ public class Read {
     }
 
     public String readFromFile() throws IOException {
-        File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
         byte[] data = new byte[(int) file.length()];
         fis.read(data);
