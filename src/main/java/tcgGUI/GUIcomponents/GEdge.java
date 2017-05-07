@@ -38,8 +38,8 @@ public class GEdge
     }
     public boolean contains ( int x, int y)
     {
-        int xs[] ={from.getX(), to.getX(), from.getX()+THICKNESS, to.getX() + THICKNESS};
-        int ys[] ={from.getY(), to.getY(), from.getY()+THICKNESS, to.getY() + THICKNESS};
+        int xs[] ={from.getX()-THICKNESS, to.getX()-THICKNESS, from.getX()+THICKNESS, to.getX() + THICKNESS};
+        int ys[] ={from.getY()-THICKNESS, to.getY()-THICKNESS, from.getY()+THICKNESS, to.getY() + THICKNESS};
         Polygon p = new Polygon( xs, ys,4);
         return p.contains(x,y);
     }

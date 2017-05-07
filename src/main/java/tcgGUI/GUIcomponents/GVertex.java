@@ -63,6 +63,6 @@ public class GVertex
     }
     public boolean contains ( int x, int y)
     {
-        return ( (this.x - x)*(this.x - x) + (this.y - y)*(this.y - y) <= RADIUS * RADIUS);
+        return ( (this.x - x)*(this.x - x) + (this.y - y)*(this.y - y) <= RADIUS * RADIUS / 4);
     }
 }
