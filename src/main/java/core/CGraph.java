@@ -9,21 +9,25 @@ import java.util.ArrayList;
 public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
 {
     ArrayList<CVertex> outNodes;
+    ArrayList<CVertex> inNodes;
     boolean selected;
 
     public CGraph(Class edgeClass) {
         super(edgeClass);
         selected = false;
+        outNodes = new ArrayList<CVertex>();
+        inNodes = new ArrayList<CVertex>();
+        for ( CVertex v : this) {
+            if (outDegreeOf(v) == 0 && v instanceof OutputVertex)
+                outNodes.add(v);
+            if (inDegreeOf(v) == 0 && v instanceof InputVertex)
+                inNodes.add(v);
+        }
     }
 
 
     public void calcGraph()
     {
-        outNodes = new ArrayList<CVertex>();
-        for ( CVertex v : this)
-             if ( outDegreeOf(v) == 0 && v instanceof OutputVertex)
-                outNodes.add(v);
-
         calcOutputs();
     }
 
@@ -46,9 +50,10 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
     Ft(h,g,j) = ▽F(h,g,f) * (h',g',f')
                             |_________| -> this part is done recursively
      */
-    public void calcDerivative ( int ID)
+    public ArrayList<Double> calcDerivative ( int ID, CVertex v)
     {
-
+        ArrayList<Double> ret = new ArrayList<Double>();
+        return ret;
     }
 
     public void removeSelected()
@@ -73,14 +78,29 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
     }
 
     public ArrayList<Double> getOutput() {
-        return null;
+        calcOutputs();
+        ArrayList<Double> outputs = new ArrayList<Double>();
+        for ( CVertex v : outNodes)
+        {
+            outputs.add(v.getOutput().get(0));
+        }
     }
 
     public void setInput(ArrayList<Double> al) {
-
+        for ( int i = 0; i < inNodes.size(); i++)
+        {
+            ArrayList<Double> a = new ArrayList<Double>();
+            a.add(al.get(i));
+            inNodes.get(i).setInput(a);
+        }
     }
 
     public ArrayList<Double> getDerivative(int ID) {
-        return null;
+        ArrayList<Double> ret = new ArrayList<Double>();
+        for ( CVertex v : outNodes)
+        {
+            ret.add(calcDerivative(ID, v).get(0));
+        }
+        return ret;
     }
 }
