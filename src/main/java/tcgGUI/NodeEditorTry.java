@@ -3,21 +3,19 @@ package tcgGUI;
 import core.CEdge;
 import core.CGraph;
 import core.CVertex;
+import sun.font.GlyphLayout;
 import tcgGUI.GUIcomponents.GEdge;
 import tcgGUI.GUIcomponents.GVertex;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
-/**
- * {NodeEditorTry}
- * Author: Yaman Yağız Taşbağ
- * Version: {7.05.2017}
- */
 public class NodeEditorTry extends JPanel
 {
     private ArrayList<GVertex> vertices;
@@ -38,6 +36,7 @@ public class NodeEditorTry extends JPanel
         {
             edges.add(new GEdge( getGVertex(e.getSource()), getGVertex(e.getTarget()), e) );
         }
+        addMouseListener(new Listener());
     }
     public GVertex getGVertex ( CVertex v)
     {
@@ -56,5 +55,33 @@ public class NodeEditorTry extends JPanel
             v.paint(g);
         for ( GEdge e : edges)
             e.paint(g);
+    }
+
+    private class Listener extends MouseAdapter
+    {
+
+        GVertex currentVertex;
+
+        public void mousePressed (MouseEvent event)
+        {
+            currentVertex = null;
+            for (GVertex gv : vertices)
+                if(gv.contains(event.getX(), event.getY()))
+                {
+                    currentVertex = gv;
+                    break;
+                }
+
+        }
+
+        public void mouseDragged (MouseEvent event)
+        {
+            if (currentVertex != null) {
+                currentVertex.setX(event.getX());
+                currentVertex.setY(event.getY());
+                repaint();
+            }
+        }
+
     }
 }

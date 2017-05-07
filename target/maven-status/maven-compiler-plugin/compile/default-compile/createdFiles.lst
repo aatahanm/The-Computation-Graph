@@ -1,5 +1,3 @@
-tcgGUI\GUIcomponents\GVertex.class
 Test.class
-tcgGUI\GUIcomponents\GEdge.class
-tcgGUI\TestNodeEditorTry.class
-tcgGUI\NodeEditorTry.class
+tcgGUI/NodeEditorTry$Listener.class
+tcgGUI/NodeEditorTry$1.class
