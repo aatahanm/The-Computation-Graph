@@ -84,6 +84,7 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
         {
             outputs.add(v.getOutput().get(0));
         }
+        return outputs;
     }
 
     public void setInput(ArrayList<Double> al) {
