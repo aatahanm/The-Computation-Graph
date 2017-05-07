@@ -17,4 +17,9 @@ public class InputVertex extends CVertex {
 
         return super.input;
     }
+
+    public String toString()
+    {
+        return super.input.get(0) + "";
+    }
 }
