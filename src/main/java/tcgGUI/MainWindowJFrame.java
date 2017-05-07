@@ -37,11 +37,12 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       nodesJScrollBar = new javax.swing.JScrollBar();
       editor = new NodeEditor();
       workAreaJPanel = new JPanel();
+
       nodeJPanelBackground = new javax.swing.JPanel();
       nodesJTabbedPane = new javax.swing.JTabbedPane();
-      allNodes = new javax.swing.JPanel();
-      standartNodes = new javax.swing.JPanel();
-      addedNodes = new javax.swing.JPanel();
+      allNodes = new GPanel();
+      standartNodes = new GPanel();
+      addedNodes = new GPanel();
       jLabel = new javax.swing.JLabel();
       mainJMenuBar = new javax.swing.JMenuBar();
       fileJMenu = new javax.swing.JMenu();
@@ -88,18 +89,11 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       nodeJPanelBackground.setBackground(new java.awt.Color(204, 204, 255));
 
       nodesJTabbedPane.add("All", allNodes);
-      allNodes.setBackground(Color.WHITE);
-
       nodesJTabbedPane.add("Standart", standartNodes);
-      standartNodes.setBackground(Color.WHITE);
-
       nodesJTabbedPane.add("Added", addedNodes);
-      addedNodes.setBackground(Color.WHITE);
 
       jLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
       jLabel.setText("Nodes");
-
-
 
       javax.swing.GroupLayout nodeJPanelBackgroundLayout = new javax.swing.GroupLayout(nodeJPanelBackground);
       nodeJPanelBackground.setLayout(nodeJPanelBackgroundLayout);
@@ -248,6 +242,26 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       }
    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+   public class GPanel extends JPanel {
+
+      public GPanel(){
+      }
+
+      @Override
+      public void paintComponent(Graphics g) {
+         int nextLine = 0;
+         for (int j = 0 ; j < 6 ; j++) {
+            int length = 0;
+            for (int i = 0; i < 2; i++) {
+               g.drawRect(0 + length, 0 + nextLine, 80, 80);
+               length += 80;
+            }
+            nextLine += 80;
+         }
+      }
+
+
+   }
 
    /**
     * @param args the command line arguments
