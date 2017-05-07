@@ -6,11 +6,14 @@ import org.jgrapht.ext.JGraphModelAdapter;
 import java.util.ArrayList;
 
 
-public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
+public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
 {
     ArrayList<CVertex> outNodes;
+    boolean selected;
+
     public CGraph(Class edgeClass) {
         super(edgeClass);
+        selected = false;
     }
 
 
@@ -59,5 +62,25 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge>
                 removeVertex(v);
             }
         }
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean s) {
+        selected = s;
+    }
+
+    public ArrayList<Double> getOutput() {
+        return null;
+    }
+
+    public void setInput(ArrayList<Double> al) {
+
+    }
+
+    public ArrayList<Double> getDerivative(int ID) {
+        return null;
     }
 }
