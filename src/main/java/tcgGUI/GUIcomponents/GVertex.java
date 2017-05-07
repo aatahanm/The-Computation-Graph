@@ -55,6 +55,12 @@ public class GVertex
     {
         return v;
     }
+    public void setSelected(boolean selected){
+        v.setSelected(selected);
+    }
+    public boolean isSelected(){
+        return v.isSelected();
+    }
     public boolean contains ( int x, int y)
     {
         return ( (this.x - x)*(this.x - x) + (this.y - y)*(this.y - y) <= RADIUS * RADIUS);

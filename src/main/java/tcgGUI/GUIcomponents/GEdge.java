@@ -24,16 +24,28 @@ public class GEdge
     }
     public void paint ( Graphics g)
     {
+        Color t_ = g.getColor();
         Graphics2D g2 = (Graphics2D) g;
         Stroke t = g2.getStroke();
         g2.setStroke(new BasicStroke(THICKNESS));
+        if ( edge.isSelected())
+            g.setColor(Color.pink);
+        else
+            g.setColor(Color.black);
         g2.draw(new Line2D.Float(from.getX(), from.getY(), to.getX(), to.getY()));
         g2.setStroke(t);
+        g2.setColor(t_);
     }
     public boolean contains ( int x, int y)
     {
-        double m = (to.getY()-from.getY())/(to.getX()-from.getY());
-        double c = to.getY() - m * to.getX();
-        return Math.abs(m*x - y + c)/Math.sqrt(m*m + 1) <= THICKNESS;
+        Polygon p = new Polygon({from.getX(), to.getX(), from.getX()+THICKNESS},);
+    }
+
+    public void setSelected(boolean selected){
+        edge.setSelected(selected);
+    }
+
+    public boolean isSelected(){
+        return edge.isSelected();
     }
 }

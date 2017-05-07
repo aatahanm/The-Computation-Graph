@@ -67,14 +67,32 @@ public class NodeEditorTry extends JPanel
 
         public void mousePressed (MouseEvent event)
         {
+            deselect();
             currentVertex = null;
             for (GVertex gv : vertices)
                 if(gv.contains(event.getX(), event.getY()))
                 {
+                    gv.setSelected(true);
                     currentVertex = gv;
                     break;
                 }
+            for (GEdge e : edges){
+                if(e.contains(event.getX(), event.getY())){
+                    e.setSelected(true);
+                    break;
+                }
+            }
 
+        }
+
+        public void deselect(){
+            for (GVertex v : vertices){
+                v.setSelected(false);
+            }
+            for (GEdge e : edges){
+                e.setSelected(false);
+            }
+            repaint();
         }
 
         public void mouseDragged (MouseEvent event)
