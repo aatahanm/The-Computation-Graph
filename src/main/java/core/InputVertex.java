@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class InputVertex extends CVertex {
 
+    public InputVertex(){
+        super.input.add(0.0);
+    }
+
     public ArrayList<Double> getDerivative ( int ID)
     {
         ArrayList<Double> al;

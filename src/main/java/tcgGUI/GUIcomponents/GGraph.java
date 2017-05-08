@@ -22,16 +22,7 @@ public class GGraph
     {
         vertices = new ArrayList<GVertex>();
         edges = new ArrayList<GEdge>();
-        Random random = new Random();
         this.graph = graph;
-        for (CVertex v : graph.vertexSet())
-        {
-            vertices.add ( new GVertex(random.nextInt(200),random.nextInt(200), v));
-        }
-        for (CEdge e : graph.edgeSet())
-        {
-            edges.add(new GEdge( getGVertex(e.getSource()), getGVertex(e.getTarget()), e) );
-        }
     }
 
     public void addVertex( int x, int y, CVertex v)

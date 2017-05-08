@@ -1,6 +1,6 @@
 package tcgGUI;
 
-import file.Read;
+import file.FileUtilities;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.awt.*;
-import java.awt.Dimension;
 import java.io.IOException;
 
 public class MainWindowJFrame extends javax.swing.JFrame {
@@ -235,13 +234,14 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
    private void jMenuItemInputActionPerformed(java.awt.event.ActionEvent evt) throws IOException, JSONException {//GEN-FIRST:event_jMenuItem6ActionPerformed
       int returnValue = inputFromFile.showOpenDialog(this);
-
+/*
       if(returnValue == JFileChooser.APPROVE_OPTION){
           File file = inputFromFile.getSelectedFile();
-          Read text = new Read(file);
+          FileUtilities text = new FileUtilities(file);
           JSONObject json = text.parseToJSON();
           editor.init(json);
       }
+      */
    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
 

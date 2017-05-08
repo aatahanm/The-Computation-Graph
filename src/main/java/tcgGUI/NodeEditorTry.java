@@ -17,6 +17,15 @@ public class NodeEditorTry extends JPanel
     public NodeEditorTry ( CGraph graph)
     {
         this.graph = new GGraph(graph);
+        init();
+    }
+
+    public NodeEditorTry(GGraph gg){
+        graph = gg;
+        init();
+    }
+
+    private void init(){
         setSize(600,600);
         Listener l = new Listener();
         addMouseListener(l);

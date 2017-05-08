@@ -1,4 +1,4 @@
-/Users/mertcinar/tcg/src/main/java/file/Read.java
+/Users/mertcinar/tcg/src/main/java/tcgGUI/GUIcomponents/GGraph.java
 /Users/mertcinar/tcg/src/main/java/tcgGUI/NodeEditorTry.java
 /Users/mertcinar/tcg/src/main/java/tcgGUI/TestNodeEditorTry.java
 /Users/mertcinar/tcg/src/main/java/core/Dsf.java
@@ -19,6 +19,7 @@
 /Users/mertcinar/tcg/src/main/java/tcgGUI/TEST.java
 /Users/mertcinar/tcg/src/main/java/core/OutputVertex.java
 /Users/mertcinar/tcg/src/main/java/tcgGUI/GUIcomponents/GEdge.java
+/Users/mertcinar/tcg/src/main/java/file/FileUtilities.java
 /Users/mertcinar/tcg/src/main/java/core/CGraph.java
 /Users/mertcinar/tcg/src/main/java/tcgGUI/TutorialJFrame.java
 /Users/mertcinar/tcg/src/main/java/core/STATICS.java
