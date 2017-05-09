@@ -201,14 +201,15 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       jMenuItemInput.setText("Load From Input File");
       jMenuItemInput.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
-           /* try {
+           // try {
                jMenuItemInputActionPerformed(evt);
-
+         /*
             } catch (IOException e) {
                e.printStackTrace();
             } catch (JSONException e) {
                e.printStackTrace();
-            } */
+
+            }*/
          }
       });
       actionsJMenu.add(jMenuItemInput);
