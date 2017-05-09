@@ -15,6 +15,7 @@ public abstract class CVertex implements Dsf, Serializable
     public CVertex()
     {
         ID = STATICS.getID();
+        input = new ArrayList<Double>();
     }
 
     public boolean isSelected()

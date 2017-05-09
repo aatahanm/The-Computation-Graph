@@ -50,13 +50,13 @@ public class CEdge extends DefaultEdge implements Selectable
         selected = s;
     }
 
-    public Object getSource()
+    public CVertex getSource()
     {
-        return super.getSource();
+        return (CVertex) super.getSource();
     }
 
-    public Object getTarget()
+    public CVertex getTarget()
     {
-        return super.getTarget();
+        return (CVertex) super.getTarget();
     }
 }

@@ -21,4 +21,8 @@ public class OutputVertex extends CVertex
         return super.input;
     }
 
+    public String toString()
+    {
+        return "ID #" + ID + " :" + super.input.get(0);
+    }
 }

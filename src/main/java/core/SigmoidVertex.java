@@ -24,4 +24,9 @@ public class SigmoidVertex extends CVertex{
         al.add ( 1/(1+Math.exp(-input.get(0))));
         return al;
     }
+
+    public String toString()
+    {
+        return "sgm";
+    }
 }

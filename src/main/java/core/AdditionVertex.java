@@ -23,4 +23,8 @@ public class AdditionVertex extends CVertex{
         al.add ( input.get(0) + input.get(1));
         return al;
     }
+    public String toString()
+    {
+        return "+";
+    }
 }
