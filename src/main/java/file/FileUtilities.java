@@ -21,15 +21,17 @@ public class FileUtilities {
         CGraph cg = new CGraph(CEdge.class);
         GGraph gg = new GGraph(cg);
         JSONObject vjson = (JSONObject) json.get("vertices");
+        JSONObject ejson = (JSONObject) json.get("edges");
         Iterator vkeys = vjson.keys();
+        Iterator ekeys = ejson.keys();
         while (vkeys.hasNext()){
             CVertex currentV = null;
-            JSONObject currentvertex = (JSONObject) vjson.get((String)(vkeys.next()));
-            x = (Integer) currentvertex.get("x");
-            y = (Integer) currentvertex.get("y");
-            type = (Integer) currentvertex.get("type");
+            JSONObject currentVertex = (JSONObject) vjson.get((String)(vkeys.next()));
+            x = (Integer) currentVertex.get("x");
+            y = (Integer) currentVertex.get("y");
+            type = (Integer) currentVertex.get("type");
             if (type == STATICS.CONSTANT_VERTEX){
-                val = (Double) currentvertex.get("val");
+                val = (Double) currentVertex.get("val");
                 currentV = new ConstantVertex(val);
             }
             else if (type == STATICS.INPUT_VERTEX)
@@ -45,6 +47,16 @@ public class FileUtilities {
 
             vertexAl.add(currentV);
             gg.addVertex(x,y,currentV);
+        }
+
+        while (ekeys.hasNext()){
+            int from,to,toOrder,fromOrder;
+            JSONObject currentEdge = (JSONObject) ejson.get((String)(ekeys.next()));
+            from = (Integer) currentEdge.get("from");
+            to = (Integer) currentEdge.get("to");
+            toOrder = (Integer) currentEdge.get("toOrder");
+            fromOrder = (Integer) currentEdge.get("fromOrder");
+            gg.addEdge(vertexAl.get(from), vertexAl.get(to), new CEdge(toOrder, fromOrder));
         }
 
         return gg;

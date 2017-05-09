@@ -6,6 +6,8 @@ public class OutputVertex extends CVertex
 {
     public OutputVertex()
     {
+        super.input = new ArrayList<Double>();
+        super.input.add(0.0);
         super.inpCount = 1;
     }
 

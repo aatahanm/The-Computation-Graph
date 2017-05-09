@@ -37,7 +37,7 @@ public class GVertex
         else
             g.setColor(Color.black);
         g.fillOval(x - RADIUS / 2, y - RADIUS / 2, RADIUS, RADIUS);
-        g.setColor(Color.white);
+        g.setColor(Color.blue);
         g.drawString ( v.toString(), x - RADIUS / 2 , y - RADIUS / 2);
         g.setColor(t);
     }

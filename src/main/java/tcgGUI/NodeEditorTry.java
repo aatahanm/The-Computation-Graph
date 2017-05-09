@@ -14,6 +14,7 @@ import java.awt.event.MouseEvent;
 public class NodeEditorTry extends JPanel
 {
     GGraph graph;
+
     public NodeEditorTry ( CGraph graph)
     {
         this.graph = new GGraph(graph);
@@ -21,6 +22,7 @@ public class NodeEditorTry extends JPanel
     }
 
     public NodeEditorTry(GGraph gg){
+        setBackground(Color.white);
         graph = gg;
         init();
     }
@@ -36,10 +38,10 @@ public class NodeEditorTry extends JPanel
     public void paintComponent ( Graphics g)
     {
         super.paintComponent(g);
-        for ( GVertex v : graph.getVertices())
-            v.paint(g);
         for ( GEdge e : graph.getEdges())
             e.paint(g);
+        for ( GVertex v : graph.getVertices())
+            v.paint(g);
     }
 
     private class Listener extends MouseAdapter
