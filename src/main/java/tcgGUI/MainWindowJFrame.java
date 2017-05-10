@@ -249,8 +249,19 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    }
 
    private void jMenuItemSaveActionPerformed(java.awt.event.ActionEvent evt) throws JSONException {
-       JSONObject json = FileUtilities.parseFromGraph(graph);
-       FileUtilities.writeToFile(json);
+       chooser = new JFileChooser();
+       chooser.setCurrentDirectory(new java.io.File("."));
+       chooser.setDialogTitle(getTitle());
+       chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+       chooser.setAcceptAllFileFilterUsed(false);
+       int returnValue = chooser.showOpenDialog(this);
+       if (returnValue == JFileChooser.APPROVE_OPTION) {
+           String dir = chooser.getSelectedFile().getAbsolutePath();
+           System.out.println(dir);
+           JSONObject json = FileUtilities.parseFromGraph(graph);
+           FileUtilities.writeToFile(json, this.getTitle(), dir);
+       }
+
    }
 
    private void jMenuItemCloseActionPerformed(java.awt.event.ActionEvent evt) {dispose();}
@@ -349,6 +360,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private javax.swing.JPanel standardNodes;
    private javax.swing.JPanel workAreaJPanel;
    private JFileChooser inputFromFile;
+   private JFileChooser chooser;
    private JFileChooser openFileChooser;
    private JScrollPane nodesJScrollPane;
    private GGraph graph;

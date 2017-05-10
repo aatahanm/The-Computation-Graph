@@ -7,7 +7,7 @@ import sun.applet.Main;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
-import javax.swing.JFileChooser;
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
@@ -156,8 +156,14 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
 
    private void newJLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newJLabelMouseClicked
       dispose();
+      String projectName = JOptionPane.showInputDialog("Project Name: ");
       MainWindowJFrame main = new MainWindowJFrame();
-      main.setVisible(true);
+      if (projectName == null || projectName.isEmpty())
+          new WelcomeWindowJFrame().setVisible(true);
+      else {
+          main.setTitle(projectName);
+          main.setVisible(true);
+      }
    }//GEN-LAST:event_newJLabelMouseClicked
 
    private void newJLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newJLabelMouseEntered
