@@ -6,13 +6,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import tcgGUI.GUIcomponents.GGraph;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import javax.swing.JFileChooser;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MainWindowJFrame extends javax.swing.JFrame {
@@ -36,9 +33,9 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       workAreaJPanel = new NodeEditorTry(graph);
       nodeJPanelBackground = new javax.swing.JPanel();
       nodesJTabbedPane = new javax.swing.JTabbedPane();
-      allNodes = new GPanel();
-      standardNodes = new GPanel();
-      addedNodes = new GPanel();
+      allNodes = new JPanel();
+      standardNodes = new JPanel();
+      addedNodes = new JPanel();
       jLabel1 = new javax.swing.JLabel();
       mainJMenuBar = new javax.swing.JMenuBar();
       fileJMenu = new javax.swing.JMenu();
@@ -66,54 +63,58 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
       nodeJPanelBackground.setBackground(new java.awt.Color(204, 204, 255));
 
+      JPanel panel = new JPanel();
+
       allNodes.setBackground(new java.awt.Color(204, 204, 255));
+      allNodes.setLayout(new GridLayout(6,2,2,2));
+      JButton a = new JButton("Addition");
+      JButton b = new JButton("Multiplication");
+      JButton c = new JButton("Substitution");
+      JButton d = new JButton("Division");
+      JButton e = new JButton("Sigmoid");
+      JButton f = new JButton("Sin");
+      JButton g = new JButton("Cos");
+
+      allNodes.add(a);
+      allNodes.add(b);
+      allNodes.add(c);
+      allNodes.add(d);
+      allNodes.add(e);
+      allNodes.add(f);
+      allNodes.add(g);
+
+      allNodes.setPreferredSize(new Dimension(171,500));
+      panel.setBackground(new java.awt.Color(204,204,255));
+      panel.setSize(new Dimension (171,500) );
+      panel.add(allNodes);
+      nodesJTabbedPane.addTab("All",panel);
 
 
-      nodesJTabbedPane.addTab("All",allNodes);
-
-      javax.swing.GroupLayout allNodesLayout = new javax.swing.GroupLayout(allNodes);
-      allNodes.setLayout(allNodesLayout);
-      allNodesLayout.setHorizontalGroup(
-              allNodesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGap(0, 171, Short.MAX_VALUE)
-      );
-      allNodesLayout.setVerticalGroup(
-              allNodesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGap(0, 500, Short.MAX_VALUE)
-      );
 
       standardNodes.setBackground(new java.awt.Color(204, 204, 255));
 
-      javax.swing.GroupLayout standardNodesLayout = new javax.swing.GroupLayout(standardNodes);
-      standardNodes.setLayout(standardNodesLayout);
-      standardNodesLayout.setHorizontalGroup(
-              standardNodesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGap(0, 171, Short.MAX_VALUE)
-      );
-      standardNodesLayout.setVerticalGroup(
-              standardNodesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGap(0, 500, Short.MAX_VALUE)
-      );
+      JPanel panel2 = new JPanel();
 
-      nodesJTabbedPane.addTab("Standard", standardNodes);
+      standardNodes.setLayout(new GridLayout(6,2,2,2));
+      standardNodes.setPreferredSize(new Dimension (171,500));
+      panel2.setBackground(new java.awt.Color(204,204,255));
+      panel2.setSize(new Dimension (171,500) );
+      panel2.add(standardNodes);
+      nodesJTabbedPane.addTab("Standard", panel2);
 
       addedNodes.setBackground(new java.awt.Color(204, 204, 255));
 
-      javax.swing.GroupLayout addedNodesLayout = new javax.swing.GroupLayout(addedNodes);
-      addedNodes.setLayout(addedNodesLayout);
-      addedNodesLayout.setHorizontalGroup(
-              addedNodesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGap(0, 171, Short.MAX_VALUE)
-      );
-      addedNodesLayout.setVerticalGroup(
-              addedNodesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGap(0, 500, Short.MAX_VALUE)
-      );
+      JPanel panel3 = new JPanel();
 
-      nodesJTabbedPane.addTab("Added", addedNodes);
+      addedNodes.setLayout(new GridLayout(6,2,2,2));
+      addedNodes.setPreferredSize(new Dimension (171,500));
+      panel3.setBackground(new java.awt.Color(204,204,255));
+      panel3.setSize(new Dimension (171,500) );
+      panel3.add(addedNodes);
+      nodesJTabbedPane.addTab("Added", panel3);
 
       jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-      jLabel1.setText("     Nodes");
+      jLabel1.setText(" Nodes");
 
       javax.swing.GroupLayout nodeJPanelBackgroundLayout = new javax.swing.GroupLayout(nodeJPanelBackground);
       nodeJPanelBackground.setLayout(nodeJPanelBackgroundLayout);
@@ -284,25 +285,6 @@ public class MainWindowJFrame extends javax.swing.JFrame {
        */
    }//GEN-LAST:event_jMenuItemInputActionPerformed
 
-   public class GPanel extends JPanel {
-
-      public GPanel(){
-      }
-
-      @Override
-      public void paintComponent(Graphics g) {
-         super.paintComponent(g);
-         int nextLine = 0;
-         for (int j = 0 ; j < 6 ; j++) {
-            int length = 0;
-            for (int i = 0; i < 2; i++) {
-               g.drawRect(0 + length, 0 + nextLine, 80, 80);
-               length += 80;
-            }
-            nextLine += 80;
-         }
-      }
-   }
 
    /**
     * @param args the command line arguments
