@@ -3,6 +3,7 @@ package tcgGUI.GUIcomponents;
 import core.CEdge;
 import core.CGraph;
 import core.CVertex;
+import core.Dsf;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,19 +21,19 @@ public class GGraph
         this.graph = graph;
     }
 
-    public void addVertex( int x, int y, CVertex v)
+    public void addVertex( int x, int y, Dsf v)
     {
         graph.addVertex(v);
         vertices.add(new GVertex(x,y,v));
     }
 
-    public void addEdge ( CVertex from, CVertex to, CEdge e)
+    public void addEdge (Dsf from, Dsf to, CEdge e)
     {
         graph.addEdge(from, to, e);
         edges.add(new GEdge(getGVertex(from), getGVertex(to), e));
     }
 
-    public GVertex getGVertex ( CVertex v)
+    public GVertex getGVertex ( Dsf v)
     {
         for ( GVertex gv : vertices)
         {

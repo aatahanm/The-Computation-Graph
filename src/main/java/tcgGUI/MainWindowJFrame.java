@@ -1,13 +1,15 @@
 package tcgGUI;
 import Keyboard.KeyUtilities;
-import core.CEdge;
-import core.CGraph;
+import core.*;
 import file.FileUtilities;
 import org.json.JSONException;
 import org.json.JSONObject;
+import tcgGUI.GUIcomponents.GButton;
 import tcgGUI.GUIcomponents.GGraph;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
@@ -351,4 +353,29 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private JFileChooser openFileChooser;
    private JScrollPane nodesJScrollPane;
    private GGraph graph;
+
+   private class ButtonListener implements ActionListener
+   {
+
+      @Override
+      public void actionPerformed(ActionEvent e) {
+         GButton button = (GButton)e.getSource();
+         Dsf vertex = null;
+
+         if ( button.getType() == STATICS.CONSTANT_VERTEX)
+            vertex = new ConstantVertex(0);
+         if ( button.getType() == STATICS.INPUT_VERTEX)
+            vertex = new InputVertex();
+         if ( button.getType() == STATICS.ADDITION_VERTEX)
+            vertex = new AdditionVertex();
+         if ( button.getType() == STATICS.MULTIPLICATION_VERTEX)
+            vertex = new MultiplicationVertex();
+         if ( button.getType() == STATICS.OUTPUT_VERTEX)
+            vertex = new OutputVertex();
+         if ( button.getType() == STATICS.SIGMOID_VERTEX)
+            vertex = new SigmoidVertex();
+
+         graph.addVertex ( workAreaJPanel.getX()/2, workAreaJPanel.getY()/2, vertex);
+      }
+   }
 }
