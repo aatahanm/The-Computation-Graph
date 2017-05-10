@@ -55,7 +55,6 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
       setTitle("Welcome to the Computation Graph");
 
       welcomeWindowJPanel.setLayout(null);
-
       greetingJLabel.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
       greetingJLabel.setText("       The Computation Graph");
       welcomeWindowJPanel.add(greetingJLabel);

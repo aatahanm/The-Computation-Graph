@@ -31,10 +31,18 @@ public class TutorialJFrame extends javax.swing.JFrame {
       jLabel17 = new javax.swing.JLabel();
       jLabel18 = new javax.swing.JLabel();
       jLabel19 = new javax.swing.JLabel();
+      backButton = new javax.swing.JButton("Back");
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setTitle("The Computation Graph Tutorials");
-
+      backButton.setSize(75, 75);
+      backButton.addMouseListener(new java.awt.event.MouseAdapter(){
+           public void mouseClicked(java.awt.event.MouseEvent evt) {
+               if (evt.getSource() == backButton)
+                   new WelcomeWindowJFrame().setVisible(true);
+           }
+       });
+      add(backButton);
       tutorialsWindowJPanel.setLayout(null);
 
       tutorial4JPanel.setBackground(new java.awt.Color(153, 153, 153));
@@ -287,5 +295,6 @@ public class TutorialJFrame extends javax.swing.JFrame {
    private javax.swing.JPanel tutorial4JPanel;
    private javax.swing.JLabel tutorialsHeaderJLabel;
    private javax.swing.JPanel tutorialsWindowJPanel;
+   private javax.swing.JButton backButton;
    // End of variables declaration//GEN-END:variables
 }
