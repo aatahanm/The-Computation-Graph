@@ -14,6 +14,7 @@ public class STATICS {
     public static final int MULTIPLICATION_VERTEX = 4;
     public static final int OUTPUT_VERTEX = 5;
     public static final int SIGMOID_VERTEX = 6;
+    public static final int CGRAPH = 99;
 
 
 }

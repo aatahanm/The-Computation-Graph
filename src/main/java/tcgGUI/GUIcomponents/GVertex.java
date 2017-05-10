@@ -1,6 +1,7 @@
 package tcgGUI.GUIcomponents;
 
 import core.CVertex;
+import core.Dsf;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,15 +12,15 @@ public class GVertex
     public static final int RADIUS = 20;
     private int x;
     private int y;
-    private CVertex v;
-    public GVertex (CVertex v)
+    private Dsf v;
+    public GVertex (Dsf v)
     {
         x = 0;
         y = 0;
         this.v = v;
     }
 
-    public GVertex ( int x, int y, CVertex v)
+    public GVertex ( int x, int y, Dsf v)
     {
         this.x = x;
         this.y = y;
@@ -59,7 +60,7 @@ public class GVertex
     }
     public void setX(int x){this.x = x;}
     public void setY(int y){this.y = y;}
-    public CVertex getVertex()
+    public Dsf getVertex()
     {
         return v;
     }

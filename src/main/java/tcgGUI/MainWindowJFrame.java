@@ -31,6 +31,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    @SuppressWarnings("unchecked")
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
+      setFocusable(true);
       graph = new GGraph(new CGraph(CEdge.class));
       workAreaJPanel = new NodeEditorTry(graph);
       nodeJPanelBackground = new javax.swing.JPanel();

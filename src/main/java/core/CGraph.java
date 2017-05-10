@@ -104,4 +104,8 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
         }
         return ret;
     }
+    public int getType()
+    {
+        return STATICS.CGRAPH;
+    }
 }
