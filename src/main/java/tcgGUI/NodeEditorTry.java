@@ -27,11 +27,16 @@ public class NodeEditorTry extends JPanel
         init();
     }
 
+    public void setGraph(GGraph graph)
+    {
+        this.graph = graph;
+    }
+
     private void init(){
-        setSize(600,600);
         Listener l = new Listener();
         addMouseListener(l);
         addMouseMotionListener(l);
+
     }
 
     @Override

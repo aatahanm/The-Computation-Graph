@@ -4,6 +4,7 @@ import core.*;
 import jdk.nashorn.internal.parser.JSONParser;
 import org.json.JSONException;
 import org.json.JSONObject;
+import tcgGUI.GUIcomponents.GEdge;
 import tcgGUI.GUIcomponents.GGraph;
 import tcgGUI.GUIcomponents.GVertex;
 
@@ -12,6 +13,31 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class FileUtilities {
+
+    public static JSONObject parseFromGraph(GGraph graph) throws JSONException {
+
+        int order = 1;
+        JSONObject json = new JSONObject();
+        JSONObject vjson = new JSONObject();
+        for (GVertex gv : graph.getVertices()){
+            vjson.put("v" + order, gv.parseToJson());
+            order++;
+        }
+        order = 1;
+        JSONObject ejson = new JSONObject();
+        for (GEdge ge : graph.getEdges()){
+            JSONObject e = new JSONObject();
+            e.put("from", graph.getVertices().indexOf(ge.getFrom()));
+            e.put("to", graph.getVertices().indexOf(ge.getTo()));
+            e.put("fromOrder", ge.getFromOrder());
+            e.put("toOrder", ge.getToOrder());
+            ejson.put("e" + order, e);
+            order++;
+        }
+        json.put("vertices", vjson);
+        json.put("edges", ejson);
+        return json;
+    }
 
     public static GGraph parseToGGraph(File file) throws IOException, JSONException {
         int x,y,type;
@@ -74,5 +100,15 @@ public class FileUtilities {
         String str = new String(data, "UTF-8");
 
         return str;
+    }
+
+    public static void writeToFile(JSONObject json) throws JSONException {
+        try{
+            PrintWriter writer = new PrintWriter("jsonSample1.cgf", "UTF-8");
+            writer.println(json.toString());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,11 +1,13 @@
 package tcgGUI;
+import core.CEdge;
+import core.CGraph;
+import file.FileUtilities;
 import org.json.JSONException;
-import tcgGUI.NodeEditor;
+import org.json.JSONObject;
+import tcgGUI.GUIcomponents.GGraph;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JFileChooser;
@@ -13,16 +15,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Ahmet Atahan
- */
 public class MainWindowJFrame extends javax.swing.JFrame {
 
    /**
@@ -40,10 +32,8 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    @SuppressWarnings("unchecked")
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
-
-      editor = new NodeEditor();
-
-      workAreaJPanel = new javax.swing.JPanel();
+      graph = new GGraph(new CGraph(CEdge.class));
+      workAreaJPanel = new NodeEditorTry(graph);
       nodeJPanelBackground = new javax.swing.JPanel();
       nodesJTabbedPane = new javax.swing.JTabbedPane();
       allNodes = new GPanel();
@@ -62,12 +52,9 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       jMenuItemBlackBox = new javax.swing.JMenuItem();
       nodesJScrollPane = new JScrollPane(nodeJPanelBackground,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-      workAreaJPanel.add(editor);
-
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setTitle("The Computation Graph");
 
-      workAreaJPanel.setBackground(new java.awt.Color(255, 255, 255));
 
       openFileChooser = new JFileChooser();
       openFileChooser.setCurrentDirectory(new File("c:\\temp"));
@@ -147,6 +134,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
                               .addContainerGap())
       );
 
+
       javax.swing.GroupLayout workAreaJPanelLayout = new javax.swing.GroupLayout(workAreaJPanel);
       workAreaJPanel.setLayout(workAreaJPanelLayout);
       workAreaJPanelLayout.setHorizontalGroup(
@@ -166,13 +154,28 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       jMenuItemOpen.setText("Open");
       jMenuItemOpen.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMenuItemOpenActionPerformed(evt);
+             try {
+                 jMenuItemOpenActionPerformed(evt);
+             } catch (IOException e) {
+                 e.printStackTrace();
+             } catch (JSONException e) {
+                 e.printStackTrace();
+             }
          }
       });
       fileJMenu.add(jMenuItemOpen);
 
       jMenuItemSave.setText("Save");
       fileJMenu.add(jMenuItemSave);
+      jMenuItemSave.addActionListener(new java.awt.event.ActionListener(){
+          public void actionPerformed(java.awt.event.ActionEvent evt){
+              try {
+                  jMenuItemSaveActionPerformed(evt);
+              } catch (JSONException e) {
+                  e.printStackTrace();
+              }
+          }
+      });
 
       jMenuItemOpenSaveAs.setText("Save As");
       fileJMenu.add(jMenuItemOpenSaveAs);
@@ -233,22 +236,29 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       );
 
       pack();
-   }// </editor-fold>//GEN-END:initComponents
+   }
 
-   private void jMenuItemOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemOpenActionPerformed
+   private void jMenuItemOpenActionPerformed(java.awt.event.ActionEvent evt) throws IOException, JSONException {
       int returnValue = openFileChooser.showOpenDialog(this);
-
       if (returnValue == JFileChooser.APPROVE_OPTION) {
-
+          File file = openFileChooser.getSelectedFile();
+          graph = FileUtilities.parseToGGraph(file);
+          ((NodeEditorTry)workAreaJPanel).setGraph(graph);
+          repaint();
       }
-      //TO DO
-   }//GEN-LAST:event_jMenuItemOpenActionPerformed
+   }
+
+   private void jMenuItemSaveActionPerformed(java.awt.event.ActionEvent evt) throws JSONException {
+       JSONObject json = FileUtilities.parseFromGraph(graph);
+       FileUtilities.writeToFile(json);
+   }
 
    private void jMenuItemCloseActionPerformed(java.awt.event.ActionEvent evt) {dispose();}
 
 
    private void jMenuItemRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-      editor.calc();
+      graph.calc();
+      repaint();
    }
 
    private void jMenuItemInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemInputActionPerformed
@@ -321,7 +331,6 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       });
    }
 
-   // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JMenu actionsJMenu;
    private javax.swing.JPanel addedNodes;
    private javax.swing.JPanel allNodes;
@@ -342,6 +351,5 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private JFileChooser inputFromFile;
    private JFileChooser openFileChooser;
    private JScrollPane nodesJScrollPane;
-   private NodeEditor editor;
-   // End of variables declaration//GEN-END:variables
+   private GGraph graph;
 }

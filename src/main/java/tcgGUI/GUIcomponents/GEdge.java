@@ -1,6 +1,8 @@
 package tcgGUI.GUIcomponents;
 
 import core.CEdge;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
@@ -36,6 +38,23 @@ public class GEdge
         g2.setStroke(t);
         g2.setColor(t_);
     }
+
+    public int getToOrder(){
+        return edge.getToOrder();
+    }
+
+    public int getFromOrder(){
+        return edge.getFromOrder();
+    }
+
+    public GVertex getFrom(){
+        return from;
+    }
+
+    public GVertex getTo(){
+        return to;
+    }
+
     public boolean contains ( int x, int y)
     {
         int xs[] ={from.getX()-THICKNESS, to.getX()-THICKNESS, from.getX()+THICKNESS, to.getX() + THICKNESS};

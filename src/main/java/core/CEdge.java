@@ -22,7 +22,7 @@ public class CEdge extends DefaultEdge implements Selectable
         this.fromOrder = fromOrder;
     }
 
-    int getToOrder()
+    public int getToOrder()
     {
         return toOrder;
     }
@@ -32,7 +32,7 @@ public class CEdge extends DefaultEdge implements Selectable
         toOrder = order;
     }
 
-    int getFromOrder()
+    public int getFromOrder()
     {
         return fromOrder;
     }

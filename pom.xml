@@ -15,7 +15,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
                 <configuration>
-                    <mainClass>tcgGUI.TestNodeEditorTry</mainClass>
+                    <mainClass>tcgGUI.MainWindowJFrame</mainClass>
                 </configuration>
             </plugin>
         </plugins>

@@ -47,6 +47,10 @@ public class GGraph
         return null;
     }
 
+    public void calc(){
+        graph.calcGraph();
+    }
+
     public ArrayList<GVertex> getVertices() {
         return vertices;
     }

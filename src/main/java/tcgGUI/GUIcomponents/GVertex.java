@@ -1,6 +1,8 @@
 package tcgGUI.GUIcomponents;
 
 import core.CVertex;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.awt.*;
 
@@ -41,6 +43,17 @@ public class GVertex
         g.drawString ( v.toString(), x - RADIUS / 2 , y - RADIUS / 2);
         g.setColor(t);
     }
+
+    public JSONObject parseToJson() throws JSONException {
+        JSONObject vjson =  new JSONObject();
+        vjson.put("x", x);
+        vjson.put("y", y);
+        vjson.put("type", v.getType());
+        if (v.getType() == 1)
+            vjson.put("val", v.getOutput().get(0));//Question Mark?
+        return vjson;
+    }
+
     public int getX()
     {
         return x;
