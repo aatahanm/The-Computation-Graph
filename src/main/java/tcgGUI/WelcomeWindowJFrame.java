@@ -12,10 +12,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author Ahmet Atahan
- */
 public class WelcomeWindowJFrame extends javax.swing.JFrame {
    
    private JFileChooser openFileChooser;
