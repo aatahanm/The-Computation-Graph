@@ -45,7 +45,7 @@ public class GVertex
         vjson.put("y", y);
         vjson.put("type", v.getType());
         if (v.getType() == 1)
-            vjson.put("val", v.getOutput().get(0));//Question Mark?
+            vjson.put("val", v.getOutput().get(0));//??????????
         return vjson;
     }
 
