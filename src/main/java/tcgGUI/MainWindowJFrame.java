@@ -1,4 +1,5 @@
 package tcgGUI;
+import Keyboard.KeyUtilities;
 import core.CEdge;
 import core.CGraph;
 import file.FileUtilities;
@@ -7,6 +8,7 @@ import org.json.JSONObject;
 import tcgGUI.GUIcomponents.GGraph;
 
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.*;
@@ -216,6 +218,8 @@ public class MainWindowJFrame extends javax.swing.JFrame {
             }*/
          }
       });
+
+      addKeyListener(new KeyUtilities());
       actionsJMenu.add(jMenuItemInput);
 
       jMenuItemBlackBox.setText("Black Box the Graph");
@@ -280,7 +284,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
           File file = inputFromFile.getSelectedFile();
           FileUtilities text = new FileUtilities(file);
           JSONObject json = text.parseToJSON();
-          editor.init(json);
+          editor."(json);
       }
        */
    }//GEN-LAST:event_jMenuItemInputActionPerformed

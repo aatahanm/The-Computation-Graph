@@ -6,6 +6,8 @@ public class MultiplicationVertex extends CVertex
 {
     public MultiplicationVertex(){
         super.inpCount = 2;
+        super.input.add(0.0);
+        super.input.add(0.0);
     }
 
     public ArrayList<Double> getDerivative (int ID)

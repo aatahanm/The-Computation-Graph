@@ -1,19 +1,10 @@
-package KeyUtilities;
+package Keyboard;
 
-import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.JFrame;
+public class KeyUtilities implements KeyListener {
 
-public class Pencere extends JFrame implements KeyListener {
-
-	public void paint (Graphics g)
-	{
-		super.paint(g);
-		g.drawRect(160,120,320,240);
-		addKeyListener(this);
-	}
 	public void keyTyped(KeyEvent e){}
 
 	public void keyPressed(KeyEvent e)
