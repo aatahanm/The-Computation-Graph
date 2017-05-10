@@ -1,4 +1,5 @@
 package tcgGUI;
+import core.CEdge;
 import core.CGraph;
 ;
 import tcgGUI.GUIcomponents.GEdge;
@@ -9,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.geom.Line2D;
 
 
 public class NodeEditorTry extends JPanel
@@ -71,7 +73,6 @@ public class NodeEditorTry extends JPanel
                     break;
                 }
             }
-
         }
 
         public void deselect(){
