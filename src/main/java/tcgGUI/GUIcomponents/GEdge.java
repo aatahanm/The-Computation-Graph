@@ -7,11 +7,6 @@ import org.json.JSONObject;
 import java.awt.*;
 import java.awt.geom.Line2D;
 
-/**
- * {GEdge}
- * Author: Yaman Yağız Taşbağ
- * Version: {7.05.2017}
- */
 public class GEdge
 {
     public final int THICKNESS = 4;

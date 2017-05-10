@@ -6,11 +6,6 @@ import org.json.JSONObject;
 
 import java.awt.*;
 
-/**
- * {GVertex}
- * Author: Yaman Yağız Taşbağ
- * Version: {7.05.2017}
- */
 public class GVertex
 {
     public static final int RADIUS = 20;

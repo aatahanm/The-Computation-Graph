@@ -1,8 +1,12 @@
 package tcgGUI;
 
 
+import org.json.JSONException;
+import sun.applet.Main;
+
 import java.awt.Color;
 import java.io.File;
+import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -61,14 +65,8 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
 
       javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
       jPanel3.setLayout(jPanel3Layout);
-      jPanel3Layout.setHorizontalGroup(
-         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 270, Short.MAX_VALUE)
-      );
-      jPanel3Layout.setVerticalGroup(
-         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 10, Short.MAX_VALUE)
-      );
+      jPanel3Layout.setHorizontalGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 270, Short.MAX_VALUE));
+      jPanel3Layout.setVerticalGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 10, Short.MAX_VALUE));
 
       welcomeWindowJPanel.add(jPanel3);
       jPanel3.setBounds(90, 230, 270, 10);
@@ -77,14 +75,8 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
 
       javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
       jPanel2.setLayout(jPanel2Layout);
-      jPanel2Layout.setHorizontalGroup(
-         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 0, Short.MAX_VALUE)
-      );
-      jPanel2Layout.setVerticalGroup(
-         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 200, Short.MAX_VALUE)
-      );
+      jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 0, Short.MAX_VALUE));
+      jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 200, Short.MAX_VALUE));
 
       welcomeWindowJPanel.add(jPanel2);
       jPanel2.setBounds(170, 190, 10, 200);
@@ -98,7 +90,13 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
       openJLabel.setText("Open");
       openJLabel.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseClicked(java.awt.event.MouseEvent evt) {
-            openJLabelMouseClicked(evt);
+            try {
+               openJLabelMouseClicked(evt);
+            } catch (IOException e) {
+               e.printStackTrace();
+            } catch (JSONException e) {
+               e.printStackTrace();
+            }
          }
          public void mouseEntered(java.awt.event.MouseEvent evt) {
             openJLabelMouseEntered(evt);
@@ -151,14 +149,8 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
       getContentPane().setLayout(layout);
-      layout.setHorizontalGroup(
-         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(welcomeWindowJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
-      );
-      layout.setVerticalGroup(
-         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(welcomeWindowJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
-      );
+      layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(welcomeWindowJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE));
+      layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(welcomeWindowJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE));
 
       pack();
    }// </editor-fold>//GEN-END:initComponents
@@ -195,11 +187,11 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
       TutorialsJLabel.setForeground(Color.BLACK);
    }//GEN-LAST:event_TutorialsJLabelMouseExited
 
-   private void openJLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_openJLabelMouseClicked
+   private void openJLabelMouseClicked(java.awt.event.MouseEvent evt) throws IOException, JSONException {//GEN-FIRST:event_openJLabelMouseClicked
       int returnValue = openFileChooser.showOpenDialog(this);
          
       if(returnValue == JFileChooser.APPROVE_OPTION){
-         //TO DO
+
       }
    }//GEN-LAST:event_openJLabelMouseClicked
 

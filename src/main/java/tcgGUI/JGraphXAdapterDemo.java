@@ -20,8 +20,7 @@ import com.mxgraph.swing.*;
  *
  * @since July 9, 2013
  */
-public class JGraphXAdapterDemo
-        extends JApplet
+public class JGraphXAdapterDemo extends JApplet
 {
     private static final long serialVersionUID = 2202072534703043194L;
     private static final Dimension DEFAULT_SIZE = new Dimension(530, 320);

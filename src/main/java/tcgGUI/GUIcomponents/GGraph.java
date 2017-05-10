@@ -7,11 +7,6 @@ import core.CVertex;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * {GGraph}
- * Author: Yaman Yağız Taşbağ
- * Version: {8.05.2017}
- */
 public class GGraph
 {
     private ArrayList<GVertex> vertices;
