@@ -1,1 +1,0 @@
-{"vertices":{"v1":{"val":4,"x":100,"y":200,"type":1},"v2":{"val":7,"x":200,"y":100,"type":1},"v3":{"x":198,"y":191,"type":3},"v4":{"x":300,"y":300,"type":5}},"edges":{"e1":{"fromOrder":0,"toOrder":0,"from":0,"to":2},"e2":{"fromOrder":0,"toOrder":1,"from":1,"to":2},"e3":{"fromOrder":0,"toOrder":0,"from":2,"to":3}}}
