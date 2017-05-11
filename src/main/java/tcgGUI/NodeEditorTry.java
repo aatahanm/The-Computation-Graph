@@ -97,6 +97,7 @@ public class NodeEditorTry extends JPanel
                     }
                 }
             }
+            repaint();
         }
 
         public void deselect(){

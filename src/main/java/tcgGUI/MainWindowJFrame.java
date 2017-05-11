@@ -372,7 +372,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
          Dsf vertex = null;
 
          if ( button.getType() == STATICS.CONSTANT_VERTEX)
-            vertex = new ConstantVertex(0);
+            vertex = new ConstantVertex(1);
          if ( button.getType() == STATICS.INPUT_VERTEX)
             vertex = new InputVertex();
          if ( button.getType() == STATICS.ADDITION_VERTEX)
