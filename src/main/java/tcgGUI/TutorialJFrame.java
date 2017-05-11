@@ -93,7 +93,7 @@ public class TutorialJFrame extends javax.swing.JFrame {
       jLabel7.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
       jLabel7.setText("   #2");
 
-      jLabel8.setText("-Create your own");
+      jLabel8.setText("-Create your owan");
 
       jLabel9.setText("function");
 
