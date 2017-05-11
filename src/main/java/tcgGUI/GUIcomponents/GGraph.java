@@ -10,12 +10,16 @@ import java.util.Random;
 
 public class GGraph
 {
+    private String path;
+    private boolean saved;
     private ArrayList<GVertex> vertices;
     private ArrayList<GEdge> edges;
     private CGraph graph;
 
     public GGraph ( CGraph graph)
     {
+        path = "";
+        saved = false;
         vertices = new ArrayList<GVertex>();
         edges = new ArrayList<GEdge>();
         this.graph = graph;
@@ -60,6 +64,21 @@ public class GGraph
         return edges;
     }
 
+    public boolean getSaved(){
+        return saved;
+    }
+
+    public void setSaved(boolean saved){
+        this.saved = saved;
+    }
+
+    public void setPath(String s){
+        path = s;
+    }
+
+    public String getPath() {
+        return path;
+    }
     public ArrayList<GVertex> getSelected()
     {
         ArrayList<GVertex> selected = new ArrayList<>();

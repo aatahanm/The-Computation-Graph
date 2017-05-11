@@ -1,5 +1,8 @@
 package tcgGUI;
-import Keyboard.KeyUtilities;
+
+import javax.swing.*;
+import core.CEdge;
+import core.CGraph;
 import core.*;
 import file.FileUtilities;
 import org.json.JSONException;
@@ -9,6 +12,7 @@ import tcgGUI.GUIcomponents.GGraph;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.io.File;
@@ -184,7 +188,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       jMenuItemSave.addActionListener(new java.awt.event.ActionListener(){
           public void actionPerformed(java.awt.event.ActionEvent evt){
               try {
-                  jMenuItemSaveActionPerformed(evt);
+                  jMenuItemSaveActionPerformed();
               } catch (JSONException e) {
                   e.printStackTrace();
               }
@@ -193,6 +197,16 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
       jMenuItemOpenSaveAs.setText("Save As");
       fileJMenu.add(jMenuItemOpenSaveAs);
+       jMenuItemOpenSaveAs.addActionListener(new java.awt.event.ActionListener(){
+           @Override
+           public void actionPerformed(ActionEvent e) {
+               try {
+                   jMenuItemSaveAsActionPerformed();
+               } catch (JSONException e1) {
+                   e1.printStackTrace();
+               }
+           }
+       });
 
       jMenuItemClose.setText("Close");
       jMenuItemClose.addActionListener(new java.awt.event.ActionListener() {
@@ -265,20 +279,30 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       }
    }
 
-   private void jMenuItemSaveActionPerformed(java.awt.event.ActionEvent evt) throws JSONException {
-       chooser = new JFileChooser();
-       chooser.setCurrentDirectory(new java.io.File("."));
-       chooser.setDialogTitle(getTitle());
-       chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-       chooser.setAcceptAllFileFilterUsed(false);
-       int returnValue = chooser.showOpenDialog(this);
-       if (returnValue == JFileChooser.APPROVE_OPTION) {
-           String dir = chooser.getSelectedFile().getAbsolutePath();
-           System.out.println(dir);
-           JSONObject json = FileUtilities.parseFromGraph(graph);
-           FileUtilities.writeToFile(json, this.getTitle(), dir);
-       }
+    private void jMenuItemSaveAsActionPerformed() throws JSONException {
+        chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+        chooser.setDialogTitle(getTitle());
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        chooser.setAcceptAllFileFilterUsed(false);
+        int returnValue = chooser.showOpenDialog(this);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File file = chooser.getSelectedFile();
+            String dir = file.getAbsolutePath();
+            System.out.println(dir);
+            JSONObject json = FileUtilities.parseFromGraph(graph);
+            FileUtilities.writeToFile(json, this.getTitle(), dir);
+            graph.setSaved(true);
+            graph.setPath(dir);
+        }
+    }
 
+   private void jMenuItemSaveActionPerformed() throws JSONException {
+       JSONObject json = FileUtilities.parseFromGraph(graph);
+       if (!graph.getSaved())
+            jMenuItemSaveAsActionPerformed();
+       else
+           FileUtilities.writeToFile(json, this.getTitle(), graph.getPath());
    }
 
    private void jMenuItemCloseActionPerformed(java.awt.event.ActionEvent evt) {dispose();}
@@ -362,6 +386,100 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private JFileChooser openFileChooser;
    private JScrollPane nodesJScrollPane;
    private GGraph graph;
+
+    class KeyUtilities implements KeyListener {
+
+        public void keyTyped(KeyEvent e){}
+
+        public void keyPressed(KeyEvent e)
+        {
+            if (e.isControlDown() && e.getKeyCode() == e.VK_A)
+            {
+                System.out.println("Select All");
+            }
+            else if(e.isControlDown() && e.isAltDown() && e.getKeyCode() == e.VK_S)
+            {
+                try {
+                    jMenuItemSaveActionPerformed();
+                } catch (JSONException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_S)
+            {
+                System.out.println("save as");
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_C)
+            {
+                System.out.println("copy");
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_X)
+            {
+                System.out.println("cut");
+            }
+            else if(e.isControlDown()&& e.getKeyCode() == e.VK_V)
+            {
+                System.out.println("paste");
+            }
+            else if(e.isControlDown() && e.isShiftDown()&& e.getKeyCode() == e.VK_Z)
+            {
+                System.out.println("redo");
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_Z)
+            {
+                System.out.println("undo");
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_4)
+            {
+                System.out.println("zoom in");
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_PLUS)
+            {
+                System.out.println("zoom in");
+            }
+            else if(e.isControlDown()&& e.getKeyCode() == e.VK_MINUS)
+            {
+                System.out.println("zoom out");
+            }
+            else if(e.isControlDown()&& e.getKeyCode() == e.VK_UP)
+            {
+                System.out.println("up");
+            }
+            else if(e.isControlDown()&& e.getKeyCode() == e.VK_DOWN)
+            {
+                System.out.println("down");
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_LEFT)
+            {
+                System.out.println("left");
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_RIGHT)
+            {
+                System.out.println("right");
+            }
+            else if(e.isControlDown()&& e.getKeyCode() == e.VK_KP_UP)
+            {
+                System.out.println("up");
+            }
+            else if(e.isControlDown()&& e.getKeyCode() == e.VK_KP_DOWN)
+            {
+                System.out.println("down");
+            }
+            else if(e.isControlDown()&& e.getKeyCode() == e.VK_KP_LEFT)
+            {
+                System.out.println("left");
+            }
+            else if(e.isControlDown()&& e.getKeyCode() == e.VK_KP_RIGHT)
+            {
+                System.out.println("right");
+            }
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_DELETE)
+            {
+                System.out.println("delete");
+            }
+        }
+        public void keyReleased(KeyEvent e){}
+    }
 
    private class ButtonListener implements ActionListener
    {
