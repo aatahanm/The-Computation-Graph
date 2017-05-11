@@ -57,7 +57,7 @@ public class FileUtilities {
             y = (Integer) currentVertex.get("y");
             type = (Integer) currentVertex.get("type");
             if (type == STATICS.CONSTANT_VERTEX){
-                val = (Double) currentVertex.get("val");
+                val = Double.parseDouble(currentVertex.get("val").toString());
                 currentV = new ConstantVertex(val);
             }
             else if (type == STATICS.INPUT_VERTEX)
