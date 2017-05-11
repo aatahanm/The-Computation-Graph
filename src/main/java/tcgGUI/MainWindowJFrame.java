@@ -37,6 +37,9 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    @SuppressWarnings("unchecked")
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
+      saved = false;
+      path = "";
+      fileName = "";
       setFocusable(true);
       graph = new GGraph(new CGraph(CEdge.class));
       workAreaJPanel = new NodeEditorTry(graph);
@@ -273,6 +276,9 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       if (returnValue == JFileChooser.APPROVE_OPTION) {
           File file = openFileChooser.getSelectedFile();
           graph = FileUtilities.parseToGGraph(file);
+          saved = true;
+          path = file.getAbsolutePath();
+          fileName = file.getName();
           ((NodeEditorTry)workAreaJPanel).setGraph(graph);
           setTitle("The Computation Graph - " + file.getName());
           repaint();
@@ -280,6 +286,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    }
 
     private void jMenuItemSaveAsActionPerformed() throws JSONException {
+       saved = true;
         chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
         chooser.setDialogTitle(getTitle());
@@ -289,20 +296,18 @@ public class MainWindowJFrame extends javax.swing.JFrame {
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();
             String dir = file.getAbsolutePath();
-            System.out.println(dir);
             JSONObject json = FileUtilities.parseFromGraph(graph);
-            FileUtilities.writeToFile(json, this.getTitle(), dir);
-            graph.setSaved(true);
-            graph.setPath(dir);
+            FileUtilities.writeToFile(json, dir);
+            path = dir + fileName;
         }
     }
 
    private void jMenuItemSaveActionPerformed() throws JSONException {
        JSONObject json = FileUtilities.parseFromGraph(graph);
-       if (!graph.getSaved())
+       if (saved == false)
             jMenuItemSaveAsActionPerformed();
        else
-           FileUtilities.writeToFile(json, this.getTitle(), graph.getPath());
+           FileUtilities.writeToFile(json, path);
    }
 
    private void jMenuItemCloseActionPerformed(java.awt.event.ActionEvent evt) {dispose();}
@@ -386,6 +391,13 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private JFileChooser openFileChooser;
    private JScrollPane nodesJScrollPane;
    private GGraph graph;
+   private boolean saved;
+   private String path;
+   private String fileName;
+
+   public void setFileName(String s){
+       fileName = s;
+   }
 
     class KeyUtilities implements KeyListener {
 

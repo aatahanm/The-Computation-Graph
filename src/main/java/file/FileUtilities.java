@@ -102,9 +102,9 @@ public class FileUtilities {
         return str;
     }
 
-    public static void writeToFile(JSONObject json, String name, String path) throws JSONException {
+    public static void writeToFile(JSONObject json, String path) throws JSONException {
         try{
-            PrintWriter writer = new PrintWriter(path + "/" + name + ".cgf", "UTF-8");
+            PrintWriter writer = new PrintWriter(path, "UTF-8");
             writer.println(json.toString());
             writer.close();
         } catch (IOException e) {
