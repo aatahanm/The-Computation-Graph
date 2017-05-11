@@ -37,6 +37,11 @@ public class GGraph
         edges.add(new GEdge(getGVertex(from), getGVertex(to), e));
     }
 
+    public void addEdge ( GVertex from, GVertex to, CEdge e)
+    {
+        graph.addEdge ( from.getVertex(), to.getVertex(), e);
+        edges.add ( new GEdge(from, to, e));
+    }
     public GVertex getGVertex ( Dsf v)
     {
         for ( GVertex gv : vertices)
@@ -71,7 +76,18 @@ public class GGraph
         path = s;
     }
 
-    public String getPath(){
+    public String getPath() {
         return path;
+    }
+    public ArrayList<GVertex> getSelected()
+    {
+        ArrayList<GVertex> selected = new ArrayList<>();
+
+        for ( GVertex v : vertices)
+        {
+            if (v.isSelected())
+                selected.add(v);
+        }
+        return selected;
     }
 }

@@ -2,6 +2,7 @@ package tcgGUI;
 import core.CEdge;
 import core.CGraph;
 ;
+import core.Dsf;
 import tcgGUI.GUIcomponents.GEdge;
 import tcgGUI.GUIcomponents.GGraph;
 import tcgGUI.GUIcomponents.GVertex;
@@ -58,19 +59,42 @@ public class NodeEditorTry extends JPanel
 
         public void mousePressed (MouseEvent event)
         {
-            deselect();
-            currentVertex = null;
-            for (GVertex gv : graph.getVertices())
-                if(gv.contains(event.getX(), event.getY()))
+            if ( event.isMetaDown())
+            {
+                GVertex target = null;
+                for (GVertex gv : graph.getVertices())
+                    if(gv.contains(event.getX(), event.getY()))
+                    {
+                        target = gv;
+                        break;
+                    }
+                if ( target != null)
                 {
-                    gv.setSelected(true);
-                    currentVertex = gv;
-                    break;
+                    for ( GVertex v : graph.getSelected())
+                    {
+                        if ( v == target)
+                            continue;
+
+                        graph.addEdge ( v, target, new CEdge ( 0, 0));
+                    }
                 }
-            for (GEdge e : graph.getEdges()){
-                if(e.contains(event.getX(), event.getY())){
-                    e.setSelected(true);
-                    break;
+            }
+            else
+            {
+                deselect();
+                currentVertex = null;
+                for (GVertex gv : graph.getVertices())
+                    if(gv.contains(event.getX(), event.getY()))
+                    {
+                        gv.setSelected(true);
+                        currentVertex = gv;
+                        break;
+                    }
+                for (GEdge e : graph.getEdges()){
+                    if(e.contains(event.getX(), event.getY())){
+                        e.setSelected(true);
+                        break;
+                    }
                 }
             }
         }
