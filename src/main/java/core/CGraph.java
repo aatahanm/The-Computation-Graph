@@ -6,18 +6,18 @@ import org.jgrapht.ext.JGraphModelAdapter;
 import java.util.ArrayList;
 
 
-public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
+public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
 {
-    ArrayList<CVertex> outNodes;
-    ArrayList<CVertex> inNodes;
+    ArrayList<Dsf> outNodes;
+    ArrayList<Dsf> inNodes;
     boolean selected;
 
     public CGraph(Class edgeClass) {
         super(edgeClass);
         selected = false;
-        outNodes = new ArrayList<CVertex>();
-        inNodes = new ArrayList<CVertex>();
-        for ( CVertex v : this) {
+        outNodes = new ArrayList<Dsf>();
+        inNodes = new ArrayList<Dsf>();
+        for ( Dsf v : this) {
             if (outDegreeOf(v) == 0 && v instanceof OutputVertex)
                 outNodes.add(v);
             if (inDegreeOf(v) == 0 && v instanceof InputVertex)
@@ -33,7 +33,7 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
 
     public void calcOutputs()
     {
-        for ( CVertex v : this) // this is in TopSort according to the java doc of the library
+        for ( Dsf v : this) // this is in TopSort according to the java doc of the library
         {
             for ( CEdge e : outgoingEdgesOf(v))
             {
@@ -50,7 +50,7 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
     Ft(h,g,j) = ▽F(h,g,f) * (h',g',f')
                             |_________| -> this part is done recursively
      */
-    public ArrayList<Double> calcDerivative ( int ID, CVertex v)
+    public ArrayList<Double> calcDerivative ( int ID, Dsf v)
     {
         ArrayList<Double> ret = new ArrayList<Double>();
         return ret;
@@ -58,7 +58,7 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
 
     public void removeSelected()
     {
-        for ( CVertex v : this)
+        for ( Dsf v : this)
         {
             if ( v.isSelected())
             {
@@ -80,7 +80,7 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
     public ArrayList<Double> getOutput() {
         calcOutputs();
         ArrayList<Double> outputs = new ArrayList<Double>();
-        for ( CVertex v : outNodes)
+        for ( Dsf v : outNodes)
         {
             outputs.add(v.getOutput().get(0));
         }
@@ -98,7 +98,7 @@ public class CGraph extends DirectedAcyclicGraph<CVertex, CEdge> implements Dsf
 
     public ArrayList<Double> getDerivative(int ID) {
         ArrayList<Double> ret = new ArrayList<Double>();
-        for ( CVertex v : outNodes)
+        for ( Dsf v : outNodes)
         {
             ret.add(calcDerivative(ID, v).get(0));
         }

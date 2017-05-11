@@ -155,7 +155,7 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
       if (projectName == null || projectName.isEmpty())
           new WelcomeWindowJFrame().setVisible(true);
       else {
-          main.setTitle(projectName);
+          main.setTitle("The Computation Graph - " + projectName);
           main.setVisible(true);
       }
    }//GEN-LAST:event_newJLabelMouseClicked

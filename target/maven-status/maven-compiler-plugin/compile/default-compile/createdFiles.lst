@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 tcgGUI/MainWindowJFrame$7.class
+=======
+tcgGUI\GUIcomponents\GButton.class
+tcgGUI\MainWindowJFrame$ButtonListener.class
+>>>>>>> d4df96dfb89c793e984f38ccc97386bcd180326e
 Test.class
 tcgGUI/MainWindowJFrame$KeyUtilities.class

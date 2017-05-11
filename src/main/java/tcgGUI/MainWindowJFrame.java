@@ -1,14 +1,19 @@
 package tcgGUI;
+
+import javax.swing.*;
 import core.CEdge;
 import core.CGraph;
+import core.*;
 import file.FileUtilities;
 import org.json.JSONException;
 import org.json.JSONObject;
+import tcgGUI.GUIcomponents.GButton;
 import tcgGUI.GUIcomponents.GGraph;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
@@ -71,13 +76,20 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
       allNodes.setBackground(new java.awt.Color(204, 204, 255));
       allNodes.setLayout(new GridLayout(6,2,2,2));
-      JButton a = new JButton("Addition");
-      JButton b = new JButton("Multiplication");
-      JButton c = new JButton("Substitution");
-      JButton d = new JButton("Division");
-      JButton e = new JButton("Sigmoid");
-      JButton f = new JButton("Sin");
-      JButton g = new JButton("Cos");
+      JButton a = new GButton("Addition", STATICS.ADDITION_VERTEX);
+      JButton b = new GButton("Multiplication",STATICS.MULTIPLICATION_VERTEX);
+      JButton c = new GButton("Input",STATICS.INPUT_VERTEX);
+      JButton e = new GButton("Sigmoid",STATICS.SIGMOID_VERTEX);
+      JButton f = new GButton("Output",STATICS.OUTPUT_VERTEX);
+      JButton d = new GButton("Constant",STATICS.CONSTANT_VERTEX);
+      JButton g = new JButton("test");
+
+      a.addActionListener(new ButtonListener());
+      b.addActionListener(new ButtonListener());
+      c.addActionListener(new ButtonListener());
+      d.addActionListener(new ButtonListener());
+      e.addActionListener(new ButtonListener());
+      f.addActionListener(new ButtonListener());
 
       allNodes.add(a);
       allNodes.add(b);
@@ -86,6 +98,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       allNodes.add(e);
       allNodes.add(f);
       allNodes.add(g);
+
 
       allNodes.setPreferredSize(new Dimension(171,500));
       panel.setBackground(new java.awt.Color(204,204,255));
@@ -261,6 +274,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
           File file = openFileChooser.getSelectedFile();
           graph = FileUtilities.parseToGGraph(file);
           ((NodeEditorTry)workAreaJPanel).setGraph(graph);
+          setTitle("The Computation Graph - " + file.getName());
           repaint();
       }
    }
@@ -467,4 +481,30 @@ public class MainWindowJFrame extends javax.swing.JFrame {
         public void keyReleased(KeyEvent e){}
     }
 
+   private class ButtonListener implements ActionListener
+   {
+
+      @Override
+      public void actionPerformed(ActionEvent e) {
+         GButton button = (GButton)e.getSource();
+         Dsf vertex = null;
+
+         if ( button.getType() == STATICS.CONSTANT_VERTEX)
+            vertex = new ConstantVertex(0);
+         if ( button.getType() == STATICS.INPUT_VERTEX)
+            vertex = new InputVertex();
+         if ( button.getType() == STATICS.ADDITION_VERTEX)
+            vertex = new AdditionVertex();
+         if ( button.getType() == STATICS.MULTIPLICATION_VERTEX)
+            vertex = new MultiplicationVertex();
+         if ( button.getType() == STATICS.OUTPUT_VERTEX)
+            vertex = new OutputVertex();
+         if ( button.getType() == STATICS.SIGMOID_VERTEX)
+            vertex = new SigmoidVertex();
+
+         graph.addVertex ( ((int)workAreaJPanel.getSize().getWidth()-(int)nodesJScrollPane.getSize().getWidth())/2,
+                 (int)workAreaJPanel.getSize().getHeight()/2, vertex);
+         repaint();
+      }
+   }
 }
