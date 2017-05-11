@@ -72,13 +72,20 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
       allNodes.setBackground(new java.awt.Color(204, 204, 255));
       allNodes.setLayout(new GridLayout(6,2,2,2));
-      JButton a = new JButton("Addition");
-      JButton b = new JButton("Multiplication");
-      JButton c = new JButton("Substitution");
-      JButton d = new JButton("Division");
-      JButton e = new JButton("Sigmoid");
-      JButton f = new JButton("Sin");
-      JButton g = new JButton("Cos");
+      JButton a = new GButton("Addition", STATICS.ADDITION_VERTEX);
+      JButton b = new GButton("Multiplication",STATICS.MULTIPLICATION_VERTEX);
+      JButton c = new GButton("Input",STATICS.INPUT_VERTEX);
+      JButton e = new GButton("Sigmoid",STATICS.SIGMOID_VERTEX);
+      JButton f = new GButton("Output",STATICS.OUTPUT_VERTEX);
+      JButton d = new GButton("Constant",STATICS.CONSTANT_VERTEX);
+      JButton g = new JButton("test");
+
+      a.addActionListener(new ButtonListener());
+      b.addActionListener(new ButtonListener());
+      c.addActionListener(new ButtonListener());
+      d.addActionListener(new ButtonListener());
+      e.addActionListener(new ButtonListener());
+      f.addActionListener(new ButtonListener());
 
       allNodes.add(a);
       allNodes.add(b);
@@ -87,6 +94,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       allNodes.add(e);
       allNodes.add(f);
       allNodes.add(g);
+
 
       allNodes.setPreferredSize(new Dimension(171,500));
       panel.setBackground(new java.awt.Color(204,204,255));
@@ -252,6 +260,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
           File file = openFileChooser.getSelectedFile();
           graph = FileUtilities.parseToGGraph(file);
           ((NodeEditorTry)workAreaJPanel).setGraph(graph);
+          setTitle("The Computation Graph - " + file.getName());
           repaint();
       }
    }
@@ -375,7 +384,9 @@ public class MainWindowJFrame extends javax.swing.JFrame {
          if ( button.getType() == STATICS.SIGMOID_VERTEX)
             vertex = new SigmoidVertex();
 
-         graph.addVertex ( workAreaJPanel.getX()/2, workAreaJPanel.getY()/2, vertex);
+         graph.addVertex ( ((int)workAreaJPanel.getSize().getWidth()-(int)nodesJScrollPane.getSize().getWidth())/2,
+                 (int)workAreaJPanel.getSize().getHeight()/2, vertex);
+         repaint();
       }
    }
 }
