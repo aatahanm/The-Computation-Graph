@@ -58,6 +58,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       actionsJMenu = new javax.swing.JMenu();
       jMenuItemRun = new javax.swing.JMenuItem();
       jMenuItemInput = new javax.swing.JMenuItem();
+      jMenuItemNew = new JMenuItem();
       jMenuItemBlackBox = new javax.swing.JMenuItem();
       nodesJScrollPane = new JScrollPane(nodeJPanelBackground,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -184,7 +185,30 @@ public class MainWindowJFrame extends javax.swing.JFrame {
              }
          }
       });
+
       fileJMenu.add(jMenuItemOpen);
+
+       jMenuItemNew.setText("New");
+       jMenuItemNew.addActionListener(new ActionListener() {
+           @Override
+           public void actionPerformed(ActionEvent e) {
+
+               String projectName = JOptionPane.showInputDialog("Project Name: ");
+
+
+               if (projectName == null || projectName.isEmpty()){}
+
+               else {
+                   dispose();
+                   MainWindowJFrame main = new MainWindowJFrame();
+                   main.setTitle("The Computation Graph - " + projectName);
+                   main.setVisible(true);
+               }
+           }
+
+       });
+       fileJMenu.add(jMenuItemNew);
+
 
       jMenuItemSave.setText("Save");
       fileJMenu.add(jMenuItemSave);
@@ -394,6 +418,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private boolean saved;
    private String path;
    private String fileName;
+    private JMenuItem jMenuItemNew;
 
    public void setFileName(String s){
        fileName = s;
