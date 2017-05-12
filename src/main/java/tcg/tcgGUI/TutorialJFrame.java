@@ -176,6 +176,7 @@ public class TutorialJFrame extends javax.swing.JFrame {
 
       tutorial1JPanel.setBackground(new java.awt.Color(153, 153, 153));
 
+
       jLabel15.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
       jLabel15.setText("   #1");
 
