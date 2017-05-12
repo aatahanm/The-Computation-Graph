@@ -2,11 +2,7 @@ package tcg.core;
 
 import java.util.ArrayList;
 
-/**
- * {SubtractionVertex}
- * Author: Yaman Yağız Taşbağ
- * Version: {12.05.2017}
- */
+
 public class SubtractionVertex extends CVertex {
 
     public SubtractionVertex()

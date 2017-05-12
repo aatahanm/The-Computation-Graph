@@ -2,9 +2,6 @@ package tcg.core;
 
 import java.util.ArrayList;
 
-/**
- * Created by mertcinar on 12/05/2017.
- */
 public class DivisionVertex extends CVertex{
 
     public DivisionVertex(){
