@@ -1,46 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e5ed025-015a-4614-8d95-c9d4b31c0002" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/core/SubtractionVertex.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/NodeEditorTry$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/NodeEditorTry$Listener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/NodeEditorTry.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tcgGUI/NodeEditorTry.java" afterPath="$PROJECT_DIR$/src/main/java/tcgGUI/NodeEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/AdditionVertex.class" afterPath="$PROJECT_DIR$/target/classes/core/AdditionVertex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/CEdge.class" afterPath="$PROJECT_DIR$/target/classes/core/CEdge.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/CGraph.class" afterPath="$PROJECT_DIR$/target/classes/core/CGraph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/CVertex.class" afterPath="$PROJECT_DIR$/target/classes/core/CVertex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/ConstantVertex.class" afterPath="$PROJECT_DIR$/target/classes/core/ConstantVertex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/Function.class" afterPath="$PROJECT_DIR$/target/classes/core/Function.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/MultiplicationVertex.class" afterPath="$PROJECT_DIR$/target/classes/core/MultiplicationVertex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/SigmoidVertex.class" afterPath="$PROJECT_DIR$/target/classes/core/SigmoidVertex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/GUIcomponents/GEdge.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/GUIcomponents/GEdge.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$2.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$3.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$4.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$5.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$6.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$7.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$8.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$ButtonListener.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$ButtonListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$KeyUtilities.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame$KeyUtilities.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame.class" afterPath="$PROJECT_DIR$/target/classes/tcgGUI/MainWindowJFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tcg-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/tcg-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/AdditionVertex.java" afterPath="$PROJECT_DIR$/src/main/java/core/AdditionVertex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/CEdge.java" afterPath="$PROJECT_DIR$/src/main/java/core/CEdge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/CGraph.java" afterPath="$PROJECT_DIR$/src/main/java/core/CGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/CVertex.java" afterPath="$PROJECT_DIR$/src/main/java/core/CVertex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/ConstantVertex.java" afterPath="$PROJECT_DIR$/src/main/java/core/ConstantVertex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/Function.java" afterPath="$PROJECT_DIR$/src/main/java/core/Function.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/MultiplicationVertex.java" afterPath="$PROJECT_DIR$/src/main/java/core/MultiplicationVertex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/SigmoidVertex.java" afterPath="$PROJECT_DIR$/src/main/java/core/SigmoidVertex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tcgGUI/GUIcomponents/GEdge.java" afterPath="$PROJECT_DIR$/src/main/java/tcgGUI/GUIcomponents/GEdge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tcgGUI/MainWindowJFrame.java" afterPath="$PROJECT_DIR$/src/main/java/tcgGUI/MainWindowJFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-    </list>
+    <list default="true" id="0e5ed025-015a-4614-8d95-c9d4b31c0002" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,8 +55,8 @@
       <file leaf-file-name="CGraph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/core/CGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="35" column="29" lean-forward="false" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+            <state relative-caret-position="21">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding>
                 <element signature="e#3965#3966#0" expanded="true" />
                 <element signature="e#4002#4003#0" expanded="true" />
@@ -385,32 +346,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="file" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tcg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tcg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -984,7 +919,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49616000" />
+    <option name="totallyTimeSpent" value="50341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1924" height="1048" extended-state="0" />
@@ -995,15 +930,15 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2797282" sideWeight="0.2099567" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23329559" sideWeight="0.5579004" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14772727" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2797282" sideWeight="0.7900433" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2797282" sideWeight="0.7900433" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23329559" sideWeight="0.44426408" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23329559" sideWeight="0.44209957" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2267316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2267316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1259,8 +1194,8 @@
         <state relative-caret-position="386">
           <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
           <folding>
-            <element signature="e#325#326#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="false" />
+            <element signature="e#352#353#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1270,8 +1205,8 @@
         <state relative-caret-position="63">
           <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding>
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
+            <element signature="e#704#705#0" expanded="false" />
+            <element signature="e#736#737#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1281,8 +1216,8 @@
         <state relative-caret-position="469">
           <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
           <folding>
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1292,8 +1227,8 @@
         <state relative-caret-position="427">
           <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="false" />
+            <element signature="e#688#689#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1311,10 +1246,10 @@
         <state relative-caret-position="386">
           <caret line="55" column="38" lean-forward="false" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
           <folding>
-            <element signature="e#504#505#0" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#1392#1393#0" expanded="true" />
-            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="false" />
+            <element signature="e#532#533#0" expanded="false" />
+            <element signature="e#1392#1393#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1348,7 +1283,7 @@
         <state relative-caret-position="470">
           <caret line="98" column="5" lean-forward="false" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1393,8 +1328,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/CGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="35" column="29" lean-forward="false" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        <state relative-caret-position="21">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding>
             <element signature="e#3965#3966#0" expanded="true" />
             <element signature="e#4002#4003#0" expanded="true" />
