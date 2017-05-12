@@ -85,15 +85,15 @@ public class MainWindowJFrame extends javax.swing.JFrame {
        JButton e = new GButton("Sigmoid",STATICS.SIGMOID_VERTEX);
        JButton f = new GButton("Output",STATICS.OUTPUT_VERTEX);
        JButton d = new GButton("Constant",STATICS.CONSTANT_VERTEX);
-       JButton g = new GButton("Addition", STATICS.ADDITION_VERTEX);
-       JButton h = new GButton("Multiplication",STATICS.MULTIPLICATION_VERTEX);
-       JButton i = new GButton("Input",STATICS.INPUT_VERTEX);
-       JButton j = new GButton("Sigmoid",STATICS.SIGMOID_VERTEX);
-       JButton k = new GButton("Output",STATICS.OUTPUT_VERTEX);
-       JButton l = new GButton("Constant",STATICS.CONSTANT_VERTEX);
-       JButton m = new GButton("Sigmoid",STATICS.SIGMOID_VERTEX);
-       JButton n = new GButton("Output",STATICS.OUTPUT_VERTEX);
-       JButton o = new GButton("Constant",STATICS.CONSTANT_VERTEX);
+       JButton g = new GButton("Subtraction", STATICS.SUBTRACTION_VERTEX);
+       JButton h = new GButton("Exponential",STATICS.EXP_VERTEX);
+       JButton i = new GButton("Logarithm",STATICS.LOG_VERTEX);
+       JButton j = new GButton("Sin",STATICS.SIN_VERTEX);
+       JButton k = new GButton("Cos",STATICS.COS_VERTEX);
+       JButton l = new GButton("Tan",STATICS.TAN_VERTEX);
+       JButton m = new GButton("Tanh",STATICS.TANH_VERTEX);
+       JButton n = new GButton("Division",STATICS.DIVISION_VERTEX);
+       JButton o = new GButton("Cot",STATICS.COT_VERTEX);
 
 
 
