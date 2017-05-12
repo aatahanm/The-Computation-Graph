@@ -35,6 +35,8 @@ public class STATICS {
             vertex = new AdditionVertex();
         if ( type == STATICS.MULTIPLICATION_VERTEX)
             vertex = new MultiplicationVertex();
+        if ( type == STATICS.SIGMOID_VERTEX)
+            vertex = new SigmoidVertex();
         if ( type == STATICS.OUTPUT_VERTEX)
             vertex = new OutputVertex();
         if ( type == STATICS.COS_VERTEX)

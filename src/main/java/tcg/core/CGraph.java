@@ -43,7 +43,7 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         {
             for ( CEdge e : outgoingEdgesOf(v))
             {
-                ((CVertex)e.getTarget()).input.set(e.getToOrder(),v.getOutput().get(e.getFromOrder()));
+                ((Dsf)e.getTarget()).getInput().set(e.getToOrder(),v.getOutput().get(e.getFromOrder()));
             }
         }
     }
@@ -143,5 +143,10 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
     public int getInputCount()
     {
         return inNodes.size();
+    }
+
+    public ArrayList<Double> getInput()
+    {
+        return null;
     }
 }
