@@ -10,14 +10,15 @@ import java.util.Random;
 
 public class GGraph
 {
-    private String path;
-    private boolean saved;
+
+    private boolean selected;
     private ArrayList<GVertex> vertices;
     private ArrayList<GEdge> edges;
     private CGraph graph;
 
     public GGraph ( CGraph graph)
     {
+        selected = false;
         vertices = new ArrayList<GVertex>();
         edges = new ArrayList<GEdge>();
         this.graph = graph;
@@ -40,6 +41,20 @@ public class GGraph
         graph.addEdge ( from.getVertex(), to.getVertex(), e);
         edges.add ( new GEdge(from, to, e));
     }
+
+    public void removeSelected(){
+        for (GVertex gv : vertices)
+            if (gv.isSelected())
+                vertices.remove(gv);
+
+        for (GEdge ge : edges)
+            if (ge.isSelected())
+                edges.remove(ge);
+
+        graph.removeSelected();
+    }
+
+
     public GVertex getGVertex ( Dsf v)
     {
         for ( GVertex gv : vertices)
