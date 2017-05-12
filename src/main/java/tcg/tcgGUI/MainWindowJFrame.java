@@ -556,39 +556,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       public void actionPerformed(ActionEvent e) {
           requestFocusInWindow(true);
          GButton button = (GButton)e.getSource();
-         Dsf vertex = null;
-
-         if ( button.getType() == STATICS.CONSTANT_VERTEX)
-            vertex = new ConstantVertex(1);
-         if ( button.getType() == STATICS.INPUT_VERTEX)
-            vertex = new InputVertex();
-         if ( button.getType() == STATICS.ADDITION_VERTEX)
-            vertex = new AdditionVertex();
-         if ( button.getType() == STATICS.MULTIPLICATION_VERTEX)
-            vertex = new MultiplicationVertex();
-         if ( button.getType() == STATICS.OUTPUT_VERTEX)
-            vertex = new OutputVertex();
-          if ( button.getType() == STATICS.COS_VERTEX)
-              vertex = new CosVertex();
-          if ( button.getType() == STATICS.COT_VERTEX)
-              vertex = new CotVertex();
-          if ( button.getType() == STATICS.DIVISION_VERTEX)
-              vertex = new DivisionVertex();
-          if ( button.getType() == STATICS.EXP_VERTEX)
-              vertex = new ExpVertex();
-          if ( button.getType() == STATICS.LOG_VERTEX)
-              vertex = new LogVertex();
-          if ( button.getType() == STATICS.SIN_VERTEX)
-              vertex = new SinVertex();
-          if ( button.getType() == STATICS.SUBTRACTION_VERTEX)
-              vertex = new SubtractionVertex();
-          if ( button.getType() == STATICS.TAN_VERTEX)
-              vertex = new TanVertex();
-          if ( button.getType() == STATICS.TANH_VERTEX)
-              vertex = new TanhVertex();
-
-
-
+         Dsf vertex = STATICS.typeToVertex(button.getType());
           graph.addVertex ( ((int)workAreaJPanel.getSize().getWidth()-(int)nodesJScrollPane.getSize().getWidth())/2,
                  (int)workAreaJPanel.getSize().getHeight()/2, vertex);
          repaint();
