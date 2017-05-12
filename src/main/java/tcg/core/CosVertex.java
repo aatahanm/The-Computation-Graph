@@ -15,7 +15,7 @@ public class CosVertex extends CVertex{
     @Override
     public ArrayList<Double> getDerivative(int ID) {
         ArrayList<Double> d = new ArrayList<>();
-        d.add(-Math.sin(input.get(1)));
+        d.add(-Math.sin(input.get(0)));
         return d;
     }
 

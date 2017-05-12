@@ -5,29 +5,29 @@ import java.util.ArrayList;
 /**
  * Created by mertcinar on 12/05/2017.
  */
-public class SinVertex extends CVertex{
+public class LogVertex extends CVertex{
 
-    public SinVertex() {
+    public LogVertex() {
         inpCount = 1;
-        super.input.add(0.0);
+        super.input.add(1.0);
     }
 
     @Override
     public ArrayList<Double> getDerivative(int ID) {
         ArrayList<Double> d = new ArrayList<>();
-        d.add(Math.cos(input.get(0)));
+        d.add(1.0/(input.get(0)));
         return d;
     }
 
     @Override
     ArrayList<Double> calcOutput() {
         ArrayList<Double> al = new ArrayList<>();
-        al.add(Math.sin(super.input.get(0)));
+        al.add(Math.log(super.input.get(0)));
         return al;
     }
 
     public String toString()
     {
-        return "sin(x0)";
+        return "ln(x0)";
     }
 }
