@@ -504,15 +504,13 @@ public class MainWindowJFrame extends JFrame {
             {
                 System.out.println("zoom out");
             }
-            else if(e.isControlDown()&& e.getKeyCode() == e.VK_UP)
+            else if(e.getKeyCode() == e.VK_UP)
             {
-                System.out.print("asdasdsad");
                 workAreaJPanel.setToOrder(workAreaJPanel.selectedEdge.getToOrder() + 1);
                 repaint();
             }
-            else if(e.isControlDown()&& e.getKeyCode() == e.VK_DOWN)
+            else if(e.getKeyCode() == e.VK_DOWN)
             {
-                System.out.print("asdas");
                 workAreaJPanel.setToOrder(workAreaJPanel.selectedEdge.getToOrder() - 1);
                 repaint();
             }
