@@ -6,6 +6,7 @@ public class SigmoidVertex extends CVertex{
 
     public SigmoidVertex(){
         super.inpCount = 1;
+        super.input.add(0.0);
     }
 
     public ArrayList<Double> getDerivative ( int ID)
