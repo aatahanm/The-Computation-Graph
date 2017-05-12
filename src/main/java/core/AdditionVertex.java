@@ -28,6 +28,6 @@ public class AdditionVertex extends CVertex{
     }
     public String toString()
     {
-        return "+";
+        return "x0 + x1";
     }
 }

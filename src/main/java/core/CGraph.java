@@ -28,6 +28,13 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
 
     public void calcGraph()
     {
+        for ( Dsf v : this)
+        {
+            ArrayList<Double> input = new ArrayList<>();
+            for ( int i = 0; i < v.getInputCount(); i++)
+                input.add(0.0);
+            v.setInput(input);
+        }
         calcOutputs();
     }
 
@@ -52,6 +59,7 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
     public ArrayList<Double> calcDerivative ( int ID, Dsf v)
     {
         ArrayList<Double> ret = new ArrayList<Double>();
+        ArrayList<Double> chainCoefficients = new ArrayList<Double>();
         ArrayList<Double> gradient = v.getDerivative(ID);
         if ( incomingEdgesOf(v).size() == 0)
         {
@@ -59,8 +67,14 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         }
         for ( CEdge e : incomingEdgesOf(v))
         {
-            ret.add(e.getToOrder(), e.getSource().getDerivative(ID).get(e.getFromOrder()) * gradient.get(e.getToOrder()));
+            chainCoefficients.add(e.getToOrder(), e.getSource().getDerivative(ID).get(e.getFromOrder()) * gradient.get(e.getToOrder()));
         }
+        double o = 0;
+        for ( double d : chainCoefficients)
+        {
+            o += d;
+        }
+        ret.add(o);
         return ret;
     }
 
@@ -125,5 +139,10 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
     public int getType()
     {
         return STATICS.CGRAPH;
+    }
+
+    public int getInputCount()
+    {
+        return inNodes.size();
     }
 }

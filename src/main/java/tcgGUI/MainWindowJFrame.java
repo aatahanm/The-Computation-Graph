@@ -17,7 +17,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
-import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MainWindowJFrame extends javax.swing.JFrame {
@@ -42,7 +41,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
       fileName = "";
       setFocusable(true);
       graph = new GGraph(new CGraph(CEdge.class));
-      workAreaJPanel = new NodeEditorTry(graph);
+      workAreaJPanel = new NodeEditor(graph);
       nodeJPanelBackground = new javax.swing.JPanel();
       nodesJTabbedPane = new javax.swing.JTabbedPane();
       allNodes = new JPanel();
@@ -303,7 +302,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
           saved = true;
           path = file.getAbsolutePath();
           fileName = file.getName();
-          ((NodeEditorTry)workAreaJPanel).setGraph(graph);
+          ((NodeEditor)workAreaJPanel).setGraph(graph);
           setTitle("The Computation Graph - " + file.getName());
           repaint();
       }
@@ -409,7 +408,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
    private javax.swing.JPanel nodeJPanelBackground;
    private javax.swing.JTabbedPane nodesJTabbedPane;
    private javax.swing.JPanel standardNodes;
-   private javax.swing.JPanel workAreaJPanel;
+   private NodeEditor workAreaJPanel;
    private JFileChooser inputFromFile;
    private JFileChooser chooser;
    private JFileChooser openFileChooser;
@@ -480,11 +479,15 @@ public class MainWindowJFrame extends javax.swing.JFrame {
             }
             else if(e.isControlDown()&& e.getKeyCode() == e.VK_UP)
             {
-                System.out.println("up");
+                System.out.print("asdasdsad");
+                workAreaJPanel.setToOrder(workAreaJPanel.selectedEdge.getToOrder() + 1);
+                repaint();
             }
             else if(e.isControlDown()&& e.getKeyCode() == e.VK_DOWN)
             {
-                System.out.println("down");
+                System.out.print("asdas");
+                workAreaJPanel.setToOrder(workAreaJPanel.selectedEdge.getToOrder() - 1);
+                repaint();
             }
             else if(e.isControlDown() && e.getKeyCode() == e.VK_LEFT)
             {

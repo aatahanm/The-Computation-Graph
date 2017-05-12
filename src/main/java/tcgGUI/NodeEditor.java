@@ -14,17 +14,17 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.Line2D;
 
 
-public class NodeEditorTry extends JPanel
+public class NodeEditor extends JPanel
 {
     GGraph graph;
-
-    public NodeEditorTry ( CGraph graph)
+    GEdge selectedEdge;
+    public NodeEditor(CGraph graph)
     {
         this.graph = new GGraph(graph);
         init();
     }
 
-    public NodeEditorTry(GGraph gg){
+    public NodeEditor(GGraph gg){
         setBackground(Color.white);
         graph = gg;
         init();
@@ -51,11 +51,15 @@ public class NodeEditorTry extends JPanel
         for ( GVertex v : graph.getVertices())
             v.paint(g);
     }
-
+    public void setToOrder ( int order)
+    {
+        selectedEdge.setToOrder(order);
+    }
     private class Listener extends MouseAdapter
     {
 
         GVertex currentVertex;
+
 
         public void mousePressed (MouseEvent event)
         {
@@ -93,6 +97,7 @@ public class NodeEditorTry extends JPanel
                 for (GEdge e : graph.getEdges()){
                     if(e.contains(event.getX(), event.getY())){
                         e.setSelected(true);
+                        selectedEdge = e;
                         break;
                     }
                 }

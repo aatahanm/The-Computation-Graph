@@ -1,9 +1,10 @@
 core\Derivable.class
 tcgGUI\GUIcomponents\GVertex.class
+tcgGUI\NodeEditor$1.class
 tcgGUI\GUIcomponents\GButton.class
-tcgGUI\NodeEditorTry$Listener.class
 core\STATICS.class
 tcgGUI\MainWindowJFrame$ButtonListener.class
+core\SubtractionVertex.class
 core\CGraph.class
 core\CVertex.class
 core\AdditionVertex.class
@@ -17,6 +18,7 @@ tcgGUI\TutorialJFrame.class
 tcgGUI\WelcomeWindowJFrame.class
 core\Function.class
 tcgGUI\MainWindowJFrame$4.class
+tcgGUI\NodeEditor.class
 tcgGUI\MainWindowJFrame$7.class
 tcgGUI\TutorialJFrame$1.class
 tcgGUI\WelcomeWindowJFrame$4.class
@@ -27,10 +29,9 @@ tcgGUI\MainWindowJFrame$2.class
 core\Selectable.class
 core\InputVertex.class
 file\FileUtilities.class
-tcgGUI\NodeEditorTry.class
 tcgGUI\GUIcomponents\GGraph.class
 tcgGUI\WelcomeWindowJFrame$2.class
-tcgGUI\NodeEditorTry$1.class
+tcgGUI\NodeEditor$Listener.class
 tcgGUI\MainWindowJFrame$KeyUtilities.class
 tcgGUI\WelcomeWindowJFrame$3.class
 tcgGUI\MainWindowJFrame$6.class

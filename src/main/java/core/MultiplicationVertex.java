@@ -28,6 +28,6 @@ public class MultiplicationVertex extends CVertex
 
     public String toString()
     {
-        return "*";
+        return "x0 * x1";
     }
 }

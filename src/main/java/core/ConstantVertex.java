@@ -20,6 +20,10 @@ public class ConstantVertex extends CVertex
         return al;
     }
 
+    public void setConsInput ( ArrayList<Double> consInput)
+    {
+        this.consInput = consInput;
+    }
     ArrayList<Double> calcOutput() {
         return consInput;
     }

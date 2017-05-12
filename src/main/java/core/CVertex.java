@@ -55,4 +55,9 @@ public abstract class CVertex implements Dsf, Serializable
 
     abstract ArrayList<Double> calcOutput();
 
+    public int getInputCount()
+    {
+        return inpCount;
+    }
+
 }

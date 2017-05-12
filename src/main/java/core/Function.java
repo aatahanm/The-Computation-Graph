@@ -6,4 +6,5 @@ public interface Function
 {
     ArrayList<Double> getOutput();
     void setInput ( ArrayList<Double> al);
+    int getInputCount();
 }

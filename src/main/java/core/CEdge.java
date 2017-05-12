@@ -27,9 +27,9 @@ public class CEdge extends DefaultEdge implements Selectable
         return toOrder;
     }
 
-    void setToOrder ( int order)
+    public void setToOrder ( int order)
     {
-        toOrder = order;
+        toOrder = order % getTarget().getInputCount();
     }
 
     public int getFromOrder()
@@ -37,7 +37,7 @@ public class CEdge extends DefaultEdge implements Selectable
         return fromOrder;
     }
 
-    void setFromOrder ( int order)
+    public void setFromOrder ( int order)
     {
         fromOrder = order;
     }

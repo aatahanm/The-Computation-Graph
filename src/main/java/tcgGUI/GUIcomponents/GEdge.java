@@ -30,7 +30,11 @@ public class GEdge
         else
             g.setColor(Color.black);
         g2.draw(new Line2D.Float(from.getX(), from.getY(), to.getX(), to.getY()));
+        g2.setStroke(new BasicStroke(2));
+        g2.setColor(Color.red);
+        g2.drawString("x"+getToOrder(),(from.getX() + to.getX())/2 , (from.getY() + to.getY())/2);
         g2.setStroke(t);
+
         g2.setColor(t_);
     }
 
@@ -57,7 +61,10 @@ public class GEdge
         Polygon p = new Polygon( xs, ys,4);
         return p.contains(x,y);
     }
-
+    public void setToOrder ( int order)
+    {
+        edge.setToOrder(order);
+    }
     public void setSelected(boolean selected){
         edge.setSelected(selected);
     }

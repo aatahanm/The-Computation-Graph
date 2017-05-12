@@ -28,6 +28,6 @@ public class SigmoidVertex extends CVertex{
 
     public String toString()
     {
-        return "sgm";
+        return "sgm(x0)";
     }
 }
