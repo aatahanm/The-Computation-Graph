@@ -43,16 +43,22 @@ public class GGraph
     }
 
     public void removeSelected(){
-        System.out.print("bbbbbbbb");
+        ArrayList<GVertex> vToRemove = new ArrayList<>();
+        ArrayList<GEdge> eToRemove = new ArrayList<>();
         for (GVertex gv : vertices)
-            if (gv.isSelected()) {
-                vertices.remove(gv);
+            if (gv.isSelected())
+                vToRemove.add(gv);
 
-            }
 
         for (GEdge ge : edges)
             if (ge.isSelected())
-                edges.remove(ge);
+                eToRemove.add(ge);
+
+        for (GVertex gv : vToRemove)
+            vertices.remove(gv);
+
+        for (GEdge ge : eToRemove)
+            edges.remove(ge);
 
         graph.removeSelected();
     }

@@ -512,7 +512,6 @@ public class MainWindowJFrame extends javax.swing.JFrame {
             }
             else if( e.getKeyCode() == e.VK_DELETE)
             {
-                System.out.print("aaaaaaaaa");
                 graph.removeSelected();
                 repaint();
             }

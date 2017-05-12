@@ -66,15 +66,25 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
 
     public void removeSelected()
     {
+        ArrayList<Dsf> vToRemove = new ArrayList<>();
+        ArrayList<CEdge> eToRemove = new ArrayList<>();
         for ( Dsf v : this)
         {
             if ( v.isSelected())
             {
                 removeAllEdges(incomingEdgesOf(v));
                 removeAllEdges(outgoingEdgesOf(v));
-                removeVertex(v);
+                vToRemove.add(v);
             }
         }
+
+        for ( CEdge e : edgeSet())
+            if ( e.isSelected())
+                eToRemove.add(e);
+
+        removeAllEdges(eToRemove);
+        removeAllVertices(vToRemove);
+
     }
 
     public boolean isSelected() {
