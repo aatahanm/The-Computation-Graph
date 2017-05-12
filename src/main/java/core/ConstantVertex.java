@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class ConstantVertex extends CVertex
 {
-
+    ArrayList<Double> consInput;
     public ConstantVertex ( double d)
     {
-        super.input = new ArrayList<Double>();
-        input.add(d);
+       consInput = new ArrayList<>();
+       consInput.add(d);
     }
     public ArrayList<Double> getDerivative(int ID) {
         ArrayList<Double> al;
@@ -21,10 +21,10 @@ public class ConstantVertex extends CVertex
     }
 
     ArrayList<Double> calcOutput() {
-        return super.input;
+        return consInput;
     }
     public String toString()
     {
-        return "{" + super.input.get(0) + "}";
+        return "{" + consInput.get(0) + "}";
     }
 }
