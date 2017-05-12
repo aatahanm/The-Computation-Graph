@@ -1,5 +1,9 @@
 package tcg.tcgGUI;
 
+import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 public class TutorialJFrame extends javax.swing.JFrame {
 
    public TutorialJFrame() {
@@ -46,6 +50,11 @@ public class TutorialJFrame extends javax.swing.JFrame {
       tutorialsWindowJPanel.setLayout(null);
 
       tutorial4JPanel.setBackground(new java.awt.Color(153, 153, 153));
+      tutorial4JPanel.addMouseListener(new MouseAdapter() {
+         public void mouseClicked(MouseEvent evt) {
+            tutorial4JPanelMouseClicked(evt);
+         }
+      });
 
       jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
       jLabel1.setText("   #4");
@@ -89,6 +98,11 @@ public class TutorialJFrame extends javax.swing.JFrame {
       tutorialsHeaderJLabel.setBounds(0, 30, 500, 70);
 
       tutorial2JPanel.setBackground(new java.awt.Color(153, 153, 153));
+      tutorial2JPanel.addMouseListener(new MouseAdapter() {
+         public void mouseClicked(MouseEvent evt) {
+            tutorial2JPanelMouseClicked(evt);
+         }
+      });
 
       jLabel7.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
       jLabel7.setText("   #2");
@@ -132,6 +146,11 @@ public class TutorialJFrame extends javax.swing.JFrame {
       tutorial2JPanel.setBounds(260, 120, 160, 150);
 
       tutorial3JPanel.setBackground(new java.awt.Color(153, 153, 153));
+      tutorial3JPanel.addMouseListener(new MouseAdapter() {
+         public void mouseClicked(MouseEvent evt) {
+            tutorial3JPanelMouseClicked(evt);
+         }
+      });
 
       jLabel11.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
       jLabel11.setText("   #3");
@@ -175,7 +194,11 @@ public class TutorialJFrame extends javax.swing.JFrame {
       tutorial3JPanel.setBounds(70, 310, 160, 150);
 
       tutorial1JPanel.setBackground(new java.awt.Color(153, 153, 153));
-
+      tutorial1JPanel.addMouseListener(new MouseAdapter() {
+         public void mouseClicked(MouseEvent evt) {
+            tutorial1JPanelMouseClicked(evt);
+         }
+      });
 
       jLabel15.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
       jLabel15.setText("   #1");
@@ -235,7 +258,35 @@ public class TutorialJFrame extends javax.swing.JFrame {
       );
 
       pack();
-   }// </editor-fold>//GEN-END:initComponents
+   }
+
+   private void tutorial1JPanelMouseClicked(MouseEvent evt) {
+      dispose();
+      MainWindowJFrame main = new MainWindowJFrame();
+         main.setTitle("The Computation Graph - Tutorial #1" );
+         main.setVisible(true);
+   }
+
+   private void tutorial2JPanelMouseClicked(MouseEvent evt) {
+      dispose();
+      MainWindowJFrame main = new MainWindowJFrame();
+      main.setTitle("The Computation Graph - Tutorial #2" );
+      main.setVisible(true);
+   }
+
+   private void tutorial3JPanelMouseClicked(MouseEvent evt) {
+      dispose();
+      MainWindowJFrame main = new MainWindowJFrame();
+      main.setTitle("The Computation Graph - Tutorial #3" );
+      main.setVisible(true);
+   }
+
+   private void tutorial4JPanelMouseClicked(MouseEvent evt) {
+      dispose();
+      MainWindowJFrame main = new MainWindowJFrame();
+      main.setTitle("The Computation Graph - Tutorial #4" );
+      main.setVisible(true);
+   }
 
    /**
     * @param args the command line arguments
