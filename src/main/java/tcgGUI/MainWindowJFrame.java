@@ -510,8 +510,9 @@ public class MainWindowJFrame extends javax.swing.JFrame {
             {
                 System.out.println("right");
             }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_DELETE)
+            else if( e.getKeyCode() == e.VK_DELETE)
             {
+                System.out.print("aaaaaaaaa");
                 graph.removeSelected();
                 repaint();
             }
@@ -524,6 +525,7 @@ public class MainWindowJFrame extends javax.swing.JFrame {
 
       @Override
       public void actionPerformed(ActionEvent e) {
+          requestFocusInWindow(true);
          GButton button = (GButton)e.getSource();
          Dsf vertex = null;
 

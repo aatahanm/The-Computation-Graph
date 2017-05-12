@@ -43,9 +43,12 @@ public class GGraph
     }
 
     public void removeSelected(){
+        System.out.print("bbbbbbbb");
         for (GVertex gv : vertices)
-            if (gv.isSelected())
+            if (gv.isSelected()) {
                 vertices.remove(gv);
+
+            }
 
         for (GEdge ge : edges)
             if (ge.isSelected())
