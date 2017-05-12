@@ -1,24 +1,32 @@
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\CGraph.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\InputVertex.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\Test.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\tcgGUI\GUIcomponents\GEdge.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\tcgGUI\NodeEditorTry.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\MultiplicationVertex.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\Derivable.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\tcgGUI\GUIcomponents\GVertex.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\tcgGUI\TutorialJFrame.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\Selectable.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\tcgGUI\GUIcomponents\GButton.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\CVertex.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\Dsf.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\file\FileUtilities.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\Function.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\SigmoidVertex.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\tcgGUI\WelcomeWindowJFrame.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\tcgGUI\MainWindowJFrame.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\CEdge.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\OutputVertex.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\STATICS.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\tcgGUI\GUIcomponents\GGraph.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\AdditionVertex.java
-C:\Users\Ahmet Atahan\tcg\src\main\java\core\ConstantVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/CGraph.java
+/Users/mertcinar/tcg/src/main/java/tcg/tcgGUI/MainWindowJFrame.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/TanVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/OutputVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/tcgGUI/WelcomeWindowJFrame.java
+/Users/mertcinar/tcg/src/main/java/tcg/tcgGUI/GUIcomponents/GEdge.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/SubtractionVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/MultiplicationVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/SinVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/Selectable.java
+/Users/mertcinar/tcg/src/main/java/tcg/tcgGUI/GUIcomponents/GButton.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/CVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/STATICS.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/Derivable.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/ExpVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/file/FileUtilities.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/LogVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/AdditionVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/CotVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/DivisionVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/Dsf.java
+/Users/mertcinar/tcg/src/main/java/tcg/tcgGUI/NodeEditor.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/SigmoidVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/CEdge.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/TanhVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/tcgGUI/TutorialJFrame.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/ConstantVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/InputVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/tcgGUI/GUIcomponents/GGraph.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/CosVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/tcgGUI/GUIcomponents/GVertex.java
+/Users/mertcinar/tcg/src/main/java/tcg/core/Function.java
