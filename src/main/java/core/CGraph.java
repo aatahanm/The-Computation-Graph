@@ -42,9 +42,8 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         }
     }
 
-    //TODO
     /*
-    The algorithm will work by recursion
+    The algorithm works by recursion
     the idea is using the dot product and multivariable differentiation with partial derivatives
     the output of the getDerivative function is the coefficient of the partial derivative
     Ft(h,g,j) = ▽F(h,g,f) * (h',g',f')
@@ -53,6 +52,15 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
     public ArrayList<Double> calcDerivative ( int ID, Dsf v)
     {
         ArrayList<Double> ret = new ArrayList<Double>();
+        ArrayList<Double> gradient = v.getDerivative(ID);
+        if ( incomingEdgesOf(v).size() == 0)
+        {
+            return gradient;
+        }
+        for ( CEdge e : incomingEdgesOf(v))
+        {
+            ret.add(e.getToOrder(), e.getSource().getDerivative(ID).get(e.getFromOrder()) * gradient.get(e.getToOrder()));
+        }
         return ret;
     }
 
