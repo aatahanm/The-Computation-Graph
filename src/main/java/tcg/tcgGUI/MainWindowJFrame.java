@@ -570,10 +570,28 @@ public class MainWindowJFrame extends javax.swing.JFrame {
             vertex = new MultiplicationVertex();
          if ( button.getType() == STATICS.OUTPUT_VERTEX)
             vertex = new OutputVertex();
-         if ( button.getType() == STATICS.SIGMOID_VERTEX)
-            vertex = new SigmoidVertex();
+          if ( button.getType() == STATICS.COS_VERTEX)
+              vertex = new CosVertex();
+          if ( button.getType() == STATICS.COT_VERTEX)
+              vertex = new CotVertex();
+          if ( button.getType() == STATICS.DIVISION_VERTEX)
+              vertex = new DivisionVertex();
+          if ( button.getType() == STATICS.EXP_VERTEX)
+              vertex = new ExpVertex();
+          if ( button.getType() == STATICS.LOG_VERTEX)
+              vertex = new LogVertex();
+          if ( button.getType() == STATICS.SIN_VERTEX)
+              vertex = new SinVertex();
+          if ( button.getType() == STATICS.SUBTRACTION_VERTEX)
+              vertex = new SubtractionVertex();
+          if ( button.getType() == STATICS.TAN_VERTEX)
+              vertex = new TanVertex();
+          if ( button.getType() == STATICS.TANH_VERTEX)
+              vertex = new TanhVertex();
 
-         graph.addVertex ( ((int)workAreaJPanel.getSize().getWidth()-(int)nodesJScrollPane.getSize().getWidth())/2,
+
+
+          graph.addVertex ( ((int)workAreaJPanel.getSize().getWidth()-(int)nodesJScrollPane.getSize().getWidth())/2,
                  (int)workAreaJPanel.getSize().getHeight()/2, vertex);
          repaint();
       }
