@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class InputVertex extends CVertex {
 
     public InputVertex(){
+        inpCount = 1;
         super.input.add(0.0);
     }
 

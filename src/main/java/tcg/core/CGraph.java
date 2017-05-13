@@ -32,7 +32,8 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
             ArrayList<Double> input = new ArrayList<>();
             for ( int i = 0; i < v.getInputCount(); i++)
                 input.add(0.0);
-            v.setInput(input);
+            if (inDegreeOf(v) != 0)
+                v.setInput(input);
         }
         calcOutputs();
     }
