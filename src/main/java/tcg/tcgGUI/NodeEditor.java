@@ -129,8 +129,6 @@ public class NodeEditor extends JPanel
             if(currentVertex!=null){
              if (currentVertex.getVertex().getType() == STATICS.INPUT_VERTEX  ) {
                  if (event.getClickCount() == 2) {
-                     System.out.println(currentVertex.getVertex().getInput());
-                     System.out.println("double clicked");
                      ArrayList<Double> test = new ArrayList<>();
                      double d = new Double(JOptionPane.showInputDialog("Please enter a value"));
                      if (d == JOptionPane.CANCEL_OPTION || d == JOptionPane.CLOSED_OPTION) {
@@ -139,8 +137,6 @@ public class NodeEditor extends JPanel
                          test.add(d);
                      }
                      currentVertex.getVertex().setInput(test);
-                     System.out.println(currentVertex.getVertex().getInput());
-
                      repaint();
                  }
              }

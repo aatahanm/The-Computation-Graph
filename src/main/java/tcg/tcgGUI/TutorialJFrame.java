@@ -264,6 +264,7 @@ public class TutorialJFrame extends javax.swing.JFrame {
       dispose();
       MainWindowJFrame main = new MainWindowJFrame();
          main.setTitle("The Computation Graph - Tutorial #1" );
+         main.setTutorial(true);
          main.setVisible(true);
    }
 

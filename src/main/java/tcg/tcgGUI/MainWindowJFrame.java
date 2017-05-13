@@ -19,6 +19,10 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import net.java.balloontip.BalloonTip;
+import net.java.balloontip.ListItemBalloonTip;
+import net.java.balloontip.styles.EdgedBalloonStyle;
+
 public class MainWindowJFrame extends JFrame {
 
     /**
@@ -36,6 +40,7 @@ public class MainWindowJFrame extends JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        tutorial = false;
         saved = false;
         path = "";
         fileName = "";
@@ -79,57 +84,18 @@ public class MainWindowJFrame extends JFrame {
 
         allNodes.setBackground(new Color(204, 204, 255));
         allNodes.setLayout(new GridLayout(8,2,2,2));
-        JButton a = new GButton("Addition", STATICS.ADDITION_VERTEX);
-        JButton b = new GButton("Multiplication",STATICS.MULTIPLICATION_VERTEX);
-        JButton c = new GButton("Input",STATICS.INPUT_VERTEX);
-        JButton e = new GButton("Sigmoid",STATICS.SIGMOID_VERTEX);
-        JButton f = new GButton("Output",STATICS.OUTPUT_VERTEX);
-        JButton d = new GButton("Constant",STATICS.CONSTANT_VERTEX);
-        JButton g = new GButton("Subtraction", STATICS.SUBTRACTION_VERTEX);
-        JButton h = new GButton("Exponential",STATICS.EXP_VERTEX);
-        JButton i = new GButton("Logarithm",STATICS.LOG_VERTEX);
-        JButton j = new GButton("Sin",STATICS.SIN_VERTEX);
-        JButton k = new GButton("Cos",STATICS.COS_VERTEX);
-        JButton l = new GButton("Tan",STATICS.TAN_VERTEX);
-        JButton m = new GButton("Tanh",STATICS.TANH_VERTEX);
-        JButton n = new GButton("Division",STATICS.DIVISION_VERTEX);
-        JButton o = new GButton("Cot",STATICS.COT_VERTEX);
+        allButtons = new GButton();
+/*
+        if(tutorial == true) {
+            tooltipBalloon = new BalloonTip(allButtons.get().get(0), "I'm a balloon tooltip!");
+            tooltipBalloon.setVisible(true);
+        }*/
 
+        for(int i = 0 ; i<allButtons.get().size();i++){
+            allNodes.add(allButtons.get().get(i));
+            allButtons.get().get(i).addActionListener(new ButtonListener());
+        }
 
-
-
-        a.addActionListener(new ButtonListener());
-        b.addActionListener(new ButtonListener());
-        c.addActionListener(new ButtonListener());
-        d.addActionListener(new ButtonListener());
-        e.addActionListener(new ButtonListener());
-        f.addActionListener(new ButtonListener());
-        g.addActionListener(new ButtonListener());
-        h.addActionListener(new ButtonListener());
-        i.addActionListener(new ButtonListener());
-        j.addActionListener(new ButtonListener());
-        k.addActionListener(new ButtonListener());
-        l.addActionListener(new ButtonListener());
-        m.addActionListener(new ButtonListener());
-        n.addActionListener(new ButtonListener());
-        o.addActionListener(new ButtonListener());
-
-
-        allNodes.add(a);
-        allNodes.add(b);
-        allNodes.add(c);
-        allNodes.add(d);
-        allNodes.add(e);
-        allNodes.add(f);
-        allNodes.add(g);
-        allNodes.add(h);
-        allNodes.add(i);
-        allNodes.add(j);
-        allNodes.add(k);
-        allNodes.add(l);
-        allNodes.add(m);
-        allNodes.add(n);
-        allNodes.add(o);
 
 
         allNodes.setPreferredSize(new Dimension(171,700));
@@ -445,6 +411,13 @@ public class MainWindowJFrame extends JFrame {
     private String path;
     private String fileName;
     private JMenuItem jMenuItemNew;
+    private GButton allButtons;
+    private boolean tutorial;
+    private BalloonTip tooltipBalloon;
+
+    public void setTutorial(boolean s){
+        this.tutorial=s;
+    }
 
     public void setFileName(String s){
         fileName = s;
@@ -563,6 +536,15 @@ public class MainWindowJFrame extends JFrame {
 
           graph.addVertex ( ((int)workAreaJPanel.getSize().getWidth()-(int)nodesJScrollPane.getSize().getWidth())/2,
                  (int)workAreaJPanel.getSize().getHeight()/2, vertex);
+          System.out.print(tutorial);
+/*
+          if(tutorial == true){
+              while(button.getType()!= STATICS.INPUT_VERTEX){
+                tooltipBalloon = new BalloonTip(allButtons.get().get(0), "Wrong u need to click to the input node!");
+                tooltipBalloon.setVisible(true);
+                repaint();
+              }
+          }*/
          repaint();
       }
 
