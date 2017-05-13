@@ -262,29 +262,32 @@ public class TutorialJFrame extends javax.swing.JFrame {
 
    private void tutorial1JPanelMouseClicked(MouseEvent evt) {
       dispose();
-      MainWindowJFrame main = new MainWindowJFrame();
+      MainWindowJFrame main = new MainWindowJFrame(true);
          main.setTitle("The Computation Graph - Tutorial #1" );
-         main.setTutorial(true);
-         main.setVisible(true);
+
+      main.setTutorial(true);
+
+         main.repaint();
+      main.setVisible(true);
    }
 
    private void tutorial2JPanelMouseClicked(MouseEvent evt) {
       dispose();
-      MainWindowJFrame main = new MainWindowJFrame();
+      MainWindowJFrame main = new MainWindowJFrame(false);
       main.setTitle("The Computation Graph - Tutorial #2" );
       main.setVisible(true);
    }
 
    private void tutorial3JPanelMouseClicked(MouseEvent evt) {
       dispose();
-      MainWindowJFrame main = new MainWindowJFrame();
+      MainWindowJFrame main = new MainWindowJFrame(false);
       main.setTitle("The Computation Graph - Tutorial #3" );
       main.setVisible(true);
    }
 
    private void tutorial4JPanelMouseClicked(MouseEvent evt) {
       dispose();
-      MainWindowJFrame main = new MainWindowJFrame();
+      MainWindowJFrame main = new MainWindowJFrame(false);
       main.setTitle("The Computation Graph - Tutorial #4" );
       main.setVisible(true);
    }
