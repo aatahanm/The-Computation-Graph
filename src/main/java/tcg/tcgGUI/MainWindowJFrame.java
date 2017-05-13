@@ -25,7 +25,7 @@ public class MainWindowJFrame extends JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public MainWindowJFrame(boolean b) {
+    public MainWindowJFrame(int b) {
         tutorial = b;
         initComponents();
     }
@@ -84,7 +84,7 @@ public class MainWindowJFrame extends JFrame {
         allNodes.setLayout(new GridLayout(8,2,2,2));
         allButtons = new GButton();
 
-if(tutorial==true) {
+if(tutorial==1) {
     tooltipBalloon = new BalloonTip(allButtons.get().get(0), "This is the Node Panel. Now select 'input'");
     tooltipBalloon.setVisible(true);
 
@@ -99,7 +99,7 @@ if(tutorial==true) {
         public void mouseClicked(MouseEvent e) {
             if (e.getClickCount() == 2 && graph.getVertices().get(0).isSelected()) {
                 tooltipBalloon.setVisible(false);
-                tooltipBalloon.setTextContents("Good now add another input");
+                tooltipBalloon = new BalloonTip(allButtons.get().get(5),"Good. Now add an output node");
                 tooltipBalloon.setVisible(true);
                 repaint();
             }
@@ -232,7 +232,7 @@ if(tutorial==true) {
 
                 else {
                     dispose();
-                    MainWindowJFrame main = new MainWindowJFrame(false);
+                    MainWindowJFrame main = new MainWindowJFrame(0);
                     main.setTitle("The Computation Graph - " + projectName);
                     main.setVisible(true);
                 }
@@ -418,7 +418,7 @@ if(tutorial==true) {
       /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainWindowJFrame(false).setVisible(true);
+                new MainWindowJFrame(0).setVisible(true);
             }
         });
     }
@@ -450,10 +450,10 @@ if(tutorial==true) {
     private String fileName;
     private JMenuItem jMenuItemNew;
     private GButton allButtons;
-    private boolean tutorial;
+    private int tutorial;
     private BalloonTip tooltipBalloon;
 
-    public void setTutorial(boolean s){
+    public void setTutorial(int s){
         this.tutorial=s;
     }
 
@@ -565,7 +565,7 @@ if(tutorial==true) {
       @Override
       public void actionPerformed(ActionEvent e) {
           requestFocusInWindow(true);
-          if (tutorial == false) {
+          if (tutorial == 0) {
               double d = 0;
               GButton button = (GButton) e.getSource();
               if (button.getType() == STATICS.CONSTANT_VERTEX) {
@@ -576,22 +576,29 @@ if(tutorial==true) {
               graph.addVertex(((int) workAreaJPanel.getSize().getWidth() - (int) nodesJScrollPane.getSize().getWidth()) / 2,
                       (int) workAreaJPanel.getSize().getHeight() / 2, vertex);
           }
-
-          if(tutorial == true && ((GButton) e.getSource()).getType() == STATICS.INPUT_VERTEX) {
-              Dsf vertex = STATICS.typeToVertex(STATICS.INPUT_VERTEX, 0);
+          if(tutorial == 1 && ((GButton) e.getSource()).getType() == STATICS.OUTPUT_VERTEX
+                  && graph.getVertices().size()>0) {
+              Dsf vertex = STATICS.typeToVertex(STATICS.OUTPUT_VERTEX, 0);
               graph.addVertex(((int) workAreaJPanel.getSize().getWidth() - (int) nodesJScrollPane.getSize().getWidth()) / 2,
                       (int) workAreaJPanel.getSize().getHeight() / 2, vertex);
-              if(graph.getVertices().size()<2) {
+              if (((GButton) e.getSource()).getType() == STATICS.OUTPUT_VERTEX && graph.getVertices().size()>1) {
+                  tooltipBalloon.setVisible(false);
+                  tooltipBalloon = new BalloonTip(allButtons.get().get(5), "Alright! Select a node by left clicking to it and right click on the second one to create an edge.");
+                  tooltipBalloon.setVisible(true);
+              }
+          }
+          if(tutorial == 1 && ((GButton) e.getSource()).getType() == STATICS.INPUT_VERTEX ) {
+              Dsf vertex = STATICS.typeToVertex(STATICS.INPUT_VERTEX, 0);
+
+              graph.addVertex(((int) workAreaJPanel.getSize().getWidth() - (int) nodesJScrollPane.getSize().getWidth()) / 2,
+                      (int) workAreaJPanel.getSize().getHeight() / 2, vertex);
+
+              if(graph.getVertices().size()==1) {
                   tooltipBalloon.setVisible(false);
                   tooltipBalloon = new BalloonTip(allButtons.get().get(2), "Good! Now change the input value by double clicking on it");
                   tooltipBalloon.setVisible(true);
-              }else{
-                  tooltipBalloon.setVisible(false);
-                  tooltipBalloon = new BalloonTip(allButtons.get().get(2), "Alright! Select a node by left clicking to it and right click on the second one to create an edge.");
-                  tooltipBalloon.setVisible(true);
-
               }
-          }else if (tutorial == true && graph.getVertices().size() == 0) {
+          }else if (tutorial == 1 && graph.getVertices().size() == 0) {
               tooltipBalloon.setVisible(false);
                   tooltipBalloon = new BalloonTip(allButtons.get().get(2),"Wrong! You need to select the input node");
                   tooltipBalloon.setVisible(true);
