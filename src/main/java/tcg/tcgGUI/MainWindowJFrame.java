@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import tcg.tcgGUI.GUIcomponents.GButton;
 import tcg.tcgGUI.GUIcomponents.GGraph;
+import tcg.tcgGUI.GUIcomponents.GVertex;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MainWindowJFrame extends JFrame {
@@ -36,6 +38,7 @@ public class MainWindowJFrame extends JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        toAdd = new ArrayList<>();
         saved = false;
         path = "";
         fileName = "";
@@ -445,6 +448,7 @@ public class MainWindowJFrame extends JFrame {
     private String path;
     private String fileName;
     private JMenuItem jMenuItemNew;
+    private ArrayList<GVertex> toAdd;
 
     public void setFileName(String s){
         fileName = s;
@@ -460,7 +464,7 @@ public class MainWindowJFrame extends JFrame {
             {
                 System.out.println("Select All");
             }
-            else if(e.isControlDown() && e.isAltDown() && e.getKeyCode() == e.VK_S)
+            else if(e.isControlDown() && e.getKeyCode() == e.VK_S)
             {
                 try {
                     jMenuItemSaveActionPerformed();
@@ -468,13 +472,23 @@ public class MainWindowJFrame extends JFrame {
                     e1.printStackTrace();
                 }
             }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_S)
+            else if(e.isControlDown() && e.isAltDown() && e.getKeyCode() == e.VK_S)
             {
-                System.out.println("save as");
+                try {
+                    jMenuItemSaveAsActionPerformed();
+                } catch (JSONException e1) {
+                    e1.printStackTrace();
+                }
             }
             else if(e.isControlDown() && e.getKeyCode() == e.VK_C)
             {
-                System.out.println("copy");
+                for (GVertex gv : graph.getVertices())
+                    if (gv.isSelected()){
+                        if (gv.getVertex().getType() != STATICS.CONSTANT_VERTEX)
+                            toAdd.add(new GVertex(gv.getX() + 10, gv.getY() + 10, STATICS.typeToVertex(gv.getVertex().getType(), 0.0)));
+                        else
+                            toAdd.add(new GVertex(gv.getX() + 10, gv.getY() + 10, STATICS.typeToVertex(gv.getVertex().getType(), gv.getVertex().getOutput().get(0))));
+                }
             }
             else if(e.isControlDown() && e.getKeyCode() == e.VK_X)
             {
@@ -482,7 +496,9 @@ public class MainWindowJFrame extends JFrame {
             }
             else if(e.isControlDown()&& e.getKeyCode() == e.VK_V)
             {
-                System.out.println("paste");
+                for (GVertex gv : toAdd)
+                    graph.addVertex(gv.getX(), gv.getY(), gv.getVertex());
+                repaint();
             }
             else if(e.isControlDown() && e.isShiftDown()&& e.getKeyCode() == e.VK_Z)
             {
