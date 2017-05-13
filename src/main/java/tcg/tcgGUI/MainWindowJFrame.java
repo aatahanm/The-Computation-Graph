@@ -12,21 +12,23 @@ import tcg.tcgGUI.GUIcomponents.GGraph;
 import tcg.tcgGUI.GUIcomponents.GVertex;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import net.java.balloontip.BalloonTip;
+import net.java.balloontip.ListItemBalloonTip;
+import net.java.balloontip.styles.EdgedBalloonStyle;
 
 public class MainWindowJFrame extends JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public MainWindowJFrame() {
+    public MainWindowJFrame(boolean b) {
+        tutorial = b;
         initComponents();
     }
 
@@ -38,7 +40,9 @@ public class MainWindowJFrame extends JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
         toAdd = new ArrayList<>();
+
         saved = false;
         path = "";
         fileName = "";
@@ -82,57 +86,58 @@ public class MainWindowJFrame extends JFrame {
 
         allNodes.setBackground(new Color(204, 204, 255));
         allNodes.setLayout(new GridLayout(8,2,2,2));
-        JButton a = new GButton("Addition", STATICS.ADDITION_VERTEX);
-        JButton b = new GButton("Multiplication",STATICS.MULTIPLICATION_VERTEX);
-        JButton c = new GButton("Input",STATICS.INPUT_VERTEX);
-        JButton e = new GButton("Sigmoid",STATICS.SIGMOID_VERTEX);
-        JButton f = new GButton("Output",STATICS.OUTPUT_VERTEX);
-        JButton d = new GButton("Constant",STATICS.CONSTANT_VERTEX);
-        JButton g = new GButton("Subtraction", STATICS.SUBTRACTION_VERTEX);
-        JButton h = new GButton("Exponential",STATICS.EXP_VERTEX);
-        JButton i = new GButton("Logarithm",STATICS.LOG_VERTEX);
-        JButton j = new GButton("Sin",STATICS.SIN_VERTEX);
-        JButton k = new GButton("Cos",STATICS.COS_VERTEX);
-        JButton l = new GButton("Tan",STATICS.TAN_VERTEX);
-        JButton m = new GButton("Tanh",STATICS.TANH_VERTEX);
-        JButton n = new GButton("Division",STATICS.DIVISION_VERTEX);
-        JButton o = new GButton("Cot",STATICS.COT_VERTEX);
+        allButtons = new GButton();
 
+if(tutorial==true) {
+    tooltipBalloon = new BalloonTip(allButtons.get().get(0), "This is the Node Panel. Now select 'input'");
+    tooltipBalloon.setVisible(true);
 
+    tooltipBalloon.addMouseListener(new MouseAdapter() {
+        public void mouseClicked(MouseEvent evt) {
+            tooltipBalloon.setVisible(false);
+        }
+    });
 
+    workAreaJPanel.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (e.getClickCount() == 2 && graph.getVertices().get(0).isSelected()) {
+                tooltipBalloon.setVisible(false);
+                tooltipBalloon.setTextContents("Good now add another input");
+                tooltipBalloon.setVisible(true);
+                repaint();
+            }
+        }
 
-        a.addActionListener(new ButtonListener());
-        b.addActionListener(new ButtonListener());
-        c.addActionListener(new ButtonListener());
-        d.addActionListener(new ButtonListener());
-        e.addActionListener(new ButtonListener());
-        f.addActionListener(new ButtonListener());
-        g.addActionListener(new ButtonListener());
-        h.addActionListener(new ButtonListener());
-        i.addActionListener(new ButtonListener());
-        j.addActionListener(new ButtonListener());
-        k.addActionListener(new ButtonListener());
-        l.addActionListener(new ButtonListener());
-        m.addActionListener(new ButtonListener());
-        n.addActionListener(new ButtonListener());
-        o.addActionListener(new ButtonListener());
+        public void mouseReleased(MouseEvent arg0) {
+            if (SwingUtilities.isRightMouseButton(arg0) && graph.getEdges().size() != 0) {
+                int response = JOptionPane.showOptionDialog(null,
+                        "Congratulations! You finished tutorial #1. What would you like to do now?",
+                        "Feedback",
+                        JOptionPane.OK_CANCEL_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,
+                        new String[]{"Return to Main Menu", "Return to Tutorials Window"}, // this is the array
+                        "default");
+                if (response == JOptionPane.OK_OPTION) {
+                    WelcomeWindowJFrame newScreen = new WelcomeWindowJFrame();
+                    dispose();
+                    newScreen.setVisible(true);
+                } else if (response == JOptionPane.NO_OPTION) {
+                    dispose();
+                    TutorialJFrame newSc = new TutorialJFrame();
+                    newSc.setVisible(true);
+                }
+            }
+        }
+    });
+}
 
+        for(int i = 0 ; i<allButtons.get().size();i++){
+            allNodes.add(allButtons.get().get(i));
+            allButtons.get().get(i).addActionListener(new ButtonListener());
+        }
 
-        allNodes.add(a);
-        allNodes.add(b);
-        allNodes.add(c);
-        allNodes.add(d);
-        allNodes.add(e);
-        allNodes.add(f);
-        allNodes.add(g);
-        allNodes.add(h);
-        allNodes.add(i);
-        allNodes.add(j);
-        allNodes.add(k);
-        allNodes.add(l);
-        allNodes.add(m);
-        allNodes.add(n);
-        allNodes.add(o);
 
 
         allNodes.setPreferredSize(new Dimension(171,700));
@@ -231,7 +236,7 @@ public class MainWindowJFrame extends JFrame {
 
                 else {
                     dispose();
-                    MainWindowJFrame main = new MainWindowJFrame();
+                    MainWindowJFrame main = new MainWindowJFrame(false);
                     main.setTitle("The Computation Graph - " + projectName);
                     main.setVisible(true);
                 }
@@ -417,7 +422,7 @@ public class MainWindowJFrame extends JFrame {
       /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainWindowJFrame().setVisible(true);
+                new MainWindowJFrame(false).setVisible(true);
             }
         });
     }
@@ -449,6 +454,13 @@ public class MainWindowJFrame extends JFrame {
     private String fileName;
     private JMenuItem jMenuItemNew;
     private ArrayList<GVertex> toAdd;
+    private GButton allButtons;
+    private boolean tutorial;
+    private BalloonTip tooltipBalloon;
+
+    public void setTutorial(boolean s){
+        this.tutorial=s;
+    }
 
     public void setFileName(String s){
         fileName = s;
@@ -569,16 +581,38 @@ public class MainWindowJFrame extends JFrame {
 
       @Override
       public void actionPerformed(ActionEvent e) {
-          double d = 0;
           requestFocusInWindow(true);
-         GButton button = (GButton)e.getSource();
-         if (button.getType() == STATICS.CONSTANT_VERTEX ){
-             d = new Double(JOptionPane.showInputDialog("Please enter a value"));
-         }
-             Dsf vertex = STATICS.typeToVertex(button.getType(), d);
+          if (tutorial == false) {
+              double d = 0;
+              GButton button = (GButton) e.getSource();
+              if (button.getType() == STATICS.CONSTANT_VERTEX) {
+                  d = new Double(JOptionPane.showInputDialog("Please enter a value"));
+              }
+              Dsf vertex = STATICS.typeToVertex(button.getType(), d);
 
-          graph.addVertex ( ((int)workAreaJPanel.getSize().getWidth()-(int)nodesJScrollPane.getSize().getWidth())/2,
-                 (int)workAreaJPanel.getSize().getHeight()/2, vertex);
+              graph.addVertex(((int) workAreaJPanel.getSize().getWidth() - (int) nodesJScrollPane.getSize().getWidth()) / 2,
+                      (int) workAreaJPanel.getSize().getHeight() / 2, vertex);
+          }
+
+          if(tutorial == true && ((GButton) e.getSource()).getType() == STATICS.INPUT_VERTEX) {
+              Dsf vertex = STATICS.typeToVertex(STATICS.INPUT_VERTEX, 0);
+              graph.addVertex(((int) workAreaJPanel.getSize().getWidth() - (int) nodesJScrollPane.getSize().getWidth()) / 2,
+                      (int) workAreaJPanel.getSize().getHeight() / 2, vertex);
+              if(graph.getVertices().size()<2) {
+                  tooltipBalloon.setVisible(false);
+                  tooltipBalloon = new BalloonTip(allButtons.get().get(2), "Good! Now change the input value by double clicking on it");
+                  tooltipBalloon.setVisible(true);
+              }else{
+                  tooltipBalloon.setVisible(false);
+                  tooltipBalloon = new BalloonTip(allButtons.get().get(2), "Alright! Select a node by left clicking to it and right click on the second one to create an edge.");
+                  tooltipBalloon.setVisible(true);
+
+              }
+          }else if (tutorial == true && graph.getVertices().size() == 0) {
+              tooltipBalloon.setVisible(false);
+                  tooltipBalloon = new BalloonTip(allButtons.get().get(2),"Wrong! You need to select the input node");
+                  tooltipBalloon.setVisible(true);
+              }
          repaint();
       }
 

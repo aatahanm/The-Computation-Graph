@@ -12,6 +12,8 @@ import java.awt.event.MouseEvent;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 
+
+
 public class WelcomeWindowJFrame extends javax.swing.JFrame {
    
    private JFileChooser openFileChooser;
@@ -149,7 +151,7 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
    private void newJLabelMouseClicked(MouseEvent evt) {
       dispose();
       String projectName = JOptionPane.showInputDialog("Project Name: ");
-      MainWindowJFrame main = new MainWindowJFrame();
+      MainWindowJFrame main = new MainWindowJFrame(false);
       if (projectName == null || projectName.isEmpty())
           new WelcomeWindowJFrame().setVisible(true);
       else {
