@@ -553,13 +553,19 @@ public class MainWindowJFrame extends JFrame {
 
       @Override
       public void actionPerformed(ActionEvent e) {
+          double d = 0;
           requestFocusInWindow(true);
          GButton button = (GButton)e.getSource();
-         Dsf vertex = STATICS.typeToVertex(button.getType());
+         if (button.getType() == STATICS.CONSTANT_VERTEX ){
+             d = new Double(JOptionPane.showInputDialog("Please enter a value"));
+         }
+             Dsf vertex = STATICS.typeToVertex(button.getType(), d);
+
           graph.addVertex ( ((int)workAreaJPanel.getSize().getWidth()-(int)nodesJScrollPane.getSize().getWidth())/2,
                  (int)workAreaJPanel.getSize().getHeight()/2, vertex);
          repaint();
       }
+
    }
 
 }

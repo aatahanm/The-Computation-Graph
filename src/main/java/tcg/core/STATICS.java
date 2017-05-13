@@ -24,11 +24,11 @@ public class STATICS {
 
     public static final int CGRAPH = 99;
 
-    public static Dsf typeToVertex(int type)
+    public static Dsf typeToVertex(int type,double d)
     {
         Dsf vertex = null;
         if ( type == STATICS.CONSTANT_VERTEX)
-            vertex = new ConstantVertex(1);
+            vertex = new ConstantVertex(d);
         if ( type == STATICS.INPUT_VERTEX)
             vertex = new InputVertex();
         if ( type == STATICS.ADDITION_VERTEX)

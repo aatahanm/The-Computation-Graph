@@ -60,6 +60,7 @@ public class FileUtilities {
                 currentV = new ConstantVertex(val);
             }
             else if (type == STATICS.INPUT_VERTEX)
+
                 currentV = new InputVertex();
             else if (type == STATICS.ADDITION_VERTEX)
                 currentV = new AdditionVertex();

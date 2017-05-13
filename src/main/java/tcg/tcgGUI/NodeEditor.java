@@ -2,6 +2,7 @@ package tcg.tcgGUI;
 import tcg.core.CEdge;
 import tcg.core.CGraph;
 ;
+import tcg.core.STATICS;
 import tcg.tcgGUI.GUIcomponents.GEdge;
 import tcg.tcgGUI.GUIcomponents.GGraph;
 import tcg.tcgGUI.GUIcomponents.GVertex;
@@ -10,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 
 public class NodeEditor extends JPanel
@@ -123,5 +125,26 @@ public class NodeEditor extends JPanel
             }
         }
 
+        public void mouseClicked(MouseEvent event) {
+            if(currentVertex!=null){
+             if (currentVertex.getVertex().getType() == STATICS.INPUT_VERTEX  ) {
+                 if (event.getClickCount() == 2) {
+                     System.out.println(currentVertex.getVertex().getInput());
+                     System.out.println("double clicked");
+                     ArrayList<Double> test = new ArrayList<>();
+                     double d = new Double(JOptionPane.showInputDialog("Please enter a value"));
+                     if (d == JOptionPane.CANCEL_OPTION || d == JOptionPane.CLOSED_OPTION) {
+                         test.add(0.0);
+                     } else {
+                         test.add(d);
+                     }
+                     currentVertex.getVertex().setInput(test);
+                     System.out.println(currentVertex.getVertex().getInput());
+
+                     repaint();
+                 }
+             }
+            }
+        }
     }
 }
