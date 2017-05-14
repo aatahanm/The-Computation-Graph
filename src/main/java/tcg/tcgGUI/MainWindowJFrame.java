@@ -70,6 +70,7 @@ public class MainWindowJFrame extends JFrame {
         jMenuItemBlackBox = new JMenuItem();
         edgedLook = new EdgedBalloonStyle(Color.WHITE, Color.BLUE);
         save = 0;
+        runTime =0;
         nodesJScrollPane = new JScrollPane(nodeJPanelBackground,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -175,6 +176,66 @@ if(tutorial==1) {
             }
         }
     });
+} else if (tutorial == 4){
+    tooltipBalloon = new BalloonTip(allButtons.get().get(2),
+            new JLabel("In this tutorial you are going use how to run a simple subtraction equation. Now firstly, put 2 input nodes."),
+            edgedLook,
+            BalloonTip.Orientation.LEFT_BELOW,
+            BalloonTip.AttachLocation.ALIGNED,
+            40, 15, false);
+    tooltipBalloon.setVisible(true);
+
+    workAreaJPanel.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (e.getClickCount() == 2 && graph.getVertices().size()>1) {
+                if(graph.getVertices().get(0).getVertex().getInput().get(0) != 0.0
+                        && graph.getVertices().get(1).getVertex().getInput().get(0) != 0.0 ) {
+                    if (graph.getVertices().get(0).getVertex().getInput().get(0) > 0.0
+                            && graph.getVertices().get(1).getVertex().getInput().get(0) > 0.0 ) {
+                        tooltipBalloon.setTextContents("Please change one of the inputs to negative.");
+                    } else if (graph.getVertices().get(0).getVertex().getInput().get(0) < 0.0
+                                || graph.getVertices().get(1).getVertex().getInput().get(0) < 0.0) {
+                        if (graph.getEdges().size() == 0) {
+                            tooltipBalloon.setVisible(false);
+                            tooltipBalloon = new BalloonTip(allButtons.get().get(6),
+                                    new JLabel("Good now add the subtraction node."),
+                                    edgedLook,
+                                    BalloonTip.Orientation.LEFT_ABOVE,
+                                    BalloonTip.AttachLocation.ALIGNED,
+                                    40, 15, false);
+                            tooltipBalloon.setVisible(true);
+
+                        }
+                    }
+                }
+            }
+            repaint();
+        }
+        public void mouseReleased(MouseEvent arg0) {
+            if (SwingUtilities.isRightMouseButton(arg0) && graph.getEdges().size()==2) {
+                tooltipBalloon.setVisible(false);
+                tooltipBalloon = new BalloonTip(allButtons.get().get(6),
+                        new JLabel("Now notice the input order (x0) next to the edges. Select one and change it with the arrow keys (up) to (x1)."),
+                        edgedLook,
+                        BalloonTip.Orientation.LEFT_ABOVE,
+                        BalloonTip.AttachLocation.ALIGNED,
+                        40, 15, false);
+                tooltipBalloon.setVisible(true);
+                System.out.println(graph.getEdges().get(0).getToOrder());
+            } else if (graph.getEdges().size()==3 && SwingUtilities.isRightMouseButton(arg0)){
+                tooltipBalloon.setVisible(false);
+                tooltipBalloon = new BalloonTip(actionsJMenu,
+                        new JLabel("Now, click the action menu and select Run option to see the result."),
+                        edgedLook,
+                        BalloonTip.Orientation.LEFT_BELOW,
+                        BalloonTip.AttachLocation.ALIGNED,
+                        40, 15, false);
+                tooltipBalloon.setVisible(true);
+            }
+        }
+    });
+
 }
 
         for(int i = 0 ; i<allButtons.get().size();i++){
@@ -460,6 +521,30 @@ if(tutorial==1) {
     private void jMenuItemRunActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         graph.calc();
         repaint();
+        if(tutorial == 4 && runTime == 0){
+            tooltipBalloon.setTextContents("This time using your arrow keys (up-down) change the input order of edges.");
+            runTime ++;
+        }else if ( runTime == 1){
+            int response = JOptionPane.showOptionDialog(null,
+                    "You finished tutorial #4. What would you like to do now?",
+                    "Congratulations!",
+                    JOptionPane.OK_CANCEL_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    new String[]{"Return to Main Menu", "Return to Tutorials Window"}, // this is the array
+                    "default");
+            if (response == JOptionPane.OK_OPTION) {
+                WelcomeWindowJFrame newScreen = new WelcomeWindowJFrame();
+                dispose();
+                newScreen.setVisible(true);
+            } else if (response == JOptionPane.NO_OPTION) {
+                dispose();
+                TutorialJFrame newSc = new TutorialJFrame();
+                newSc.setVisible(true);
+            }
+
+        }
+        repaint();
     }
 
     private void jMenuItemInputActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItemInputActionPerformed
@@ -542,7 +627,7 @@ if(tutorial==1) {
     private int tutorial;
     private BalloonTip tooltipBalloon;
     private BalloonTipStyle edgedLook;
-    private int save;
+    private int save,runTime;
 
     public void setTutorial(int s){
         this.tutorial=s;
@@ -623,11 +708,43 @@ if(tutorial==1) {
             else if(e.getKeyCode() == e.VK_UP)
             {
                 workAreaJPanel.setToOrder(workAreaJPanel.selectedEdge.getToOrder() + 1);
+
+                if(tutorial == 4 && graph.getEdges().size()>1 ){
+                    if (graph.getEdges().get(0).getToOrder() != 0 ||
+                            graph.getEdges().get(1).getToOrder() != 0) {
+                        if(!(graph.getEdges().get(0).getToOrder() == 1 &&
+                                graph.getEdges().get(1).getToOrder() == 1)) {
+                            if(runTime == 0) {
+                                tooltipBalloon.setVisible(false);
+                                tooltipBalloon = new BalloonTip(allButtons.get().get(5),
+                                        new JLabel("Now add a output node and create and edge between it and subtraction node."),
+                                        edgedLook,
+                                        BalloonTip.Orientation.LEFT_ABOVE,
+                                        BalloonTip.AttachLocation.ALIGNED,
+                                        40, 15, false);
+                                tooltipBalloon.setVisible(true);
+                            }else{
+                                tooltipBalloon.setTextContents("Run the program again to see the difference in results.");
+                            }
+                        }
+                    }
+
+                }
                 repaint();
             }
             else if(e.getKeyCode() == e.VK_DOWN)
             {
                 workAreaJPanel.setToOrder(workAreaJPanel.selectedEdge.getToOrder() - 1);
+                if(tutorial == 4 && graph.getEdges().size()>1 ){
+                    if (graph.getEdges().get(0).getToOrder() != 0 ||
+                            graph.getEdges().get(1).getToOrder() != 0) {
+                        if(!(graph.getEdges().get(0).getToOrder() == 1 &&
+                                graph.getEdges().get(1).getToOrder() == 1)) {
+                            tooltipBalloon.setTextContents("Run the program again to see the difference in results.");
+                        }
+                    }
+
+                }
                 repaint();
             }
             else if(e.isControlDown() && e.getKeyCode() == e.VK_LEFT)
@@ -670,7 +787,7 @@ if(tutorial==1) {
       @Override
       public void actionPerformed(ActionEvent e) {
           requestFocusInWindow(true);
-          if (tutorial == 0 || tutorial == 3) {
+          if (tutorial != 1) {
               double d = 0;
               GButton button = (GButton) e.getSource();
               if (button.getType() == STATICS.CONSTANT_VERTEX) {
@@ -710,6 +827,19 @@ if(tutorial==1) {
                   tooltipBalloon = new BalloonTip(allButtons.get().get(2),"Wrong! You need to select the input node");
                   tooltipBalloon.setVisible(true);
               }
+          if(tutorial == 4 ){
+              if(graph.getVertices().size()==2 && graph.getVertices().get(0).getVertex().getInput().get(0) == 0) {
+                  tooltipBalloon.setTextContents("Okay, now change their value by double clicking on them. Enter one positive one negative value. ");
+              }else if (((GButton) e.getSource()).getType() == STATICS.SUBTRACTION_VERTEX) {
+                  tooltipBalloon.setTextContents("Now create edges between the input nodes and subtraction node");
+              }
+
+              }else if(graph.getVertices().get(0).getVertex().getInput().get(0) < 0.0
+                  || graph.getVertices().get(1).getVertex().getInput().get(0) < 0.0){
+              if(((GButton) e.getSource()).getType() == STATICS.SUBTRACTION_VERTEX) {
+                  tooltipBalloon.setTextContents("Now create edges between the input nodes and subtraction node");
+              }
+          }
          repaint();
       }
 

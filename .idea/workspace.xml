@@ -2,23 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e5ed025-015a-4614-8d95-c9d4b31c0002" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$11.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$12.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$6.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$6.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$8.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$8.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$10.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$2.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$3.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$4.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$7.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$ButtonListener.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$ButtonListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$KeyUtilities.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$KeyUtilities.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/TutorialJFrame$6.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/TutorialJFrame$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/TutorialJFrame.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/TutorialJFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java" afterPath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java" afterPath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java" />
@@ -43,18 +26,18 @@
       <file leaf-file-name="MainWindowJFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="274" column="36" lean-forward="true" selection-start-line="274" selection-start-column="36" selection-end-line="274" selection-end-column="36" />
+            <state relative-caret-position="461">
+              <caret line="217" column="70" lean-forward="false" selection-start-line="217" selection-start-column="70" selection-end-line="217" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1100#1130#0" expanded="true" />
-                <element signature="e#3435#3436#0" expanded="false" />
-                <element signature="e#3491#3492#0" expanded="false" />
-                <element signature="e#5476#5583#0" expanded="true" />
-                <element signature="e#5582#5583#0" expanded="true" />
-                <element signature="e#5618#6738#0" expanded="true" />
-                <element signature="e#6737#6738#0" expanded="true" />
-                <element signature="e#18968#19055#0" expanded="true" />
+                <element signature="e#3455#3456#0" expanded="false" />
+                <element signature="e#3511#3512#0" expanded="false" />
+                <element signature="e#5496#5603#0" expanded="true" />
+                <element signature="e#5602#5603#0" expanded="true" />
+                <element signature="e#5638#6758#0" expanded="true" />
+                <element signature="e#6757#6758#0" expanded="true" />
+                <element signature="e#23388#23475#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,11 +46,34 @@
       <file leaf-file-name="TutorialJFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="199" column="10" lean-forward="true" selection-start-line="199" selection-start-column="10" selection-end-line="199" selection-end-column="10" />
+            <state relative-caret-position="109">
+              <caret line="303" column="6" lean-forward="false" selection-start-line="303" selection-start-column="6" selection-end-line="303" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8320#8457#0" expanded="true" />
+                <element signature="e#2053#2054#0" expanded="true" />
+                <element signature="e#2110#2111#0" expanded="true" />
+                <element signature="e#2179#2180#0" expanded="true" />
+                <element signature="e#2268#2269#0" expanded="true" />
+                <element signature="e#2337#2338#0" expanded="true" />
+                <element signature="e#2415#2416#0" expanded="true" />
+                <element signature="e#4535#4536#0" expanded="true" />
+                <element signature="e#4592#4593#0" expanded="true" />
+                <element signature="e#4661#4662#0" expanded="true" />
+                <element signature="e#4750#4751#0" expanded="true" />
+                <element signature="e#4819#4820#0" expanded="true" />
+                <element signature="e#4897#4898#0" expanded="true" />
+                <element signature="e#6915#6916#0" expanded="true" />
+                <element signature="e#6972#6973#0" expanded="true" />
+                <element signature="e#7041#7042#0" expanded="true" />
+                <element signature="e#7130#7131#0" expanded="true" />
+                <element signature="e#7199#7200#0" expanded="true" />
+                <element signature="e#7277#7278#0" expanded="true" />
+                <element signature="e#9325#9326#0" expanded="true" />
+                <element signature="e#9382#9383#0" expanded="true" />
+                <element signature="e#9452#9453#0" expanded="true" />
+                <element signature="e#9541#9542#0" expanded="true" />
+                <element signature="e#9610#9611#0" expanded="true" />
+                <element signature="e#9688#9689#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,10 +82,12 @@
       <file leaf-file-name="GButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/GUIcomponents/GButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
+            <state relative-caret-position="979">
               <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1830#1831#0" expanded="true" />
+                <element signature="e#1857#1858#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,6 +136,10 @@
       <find>edgedLook</find>
       <find>save</find>
       <find>ItemNew</find>
+      <find>count</find>
+      <find>sub</find>
+      <find>right</find>
+      <find>now</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -808,21 +820,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.45708156" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.4549356" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29105324" sideWeight="0.26126608" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20498301" sideWeight="0.5767167" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14538626" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29105324" sideWeight="0.7387339" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2797282" sideWeight="0.7322961" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20498301" sideWeight="0.42650214" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20498301" sideWeight="0.42328325" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24570815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -963,6 +975,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,6 +1053,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,16 +1186,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialOne.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/GUIcomponents/GButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/WelcomeWindowJFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2860">
@@ -1194,29 +1198,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="199" column="10" lean-forward="true" selection-start-line="199" selection-start-column="10" selection-end-line="199" selection-end-column="10" />
+        <state relative-caret-position="109">
+          <caret line="303" column="6" lean-forward="false" selection-start-line="303" selection-start-column="6" selection-end-line="303" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8320#8457#0" expanded="true" />
+            <element signature="e#2053#2054#0" expanded="true" />
+            <element signature="e#2110#2111#0" expanded="true" />
+            <element signature="e#2179#2180#0" expanded="true" />
+            <element signature="e#2268#2269#0" expanded="true" />
+            <element signature="e#2337#2338#0" expanded="true" />
+            <element signature="e#2415#2416#0" expanded="true" />
+            <element signature="e#4535#4536#0" expanded="true" />
+            <element signature="e#4592#4593#0" expanded="true" />
+            <element signature="e#4661#4662#0" expanded="true" />
+            <element signature="e#4750#4751#0" expanded="true" />
+            <element signature="e#4819#4820#0" expanded="true" />
+            <element signature="e#4897#4898#0" expanded="true" />
+            <element signature="e#6915#6916#0" expanded="true" />
+            <element signature="e#6972#6973#0" expanded="true" />
+            <element signature="e#7041#7042#0" expanded="true" />
+            <element signature="e#7130#7131#0" expanded="true" />
+            <element signature="e#7199#7200#0" expanded="true" />
+            <element signature="e#7277#7278#0" expanded="true" />
+            <element signature="e#9325#9326#0" expanded="true" />
+            <element signature="e#9382#9383#0" expanded="true" />
+            <element signature="e#9452#9453#0" expanded="true" />
+            <element signature="e#9541#9542#0" expanded="true" />
+            <element signature="e#9610#9611#0" expanded="true" />
+            <element signature="e#9688#9689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/GUIcomponents/GButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="979">
+          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="274" column="36" lean-forward="true" selection-start-line="274" selection-start-column="36" selection-end-line="274" selection-end-column="36" />
+        <state relative-caret-position="461">
+          <caret line="217" column="70" lean-forward="false" selection-start-line="217" selection-start-column="70" selection-end-line="217" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1100#1130#0" expanded="true" />
-            <element signature="e#3435#3436#0" expanded="false" />
-            <element signature="e#3491#3492#0" expanded="false" />
-            <element signature="e#5476#5583#0" expanded="true" />
-            <element signature="e#5582#5583#0" expanded="true" />
-            <element signature="e#5618#6738#0" expanded="true" />
-            <element signature="e#6737#6738#0" expanded="true" />
-            <element signature="e#18968#19055#0" expanded="true" />
+            <element signature="e#3455#3456#0" expanded="false" />
+            <element signature="e#3511#3512#0" expanded="false" />
+            <element signature="e#5496#5603#0" expanded="true" />
+            <element signature="e#5602#5603#0" expanded="true" />
+            <element signature="e#5638#6758#0" expanded="true" />
+            <element signature="e#6757#6758#0" expanded="true" />
+            <element signature="e#23388#23475#0" expanded="true" />
           </folding>
         </state>
       </provider>

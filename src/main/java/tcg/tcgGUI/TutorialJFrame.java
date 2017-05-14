@@ -1,6 +1,7 @@
 package tcg.tcgGUI;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -54,6 +55,15 @@ public class TutorialJFrame extends javax.swing.JFrame {
          public void mouseClicked(MouseEvent evt) {
             tutorial4JPanelMouseClicked(evt);
          }
+         @Override
+         public void mouseEntered(MouseEvent e) {
+            tutorial4JPanel.setBackground(new java.awt.Color(204, 204, 255));
+         }
+
+         @Override
+         public void mouseExited(MouseEvent e) {
+            tutorial4JPanel.setBackground(new Color(153,153,153));
+         }
       });
 
       jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -101,6 +111,15 @@ public class TutorialJFrame extends javax.swing.JFrame {
       tutorial2JPanel.addMouseListener(new MouseAdapter() {
          public void mouseClicked(MouseEvent evt) {
             tutorial2JPanelMouseClicked(evt);
+         }
+         @Override
+         public void mouseEntered(MouseEvent e) {
+            tutorial2JPanel.setBackground(new java.awt.Color(204, 204, 255));
+         }
+
+         @Override
+         public void mouseExited(MouseEvent e) {
+            tutorial2JPanel.setBackground(new Color(153,153,153));
          }
       });
 
@@ -150,6 +169,15 @@ public class TutorialJFrame extends javax.swing.JFrame {
          public void mouseClicked(MouseEvent evt) {
             tutorial3JPanelMouseClicked(evt);
          }
+         @Override
+         public void mouseEntered(MouseEvent e) {
+            tutorial3JPanel.setBackground(new java.awt.Color(204, 204, 255));
+         }
+
+         @Override
+         public void mouseExited(MouseEvent e) {
+            tutorial3JPanel.setBackground(new Color(153,153,153));
+         }
       });
 
       jLabel11.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -197,6 +225,16 @@ public class TutorialJFrame extends javax.swing.JFrame {
       tutorial1JPanel.addMouseListener(new MouseAdapter() {
          public void mouseClicked(MouseEvent evt) {
             tutorial1JPanelMouseClicked(evt);
+         }
+
+         @Override
+         public void mouseEntered(MouseEvent e) {
+            tutorial1JPanel.setBackground(new java.awt.Color(204, 204, 255));
+         }
+
+         @Override
+         public void mouseExited(MouseEvent e) {
+            tutorial1JPanel.setBackground(new Color(153,153,153));
          }
       });
 
@@ -263,7 +301,7 @@ public class TutorialJFrame extends javax.swing.JFrame {
    private void tutorial1JPanelMouseClicked(MouseEvent evt) {
       dispose();
       MainWindowJFrame main = new MainWindowJFrame(1);
-         main.setTitle("The Computation Graph - Tutorial #1" );
+      main.setTitle("The Computation Graph - Tutorial #1" );
       main.setVisible(true);
    }
 
@@ -283,7 +321,7 @@ public class TutorialJFrame extends javax.swing.JFrame {
 
    private void tutorial4JPanelMouseClicked(MouseEvent evt) {
       dispose();
-      MainWindowJFrame main = new MainWindowJFrame(0);
+      MainWindowJFrame main = new MainWindowJFrame(4);
       main.setTitle("The Computation Graph - Tutorial #4" );
       main.setVisible(true);
    }
