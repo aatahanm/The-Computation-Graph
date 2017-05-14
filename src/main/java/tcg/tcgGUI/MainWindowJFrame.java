@@ -1,6 +1,8 @@
 package tcg.tcgGUI;
 
 import javax.swing.*;
+
+import net.java.balloontip.styles.BalloonTipStyle;
 import tcg.core.CEdge;
 import tcg.core.CGraph;
 import tcg.core.*;
@@ -66,6 +68,8 @@ public class MainWindowJFrame extends JFrame {
         jMenuItemInput = new JMenuItem();
         jMenuItemNew = new JMenuItem();
         jMenuItemBlackBox = new JMenuItem();
+        edgedLook = new EdgedBalloonStyle(Color.WHITE, Color.BLUE);
+        save = 0;
         nodesJScrollPane = new JScrollPane(nodeJPanelBackground,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -112,8 +116,8 @@ if(tutorial==1) {
         public void mouseReleased(MouseEvent arg0) {
             if (SwingUtilities.isRightMouseButton(arg0) && graph.getEdges().size() != 0) {
                 int response = JOptionPane.showOptionDialog(null,
-                        "Congratulations! You finished tutorial #1. What would you like to do now?",
-                        "Feedback",
+                        "You finished tutorial #1. What would you like to do now?",
+                        "Congratulations!",
                         JOptionPane.OK_CANCEL_OPTION,
                         JOptionPane.INFORMATION_MESSAGE,
                         null,
@@ -128,6 +132,46 @@ if(tutorial==1) {
                     TutorialJFrame newSc = new TutorialJFrame();
                     newSc.setVisible(true);
                 }
+            }
+        }
+    });
+}else if (tutorial == 3){
+
+    tooltipBalloon = new BalloonTip(mainJMenuBar,
+            new JLabel("In this tutorial you are going to see the menu options.Click to 'File' to see the options"),
+            edgedLook,
+            BalloonTip.Orientation.LEFT_BELOW,
+            BalloonTip.AttachLocation.ALIGNED,
+            40, 15, false);
+    tooltipBalloon.setVisible(true);
+
+    tooltipBalloon.addMouseListener(new MouseAdapter() {
+        public void mouseClicked(MouseEvent evt) {
+            //TO DO
+        }
+    });
+
+    fileJMenu.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (fileName.equals("")) {
+                tooltipBalloon.setVisible(false);
+                tooltipBalloon = new BalloonTip(jMenuItemClose,
+                        new JLabel("Now let's see how to open a existing project. Click to 'Open'."),
+                        edgedLook,
+                        BalloonTip.Orientation.RIGHT_BELOW,
+                        BalloonTip.AttachLocation.ALIGNED,
+                        40, 15, false);
+                tooltipBalloon.setVisible(true);
+            }else if (save == 0) {
+                tooltipBalloon.setVisible(false);
+                tooltipBalloon = new BalloonTip(jMenuItemClose,
+                        new JLabel("Clicking to the 'save' option will save your project to the same directory you called it."),
+                        edgedLook,
+                        BalloonTip.Orientation.RIGHT_BELOW,
+                        BalloonTip.AttachLocation.ALIGNED,
+                        40, 15, false);
+                        save ++;
             }
         }
     });
@@ -206,7 +250,7 @@ if(tutorial==1) {
                         .addComponent(nodesJScrollPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        workAreaJPanel.setPreferredSize(new Dimension (800,500));
+        workAreaJPanel.setPreferredSize(new Dimension (1040,630));
         fileJMenu.setText("File");
 
         jMenuItemOpen.setText("Open");
@@ -228,17 +272,17 @@ if(tutorial==1) {
         jMenuItemNew.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (tutorial == 0) {
+                    String projectName = JOptionPane.showInputDialog("Project Name: ");
 
-                String projectName = JOptionPane.showInputDialog("Project Name: ");
 
-
-                if (projectName == null || projectName.isEmpty()){}
-
-                else {
-                    dispose();
-                    MainWindowJFrame main = new MainWindowJFrame(0);
-                    main.setTitle("The Computation Graph - " + projectName);
-                    main.setVisible(true);
+                    if (projectName == null || projectName.isEmpty()) {
+                    } else {
+                        dispose();
+                        MainWindowJFrame main = new MainWindowJFrame(0);
+                        main.setTitle("The Computation Graph - " + projectName);
+                        main.setVisible(true);
+                    }
                 }
             }
 
@@ -250,6 +294,14 @@ if(tutorial==1) {
         fileJMenu.add(jMenuItemSave);
         jMenuItemSave.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent evt){
+                tooltipBalloon.setVisible(false);
+                tooltipBalloon = new BalloonTip(mainJMenuBar,
+                        new JLabel("Good. Now if you want to choose where you want to save your project Click at 'Save As'."),
+                        edgedLook,
+                        BalloonTip.Orientation.LEFT_BELOW,
+                        BalloonTip.AttachLocation.ALIGNED,
+                        40, 15, false);
+                tooltipBalloon.setVisible(true);
                 try {
                     jMenuItemSaveActionPerformed();
                 } catch (JSONException e) {
@@ -341,6 +393,18 @@ if(tutorial==1) {
             fileName = file.getName();
             ((NodeEditor)workAreaJPanel).setGraph(graph);
             setTitle("The Computation Graph - " + file.getName());
+            if (returnValue == JFileChooser.APPROVE_OPTION && tutorial == 3) {
+                tooltipBalloon.setVisible(false);
+                tooltipBalloon = new BalloonTip(
+                        mainJMenuBar,
+                        new JLabel("Nicely done! As you can notice the title of the program has changed to your" +
+                                " file name and the components in your project have been created."),
+                        edgedLook,
+                        BalloonTip.Orientation.LEFT_BELOW, BalloonTip.AttachLocation.ALIGNED,
+                        40, 15, false);
+                tooltipBalloon.setVisible(true);
+
+            }
             repaint();
         }
     }
@@ -359,6 +423,26 @@ if(tutorial==1) {
             JSONObject json = FileUtilities.parseFromGraph(graph);
             FileUtilities.writeToFile(json, dir);
             path = dir + fileName;
+        }
+        if (returnValue == JFileChooser.APPROVE_OPTION && tutorial == 3){
+            int response = JOptionPane.showOptionDialog(null,
+                    "You finished tutorial #3. What would you like to do now?",
+                    "Congratulations!",
+                    JOptionPane.OK_CANCEL_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    new String[]{"Return to Main Menu", "Return to Tutorials Window"}, // this is the array
+                    "default");
+            if (response == JOptionPane.OK_OPTION) {
+                WelcomeWindowJFrame newScreen = new WelcomeWindowJFrame();
+                dispose();
+                newScreen.setVisible(true);
+            } else if (response == JOptionPane.NO_OPTION) {
+                dispose();
+                TutorialJFrame newSc = new TutorialJFrame();
+                newSc.setVisible(true);
+            }
+
         }
     }
 
@@ -457,6 +541,8 @@ if(tutorial==1) {
     private GButton allButtons;
     private int tutorial;
     private BalloonTip tooltipBalloon;
+    private BalloonTipStyle edgedLook;
+    private int save;
 
     public void setTutorial(int s){
         this.tutorial=s;
@@ -497,9 +583,11 @@ if(tutorial==1) {
                 for (GVertex gv : graph.getVertices())
                     if (gv.isSelected()){
                         if (gv.getVertex().getType() != STATICS.CONSTANT_VERTEX)
-                            toAdd.add(new GVertex(gv.getX() + 10, gv.getY() + 10, STATICS.typeToVertex(gv.getVertex().getType(), 0.0)));
+                            toAdd.add(new GVertex(gv.getX() + 10, gv.getY() + 10,
+                                    STATICS.typeToVertex(gv.getVertex().getType(), 0.0)));
                         else
-                            toAdd.add(new GVertex(gv.getX() + 10, gv.getY() + 10, STATICS.typeToVertex(gv.getVertex().getType(), gv.getVertex().getOutput().get(0))));
+                            toAdd.add(new GVertex(gv.getX() + 10, gv.getY() + 10,
+                                    STATICS.typeToVertex(gv.getVertex().getType(), gv.getVertex().getOutput().get(0))));
                 }
             }
             else if(e.isControlDown() && e.getKeyCode() == e.VK_X)
@@ -582,7 +670,7 @@ if(tutorial==1) {
       @Override
       public void actionPerformed(ActionEvent e) {
           requestFocusInWindow(true);
-          if (tutorial == 0) {
+          if (tutorial == 0 || tutorial == 3) {
               double d = 0;
               GButton button = (GButton) e.getSource();
               if (button.getType() == STATICS.CONSTANT_VERTEX) {
@@ -600,7 +688,9 @@ if(tutorial==1) {
                       (int) workAreaJPanel.getSize().getHeight() / 2, vertex);
               if (((GButton) e.getSource()).getType() == STATICS.OUTPUT_VERTEX && graph.getVertices().size()>1) {
                   tooltipBalloon.setVisible(false);
-                  tooltipBalloon = new BalloonTip(allButtons.get().get(5), "Alright! Select a node by left clicking to it and right click on the second one to create an edge.");
+                  tooltipBalloon = new BalloonTip(
+                          allButtons.get().get(5),
+                          "Alright! Select a node by left clicking to it and right click on the second one to create an edge.");
                   tooltipBalloon.setVisible(true);
               }
           }

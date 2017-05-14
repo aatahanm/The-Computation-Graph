@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e5ed025-015a-4614-8d95-c9d4b31c0002" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/ListExample.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$11.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$12.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$5.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$6.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$6.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$8.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$8.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$10.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$2.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$3.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$4.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$7.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$ButtonListener.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$ButtonListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$KeyUtilities.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame$KeyUtilities.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/MainWindowJFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/TutorialJFrame$6.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/TutorialJFrame$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/TutorialJFrame.class" afterPath="$PROJECT_DIR$/target/classes/tcg/tcgGUI/TutorialJFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java" afterPath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java" afterPath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/WelcomeWindowJFrame.java" afterPath="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/WelcomeWindowJFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$USER_HOME$/Desktop/balloontip-master/balloontip-master/target/" />
@@ -25,17 +40,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MainWindowJFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainWindowJFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-440">
-              <caret line="420" column="38" lean-forward="false" selection-start-line="420" selection-start-column="38" selection-end-line="420" selection-end-column="38" />
+            <state relative-caret-position="130">
+              <caret line="274" column="36" lean-forward="true" selection-start-line="274" selection-start-column="36" selection-end-line="274" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#979#1009#0" expanded="true" />
-                <element signature="e#3122#3255#0" expanded="true" />
-                <element signature="e#3254#3255#0" expanded="true" />
-                <element signature="e#14885#14972#0" expanded="true" />
+                <element signature="e#1100#1130#0" expanded="true" />
+                <element signature="e#3435#3436#0" expanded="false" />
+                <element signature="e#3491#3492#0" expanded="false" />
+                <element signature="e#5476#5583#0" expanded="true" />
+                <element signature="e#5582#5583#0" expanded="true" />
+                <element signature="e#5618#6738#0" expanded="true" />
+                <element signature="e#6737#6738#0" expanded="true" />
+                <element signature="e#18968#19055#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,12 +63,11 @@
       <file leaf-file-name="TutorialJFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="265" column="63" lean-forward="false" selection-start-line="265" selection-start-column="63" selection-end-line="265" selection-end-column="63" />
+            <state relative-caret-position="396">
+              <caret line="199" column="10" lean-forward="true" selection-start-line="199" selection-start-column="10" selection-end-line="199" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8320#8457#0" expanded="true" />
-                <element signature="e#8456#8457#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,8 +76,8 @@
       <file leaf-file-name="GButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/GUIcomponents/GButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1210">
-              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+            <state relative-caret-position="1144">
+              <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,14 +85,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WelcomeWindowJFrame.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WelcomeWindowJFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/WelcomeWindowJFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="155" column="53" lean-forward="true" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="53" />
+            <state relative-caret-position="2860">
+              <caret line="155" column="53" lean-forward="false" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#725#755#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,8 +100,8 @@
       <file leaf-file-name="NodeEditor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/NodeEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="138" column="62" lean-forward="true" selection-start-line="138" selection-start-column="62" selection-end-line="138" selection-end-column="62" />
+            <state relative-caret-position="2640">
+              <caret line="138" column="62" lean-forward="false" selection-start-line="138" selection-start-column="62" selection-end-line="138" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -108,6 +125,9 @@
       <find>priva</find>
       <find>secon</find>
       <find>input</find>
+      <find>edgedLook</find>
+      <find>save</find>
+      <find>ItemNew</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,9 +189,9 @@
         <option value="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/GUIcomponents/GButton.java" />
         <option value="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/NodeEditor.java" />
         <option value="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialOne.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/WelcomeWindowJFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java" />
       </list>
     </option>
   </component>
@@ -273,7 +293,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -381,6 +400,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -797,15 +817,15 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28992072" sideWeight="0.25160944" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29105324" sideWeight="0.26126608" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14538626" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28992072" sideWeight="0.74839056" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29105324" sideWeight="0.7387339" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20498301" sideWeight="0.43454936" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20498301" sideWeight="0.42650214" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24248926" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24570815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -943,7 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1021,7 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1121,7 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,73 +1162,61 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/java/balloontip/ListExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/ListExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="34" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/ListExample.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/NodeEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="138" column="62" lean-forward="true" selection-start-line="138" selection-start-column="62" selection-end-line="138" selection-end-column="62" />
+        <state relative-caret-position="2640">
+          <caret line="138" column="62" lean-forward="false" selection-start-line="138" selection-start-column="62" selection-end-line="138" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialOne.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialOne.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/GUIcomponents/GButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1210">
-          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        <state relative-caret-position="1144">
+          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-440">
-          <caret line="420" column="38" lean-forward="false" selection-start-line="420" selection-start-column="38" selection-end-line="420" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#979#1009#0" expanded="true" />
-            <element signature="e#3122#3255#0" expanded="true" />
-            <element signature="e#3254#3255#0" expanded="true" />
-            <element signature="e#14885#14972#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="265" column="63" lean-forward="false" selection-start-line="265" selection-start-column="63" selection-end-line="265" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8320#8457#0" expanded="true" />
-            <element signature="e#8456#8457#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/WelcomeWindowJFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="155" column="53" lean-forward="true" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="53" />
+        <state relative-caret-position="2860">
+          <caret line="155" column="53" lean-forward="false" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#725#755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/TutorialJFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="199" column="10" lean-forward="true" selection-start-line="199" selection-start-column="10" selection-end-line="199" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8320#8457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tcg/tcgGUI/MainWindowJFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="274" column="36" lean-forward="true" selection-start-line="274" selection-start-column="36" selection-end-line="274" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1100#1130#0" expanded="true" />
+            <element signature="e#3435#3436#0" expanded="false" />
+            <element signature="e#3491#3492#0" expanded="false" />
+            <element signature="e#5476#5583#0" expanded="true" />
+            <element signature="e#5582#5583#0" expanded="true" />
+            <element signature="e#5618#6738#0" expanded="true" />
+            <element signature="e#6737#6738#0" expanded="true" />
+            <element signature="e#18968#19055#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -264,8 +264,6 @@ public class TutorialJFrame extends javax.swing.JFrame {
       dispose();
       MainWindowJFrame main = new MainWindowJFrame(1);
          main.setTitle("The Computation Graph - Tutorial #1" );
-      main.setTutorial(1);
-         main.repaint();
       main.setVisible(true);
    }
 
@@ -278,7 +276,7 @@ public class TutorialJFrame extends javax.swing.JFrame {
 
    private void tutorial3JPanelMouseClicked(MouseEvent evt) {
       dispose();
-      MainWindowJFrame main = new MainWindowJFrame(0);
+      MainWindowJFrame main = new MainWindowJFrame(3);
       main.setTitle("The Computation Graph - Tutorial #3" );
       main.setVisible(true);
    }
