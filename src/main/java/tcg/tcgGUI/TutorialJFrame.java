@@ -4,6 +4,11 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * This class include the GUI components of tutorial window.
+ */
+
+
 public class TutorialJFrame extends javax.swing.JFrame {
 
    public TutorialJFrame() {
@@ -41,11 +46,11 @@ public class TutorialJFrame extends javax.swing.JFrame {
       setTitle("The Computation Graph Tutorials");
       backButton.setSize(75, 75);
       backButton.addMouseListener(new java.awt.event.MouseAdapter(){
-           public void mouseClicked(java.awt.event.MouseEvent evt) {
-               if (evt.getSource() == backButton)
-                   new WelcomeWindowJFrame().setVisible(true);
-           }
-       });
+         public void mouseClicked(java.awt.event.MouseEvent evt) {
+            if (evt.getSource() == backButton)
+               new WelcomeWindowJFrame().setVisible(true);
+         }
+      });
       add(backButton);
       tutorialsWindowJPanel.setLayout(null);
 
@@ -66,27 +71,27 @@ public class TutorialJFrame extends javax.swing.JFrame {
       javax.swing.GroupLayout tutorial4JPanelLayout = new javax.swing.GroupLayout(tutorial4JPanel);
       tutorial4JPanel.setLayout(tutorial4JPanelLayout);
       tutorial4JPanelLayout.setHorizontalGroup(
-         tutorial4JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(tutorial4JPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(tutorial4JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(tutorial4JPanelLayout.createSequentialGroup()
-                  .addGap(46, 46, 46)
-                  .addComponent(jLabel1))
-               .addComponent(jLabel2)
-               .addComponent(jLabel4))
-            .addContainerGap(33, Short.MAX_VALUE))
+              tutorial4JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(tutorial4JPanelLayout.createSequentialGroup()
+                              .addContainerGap()
+                              .addGroup(tutorial4JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                      .addGroup(tutorial4JPanelLayout.createSequentialGroup()
+                                              .addGap(46, 46, 46)
+                                              .addComponent(jLabel1))
+                                      .addComponent(jLabel2)
+                                      .addComponent(jLabel4))
+                              .addContainerGap(33, Short.MAX_VALUE))
       );
       tutorial4JPanelLayout.setVerticalGroup(
-         tutorial4JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(tutorial4JPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel1)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jLabel2)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jLabel4)
-            .addContainerGap(65, Short.MAX_VALUE))
+              tutorial4JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(tutorial4JPanelLayout.createSequentialGroup()
+                              .addContainerGap()
+                              .addComponent(jLabel1)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                              .addComponent(jLabel2)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                              .addComponent(jLabel4)
+                              .addContainerGap(65, Short.MAX_VALUE))
       );
 
       tutorialsWindowJPanel.add(tutorial4JPanel);
@@ -107,7 +112,7 @@ public class TutorialJFrame extends javax.swing.JFrame {
       jLabel7.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
       jLabel7.setText("   #2");
 
-      jLabel8.setText("-Create your owan");
+      jLabel8.setText("-Create your own");
 
       jLabel9.setText("function");
 
@@ -116,30 +121,30 @@ public class TutorialJFrame extends javax.swing.JFrame {
       javax.swing.GroupLayout tutorial2JPanelLayout = new javax.swing.GroupLayout(tutorial2JPanel);
       tutorial2JPanel.setLayout(tutorial2JPanelLayout);
       tutorial2JPanelLayout.setHorizontalGroup(
-         tutorial2JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(tutorial2JPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(tutorial2JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(tutorial2JPanelLayout.createSequentialGroup()
-                  .addGap(46, 46, 46)
-                  .addComponent(jLabel7))
-               .addComponent(jLabel8)
-               .addComponent(jLabel10)
-               .addComponent(jLabel9))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              tutorial2JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(tutorial2JPanelLayout.createSequentialGroup()
+                              .addContainerGap()
+                              .addGroup(tutorial2JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                      .addGroup(tutorial2JPanelLayout.createSequentialGroup()
+                                              .addGap(46, 46, 46)
+                                              .addComponent(jLabel7))
+                                      .addComponent(jLabel8)
+                                      .addComponent(jLabel10)
+                                      .addComponent(jLabel9))
+                              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       tutorial2JPanelLayout.setVerticalGroup(
-         tutorial2JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(tutorial2JPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel7)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jLabel8)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jLabel9)
-            .addGap(18, 18, 18)
-            .addComponent(jLabel10)
-            .addContainerGap(37, Short.MAX_VALUE))
+              tutorial2JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(tutorial2JPanelLayout.createSequentialGroup()
+                              .addContainerGap()
+                              .addComponent(jLabel7)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                              .addComponent(jLabel8)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                              .addComponent(jLabel9)
+                              .addGap(18, 18, 18)
+                              .addComponent(jLabel10)
+                              .addContainerGap(37, Short.MAX_VALUE))
       );
 
       tutorialsWindowJPanel.add(tutorial2JPanel);
@@ -164,30 +169,30 @@ public class TutorialJFrame extends javax.swing.JFrame {
       javax.swing.GroupLayout tutorial3JPanelLayout = new javax.swing.GroupLayout(tutorial3JPanel);
       tutorial3JPanel.setLayout(tutorial3JPanelLayout);
       tutorial3JPanelLayout.setHorizontalGroup(
-         tutorial3JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(tutorial3JPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(tutorial3JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(tutorial3JPanelLayout.createSequentialGroup()
-                  .addGap(46, 46, 46)
-                  .addComponent(jLabel11))
-               .addComponent(jLabel12)
-               .addComponent(jLabel14)
-               .addComponent(jLabel13))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              tutorial3JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(tutorial3JPanelLayout.createSequentialGroup()
+                              .addContainerGap()
+                              .addGroup(tutorial3JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                      .addGroup(tutorial3JPanelLayout.createSequentialGroup()
+                                              .addGap(46, 46, 46)
+                                              .addComponent(jLabel11))
+                                      .addComponent(jLabel12)
+                                      .addComponent(jLabel14)
+                                      .addComponent(jLabel13))
+                              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       tutorial3JPanelLayout.setVerticalGroup(
-         tutorial3JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(tutorial3JPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel11)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jLabel12)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jLabel13)
-            .addGap(18, 18, 18)
-            .addComponent(jLabel14)
-            .addContainerGap(31, Short.MAX_VALUE))
+              tutorial3JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(tutorial3JPanelLayout.createSequentialGroup()
+                              .addContainerGap()
+                              .addComponent(jLabel11)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                              .addComponent(jLabel12)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                              .addComponent(jLabel13)
+                              .addGap(18, 18, 18)
+                              .addComponent(jLabel14)
+                              .addContainerGap(31, Short.MAX_VALUE))
       );
 
       tutorialsWindowJPanel.add(tutorial3JPanel);
@@ -214,33 +219,33 @@ public class TutorialJFrame extends javax.swing.JFrame {
       javax.swing.GroupLayout tutorial1JPanelLayout = new javax.swing.GroupLayout(tutorial1JPanel);
       tutorial1JPanel.setLayout(tutorial1JPanelLayout);
       tutorial1JPanelLayout.setHorizontalGroup(
-         tutorial1JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(tutorial1JPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(tutorial1JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(tutorial1JPanelLayout.createSequentialGroup()
-                  .addGap(46, 46, 46)
-                  .addComponent(jLabel15))
-               .addComponent(jLabel16)
-               .addComponent(jLabel18)
-               .addComponent(jLabel19)
-               .addComponent(jLabel17))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              tutorial1JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(tutorial1JPanelLayout.createSequentialGroup()
+                              .addContainerGap()
+                              .addGroup(tutorial1JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                      .addGroup(tutorial1JPanelLayout.createSequentialGroup()
+                                              .addGap(46, 46, 46)
+                                              .addComponent(jLabel15))
+                                      .addComponent(jLabel16)
+                                      .addComponent(jLabel18)
+                                      .addComponent(jLabel19)
+                                      .addComponent(jLabel17))
+                              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       tutorial1JPanelLayout.setVerticalGroup(
-         tutorial1JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(tutorial1JPanelLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel15)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jLabel16)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jLabel17)
-            .addGap(18, 18, 18)
-            .addComponent(jLabel18)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel19)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              tutorial1JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(tutorial1JPanelLayout.createSequentialGroup()
+                              .addContainerGap()
+                              .addComponent(jLabel15)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                              .addComponent(jLabel16)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                              .addComponent(jLabel17)
+                              .addGap(18, 18, 18)
+                              .addComponent(jLabel18)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                              .addComponent(jLabel19)
+                              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
       tutorialsWindowJPanel.add(tutorial1JPanel);
@@ -249,23 +254,25 @@ public class TutorialJFrame extends javax.swing.JFrame {
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
       getContentPane().setLayout(layout);
       layout.setHorizontalGroup(
-         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(tutorialsWindowJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+              layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(tutorialsWindowJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
       );
       layout.setVerticalGroup(
-         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(tutorialsWindowJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+              layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(tutorialsWindowJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
       );
 
       pack();
    }
 
+   //Mouse interactions of tutorial window
+
    private void tutorial1JPanelMouseClicked(MouseEvent evt) {
       dispose();
       MainWindowJFrame main = new MainWindowJFrame();
-         main.setTitle("The Computation Graph - Tutorial #1" );
-         main.setTutorial(true);
-         main.setVisible(true);
+      main.setTitle("The Computation Graph - Tutorial #1" );
+      main.setTutorial(true);
+      main.setVisible(true);
    }
 
    private void tutorial2JPanelMouseClicked(MouseEvent evt) {

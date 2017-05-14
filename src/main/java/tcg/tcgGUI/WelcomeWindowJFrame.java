@@ -12,7 +12,9 @@ import java.awt.event.MouseEvent;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 
-
+/**
+ * This class include the GUI components of welcome window.
+ */
 
 public class WelcomeWindowJFrame extends javax.swing.JFrame {
    
@@ -82,6 +84,9 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
       openJLabel.setFont(new Font("Tahoma", 0, 18)); // NOI18N
       openJLabel.setText("Open");
       openJLabel.addMouseListener(new MouseAdapter() {
+
+         //Mouse interactions of welcome window.
+
          public void mouseClicked(MouseEvent evt) {
             try {
                openJLabelMouseClicked(evt);

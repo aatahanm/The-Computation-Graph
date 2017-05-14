@@ -12,14 +12,19 @@ import java.util.ArrayList;
  */
 public class GButton extends JButton
 {
+    //properties
     private int type;
     ArrayList<JButton> buttons;
+
+    //constructor
     public GButton ( String label, int type)
     {
         super(label);
         this.type = type;
     }
     public GButton(){
+
+        //create buttons for main window.
         buttons = new ArrayList<>();
         JButton a = new GButton("Addition", STATICS.ADDITION_VERTEX);
         JButton b = new GButton("Multiplication",STATICS.MULTIPLICATION_VERTEX);
@@ -53,11 +58,20 @@ public class GButton extends JButton
         buttons.add(n);
         buttons.add(o);
     }
+
+    /**
+     * Get type
+     * @return type
+     */
     public int getType()
     {
         return type;
     }
 
+    /**
+     * Get button
+     * @return button
+     */
     public ArrayList<JButton> get(){
         return buttons;
     }

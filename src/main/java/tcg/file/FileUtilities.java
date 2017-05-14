@@ -49,6 +49,8 @@ public class FileUtilities {
         JSONObject ejson = (JSONObject) json.get("edges");
         Iterator vkeys = vjson.keys();
         Iterator ekeys = ejson.keys();
+
+
         while (vkeys.hasNext()){
             CVertex currentV = null;
             JSONObject currentVertex = (JSONObject) vjson.get((String)(vkeys.next()));

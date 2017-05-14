@@ -4,13 +4,21 @@ import org.jgrapht.experimental.dag.DirectedAcyclicGraph;
 
 import java.util.ArrayList;
 
+/**
+ * This class include the specialities of graph.
+ */
 
 public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
 {
+    //Properties
     ArrayList<Dsf> outNodes;
     ArrayList<Dsf> inNodes;
     boolean selected;
 
+    /**
+     * Constructor for CGraph
+     * @param edgeClass
+     */
     public CGraph(Class edgeClass) {
         super(edgeClass);
         selected = false;
@@ -24,7 +32,9 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         }
     }
 
-
+    /**
+     * Calculate the operations in graph.
+     */
     public void calcGraph()
     {
         for ( Dsf v : this)
@@ -38,6 +48,9 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         calcOutputs();
     }
 
+    /**
+     * Calculate the output of the graph.
+     */
     public void calcOutputs()
     {
         for ( Dsf v : this) // this is in TopSort according to the java doc of the library
@@ -78,6 +91,9 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         return ret;
     }
 
+    /**
+     * Remove the selected components from the graph.
+     */
     public void removeSelected()
     {
         ArrayList<Dsf> vToRemove = new ArrayList<>();
@@ -91,24 +107,34 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
                 vToRemove.add(v);
             }
         }
-
         for ( CEdge e : edgeSet())
             if ( e.isSelected())
                 eToRemove.add(e);
 
         removeAllEdges(eToRemove);
         removeAllVertices(vToRemove);
-
     }
 
+    /**
+     * Check for the selected status.
+     * @return true if the component is selected.
+     */
     public boolean isSelected() {
         return selected;
     }
 
+    /**
+     * Set a componenet as selected.
+     * @param s true for selected
+     */
     public void setSelected(boolean s) {
         selected = s;
     }
 
+    /**
+     * Calculate and get the output of the graph.
+     * @return output
+     */
     public ArrayList<Double> getOutput() {
         calcOutputs();
         ArrayList<Double> outputs = new ArrayList<Double>();
@@ -119,6 +145,10 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         return outputs;
     }
 
+    /**
+     * Set input into the graph
+     * @param al input
+     */
     public void setInput(ArrayList<Double> al) {
         for ( int i = 0; i < inNodes.size(); i++)
         {
@@ -128,6 +158,11 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         }
     }
 
+    /**
+     * Get derivative
+     * @param ID specified number of vertex type
+     * @return derivative
+     */
     public ArrayList<Double> getDerivative(int ID) {
         ArrayList<Double> ret = new ArrayList<Double>();
         for ( Dsf v : outNodes)
@@ -136,11 +171,20 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         }
         return ret;
     }
+
+    /**
+     * Get type of the CGraph
+     * @return specified type number of CGraph
+     */
     public int getType()
     {
         return STATICS.CGRAPH;
     }
 
+    /**
+     * Get the input count
+     * @return input count
+     */
     public int getInputCount()
     {
         return inNodes.size();

@@ -23,6 +23,10 @@ import net.java.balloontip.BalloonTip;
 import net.java.balloontip.ListItemBalloonTip;
 import net.java.balloontip.styles.EdgedBalloonStyle;
 
+/**
+ * This class include the GUI components of the main window of the program.
+ */
+
 public class MainWindowJFrame extends JFrame {
 
     /**
@@ -95,8 +99,6 @@ public class MainWindowJFrame extends JFrame {
             allNodes.add(allButtons.get().get(i));
             allButtons.get().get(i).addActionListener(new ButtonListener());
         }
-
-
 
         allNodes.setPreferredSize(new Dimension(171,700));
         panel.setBackground(new Color(204,204,255));
@@ -184,6 +186,8 @@ public class MainWindowJFrame extends JFrame {
 
         jMenuItemNew.setText("New");
         jMenuItemNew.addActionListener(new ActionListener() {
+
+            //Action for starting a new project.
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -207,6 +211,8 @@ public class MainWindowJFrame extends JFrame {
         jMenuItemSave.setText("Save");
         fileJMenu.add(jMenuItemSave);
         jMenuItemSave.addActionListener(new ActionListener(){
+
+            //Action for saving the project
             public void actionPerformed(ActionEvent evt){
                 try {
                     jMenuItemSaveActionPerformed();
@@ -219,6 +225,7 @@ public class MainWindowJFrame extends JFrame {
         jMenuItemOpenSaveAs.setText("Save As");
         fileJMenu.add(jMenuItemOpenSaveAs);
         jMenuItemOpenSaveAs.addActionListener(new ActionListener(){
+            //Action for saving the project on different location.
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -231,6 +238,8 @@ public class MainWindowJFrame extends JFrame {
 
         jMenuItemClose.setText("Close");
         jMenuItemClose.addActionListener(new ActionListener() {
+
+            //Action for closing the program
             public void actionPerformed(ActionEvent evt) {
                 jMenuItemCloseActionPerformed(evt);
             }
@@ -288,7 +297,7 @@ public class MainWindowJFrame extends JFrame {
 
         pack();
     }
-
+    //Perform open action
     private void jMenuItemOpenActionPerformed(ActionEvent evt) throws IOException, JSONException {
         int returnValue = openFileChooser.showOpenDialog(this);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
@@ -302,7 +311,7 @@ public class MainWindowJFrame extends JFrame {
             repaint();
         }
     }
-
+    //Perform save as action
     private void jMenuItemSaveAsActionPerformed() throws JSONException {
         saved = true;
         chooser = new JFileChooser();
@@ -319,7 +328,7 @@ public class MainWindowJFrame extends JFrame {
             path = dir + fileName;
         }
     }
-
+    //Perform save action
     private void jMenuItemSaveActionPerformed() throws JSONException {
         JSONObject json = FileUtilities.parseFromGraph(graph);
         if (saved == false)
@@ -328,9 +337,10 @@ public class MainWindowJFrame extends JFrame {
             FileUtilities.writeToFile(json, path);
     }
 
+    //Perform close action
     private void jMenuItemCloseActionPerformed(ActionEvent evt) {dispose();}
 
-
+    //Perform run action
     private void jMenuItemRunActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         graph.calc();
         repaint();
@@ -385,6 +395,7 @@ public class MainWindowJFrame extends JFrame {
         });
     }
 
+    //Properties
     private JMenu actionsJMenu;
     private JPanel addedNodes;
     private JPanel allNodes;
@@ -423,17 +434,15 @@ public class MainWindowJFrame extends JFrame {
         fileName = s;
     }
 
+    //Key interactions of the program
     class KeyUtilities implements KeyListener {
 
         public void keyTyped(KeyEvent e){}
 
         public void keyPressed(KeyEvent e)
         {
-            if (e.isControlDown() && e.getKeyCode() == e.VK_A)
-            {
-                System.out.println("Select All");
-            }
-            else if(e.isControlDown() && e.isAltDown() && e.getKeyCode() == e.VK_S)
+            //keyboard shortcut for save
+            if(e.isControlDown() && e.isAltDown() && e.getKeyCode() == e.VK_S)
             {
                 try {
                     jMenuItemSaveActionPerformed();
@@ -441,76 +450,21 @@ public class MainWindowJFrame extends JFrame {
                     e1.printStackTrace();
                 }
             }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_S)
-            {
-                System.out.println("save as");
-            }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_C)
-            {
-                System.out.println("copy");
-            }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_X)
-            {
-                System.out.println("cut");
-            }
-            else if(e.isControlDown()&& e.getKeyCode() == e.VK_V)
-            {
-                System.out.println("paste");
-            }
-            else if(e.isControlDown() && e.isShiftDown()&& e.getKeyCode() == e.VK_Z)
-            {
-                System.out.println("redo");
-            }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_Z)
-            {
-                System.out.println("undo");
-            }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_4)
-            {
-                System.out.println("zoom in");
-            }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_PLUS)
-            {
-                System.out.println("zoom in");
-            }
-            else if(e.isControlDown()&& e.getKeyCode() == e.VK_MINUS)
-            {
-                System.out.println("zoom out");
-            }
+            //keyboard shortcut for going up on the frame.
             else if(e.getKeyCode() == e.VK_UP)
             {
                 workAreaJPanel.setToOrder(workAreaJPanel.selectedEdge.getToOrder() + 1);
                 repaint();
             }
+
+            //keyboard shortcut for going down on the frame.
             else if(e.getKeyCode() == e.VK_DOWN)
             {
                 workAreaJPanel.setToOrder(workAreaJPanel.selectedEdge.getToOrder() - 1);
                 repaint();
             }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_LEFT)
-            {
-                System.out.println("left");
-            }
-            else if(e.isControlDown() && e.getKeyCode() == e.VK_RIGHT)
-            {
-                System.out.println("right");
-            }
-            else if(e.isControlDown()&& e.getKeyCode() == e.VK_KP_UP)
-            {
-                System.out.println("up");
-            }
-            else if(e.isControlDown()&& e.getKeyCode() == e.VK_KP_DOWN)
-            {
-                System.out.println("down");
-            }
-            else if(e.isControlDown()&& e.getKeyCode() == e.VK_KP_LEFT)
-            {
-                System.out.println("left");
-            }
-            else if(e.isControlDown()&& e.getKeyCode() == e.VK_KP_RIGHT)
-            {
-                System.out.println("right");
-            }
+
+            //keyboard shortcut for deleting the selected item.
             else if( e.getKeyCode() == e.VK_DELETE)
             {
                 graph.removeSelected();
@@ -520,7 +474,7 @@ public class MainWindowJFrame extends JFrame {
         public void keyReleased(KeyEvent e){}
     }
 
-
+    //Button utilities of the main window
    private class ButtonListener implements ActionListener
    {
 

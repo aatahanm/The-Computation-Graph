@@ -13,6 +13,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+/**
+ * User interactions of nodes.
+ */
 
 public class NodeEditor extends JPanel
 {
@@ -42,6 +45,10 @@ public class NodeEditor extends JPanel
 
     }
 
+    /**
+     * paint method of the node
+     * @param g
+     */
     @Override
     public void paintComponent ( Graphics g)
     {
@@ -60,7 +67,7 @@ public class NodeEditor extends JPanel
 
         GVertex currentVertex;
 
-
+        //mouse interactions of the nodes
         public void mousePressed (MouseEvent event)
         {
             if ( event.isMetaDown())

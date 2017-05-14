@@ -1,6 +1,11 @@
 package tcg.core;
 
+/**
+ * This class hold statics for type of the vertices.
+ */
 public class STATICS {
+
+    //Properties
     private static int ID = 0;
     public static int getID()
     {
@@ -21,9 +26,14 @@ public class STATICS {
     public static final int SUBTRACTION_VERTEX = 13;
     public static final int TANH_VERTEX = 14;
     public static final int TAN_VERTEX = 15;
-
     public static final int CGRAPH = 99;
 
+    /**
+     * Determine type of the vertex.
+     * @param type static number of a vertex
+     * @param d constant number
+     * @return vertex
+     */
     public static Dsf typeToVertex(int type,double d)
     {
         Dsf vertex = null;

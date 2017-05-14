@@ -5,18 +5,30 @@ import tcg.core.CEdge;
 import java.awt.*;
 import java.awt.geom.Line2D;
 
+/**
+ * This class include GUI components of edge.
+ */
 public class GEdge
 {
+    //Properties
     public final int THICKNESS = 4;
     private GVertex from;
     private GVertex to;
     private CEdge edge;
+
+    //Constructor
     public GEdge ( GVertex from, GVertex to, CEdge edge)
     {
         this.from = from;
         this.to = to;
         this.edge = edge;
     }
+
+
+    /**
+     * Paint method for edge.
+     * @param g
+     */
     public void paint ( Graphics g)
     {
         Color t_ = g.getColor();
@@ -36,10 +48,18 @@ public class GEdge
         g2.setColor(t_);
     }
 
+    /**
+     * Get toOrder
+     * @return toOrder value of the edge
+     */
     public int getToOrder(){
         return edge.getToOrder();
     }
 
+    /**
+     * Get fromOrder
+     * @return fromOrder value of the edge.
+     */
     public int getFromOrder(){
         return edge.getFromOrder();
     }
@@ -52,6 +72,12 @@ public class GEdge
         return to;
     }
 
+    /**
+     * Check if the given coordinate inside the edge or not.
+     * @param x x coordinate
+     * @param y y coordinate
+     * @return true if contains
+     */
     public boolean contains ( int x, int y)
     {
         int xs[] ={from.getX()-THICKNESS, to.getX()-THICKNESS, from.getX()+THICKNESS, to.getX() + THICKNESS};
@@ -63,10 +89,19 @@ public class GEdge
     {
         edge.setToOrder(order);
     }
+
+    /**
+     * Set an edge as selected.
+     * @param selected
+     */
     public void setSelected(boolean selected){
         edge.setSelected(selected);
     }
 
+    /**
+     * Check for the selected status of an edge
+     * @return true if selected
+     */
     public boolean isSelected(){
         return edge.isSelected();
     }
