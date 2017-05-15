@@ -832,17 +832,16 @@ if(tutorial==1) {
                   tooltipBalloon = new BalloonTip(allButtons.get().get(2),"Wrong! You need to select the input node");
                   tooltipBalloon.setVisible(true);
               }
-          if(tutorial == 4 ){
-              if(graph.getVertices().size()==2 && graph.getVertices().get(0).getVertex().getInput().get(0) == 0) {
+          if(tutorial == 4 ) {
+              if (graph.getVertices().size() == 2 && graph.getVertices().get(0).getVertex().getInput().get(0) == 0) {
                   tooltipBalloon.setTextContents("Okay, now change their value by double clicking on them. Enter one positive one negative value. ");
-              }else if (((GButton) e.getSource()).getType() == STATICS.SUBTRACTION_VERTEX) {
+              } else if (((GButton) e.getSource()).getType() == STATICS.SUBTRACTION_VERTEX) {
                   tooltipBalloon.setTextContents("Now create edges between the input nodes and subtraction node");
-              }
-
-              }else if(graph.getVertices().get(0).getVertex().getInput().get(0) < 0.0
-                  || graph.getVertices().get(1).getVertex().getInput().get(0) < 0.0){
-              if(((GButton) e.getSource()).getType() == STATICS.SUBTRACTION_VERTEX) {
-                  tooltipBalloon.setTextContents("Now create edges between the input nodes and subtraction node");
+              } else if (graph.getVertices().get(0).getVertex().getInput().get(0) < 0.0
+                      || graph.getVertices().get(1).getVertex().getInput().get(0) < 0.0) {
+                  if (((GButton) e.getSource()).getType() == STATICS.SUBTRACTION_VERTEX) {
+                      tooltipBalloon.setTextContents("Now create edges between the input nodes and subtraction node");
+                  }
               }
           }
          repaint();
