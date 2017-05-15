@@ -52,6 +52,11 @@ public class GGraph
             if (ge.isSelected())
                 eToRemove.add(ge);
 
+        for ( GVertex gv : vToRemove)
+            for (GEdge ge : edges)
+                if ( ge.getFrom() == gv || ge.getTo() == gv)
+                    eToRemove.add(ge);
+
         for (GVertex gv : vToRemove)
             vertices.remove(gv);
 
