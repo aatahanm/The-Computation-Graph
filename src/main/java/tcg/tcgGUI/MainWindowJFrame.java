@@ -517,6 +517,14 @@ if(tutorial==1) {
             FileUtilities.writeToFile(json, path);
     }
 
+    private void jMenuItemBlackBoxActionPerformed() {
+        CGraph ng = new CGraph(CEdge.class);
+        GGraph ngg = new GGraph(ng);
+        ngg.addVertex(100,100, workAreaJPanel.graph.getGraph());
+        workAreaJPanel.setGraph(ngg);
+        repaint();
+    }
+
     private void jMenuItemCloseActionPerformed(ActionEvent evt) {dispose();}
 
 

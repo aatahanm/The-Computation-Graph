@@ -22,6 +22,11 @@ public class GGraph
         this.graph = graph;
     }
 
+    public CGraph getGraph()
+    {
+        return graph;
+    }
+
     public void addVertex( int x, int y, Dsf v)
     {
         graph.addVertex(v);
