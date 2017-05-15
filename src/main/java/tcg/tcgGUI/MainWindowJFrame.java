@@ -355,14 +355,16 @@ if(tutorial==1) {
         fileJMenu.add(jMenuItemSave);
         jMenuItemSave.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent evt){
-                tooltipBalloon.setVisible(false);
-                tooltipBalloon = new BalloonTip(mainJMenuBar,
-                        new JLabel("Good. Now if you want to choose where you want to save your project Click at 'Save As'."),
-                        edgedLook,
-                        BalloonTip.Orientation.LEFT_BELOW,
-                        BalloonTip.AttachLocation.ALIGNED,
-                        40, 15, false);
-                tooltipBalloon.setVisible(true);
+                if (tutorial == 4) {
+                    tooltipBalloon.setVisible(false);
+                    tooltipBalloon = new BalloonTip(mainJMenuBar,
+                            new JLabel("Good. Now if you want to choose where you want to save your project Click at 'Save As'."),
+                            edgedLook,
+                            BalloonTip.Orientation.LEFT_BELOW,
+                            BalloonTip.AttachLocation.ALIGNED,
+                            40, 15, false);
+                    tooltipBalloon.setVisible(true);
+                }
                 try {
                     jMenuItemSaveActionPerformed();
                 } catch (JSONException e) {
