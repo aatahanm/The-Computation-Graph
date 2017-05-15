@@ -28,8 +28,11 @@ public class GEdge
         else
             g.setColor(Color.black);
         g2.draw(new Line2D.Float(from.getX(), from.getY(), to.getX(), to.getY()));
-        g2.setStroke(new BasicStroke(2));
         g2.setColor(Color.red);
+        double angle = Math.atan2 ( to.getY() - from.getY(), to.getX() - from.getX());
+        g2.fillOval((int)(to.getX() - (GVertex.RADIUS / 4) * (2*Math.cos(angle) + 1)),(int)(to.getY() - (GVertex.RADIUS / 4 ) * (2*Math.sin(angle) + 1)),
+                2*GVertex.RADIUS / 3, 2*GVertex.RADIUS / 3);
+        g2.setStroke(new BasicStroke(2));
         g2.drawString("x"+getToOrder(),(from.getX() + to.getX())/2 , (from.getY() + to.getY())/2);
         g2.setStroke(t);
 
