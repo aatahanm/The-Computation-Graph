@@ -27,4 +27,9 @@ public class OutputVertex extends CVertex
     {
         return "ID #" + ID + " :" + super.input.get(0);
     }
+
+    public int getType()
+    {
+        return STATICS.OUTPUT_VERTEX;
+    }
 }

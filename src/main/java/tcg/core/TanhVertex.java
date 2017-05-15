@@ -28,4 +28,9 @@ public class TanhVertex extends CVertex{
     {
         return "tanh(x0)";
     }
+
+    public int getType()
+    {
+        return STATICS.TANH_VERTEX;
+    }
 }

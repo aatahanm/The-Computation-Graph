@@ -27,4 +27,9 @@ public class InputVertex extends CVertex {
     {
         return super.input.get(0) + "";
     }
+
+    public int getType()
+    {
+        return STATICS.INPUT_VERTEX;
+    }
 }

@@ -41,8 +41,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$USER_HOME$/Desktop/balloontip-master/balloontip-master/pom.xml" />
+        <option value="$PROJECT_DIR$/../../balloontip-master/balloontip-master/pom.xml" />
       </list>
     </option>
   </component>

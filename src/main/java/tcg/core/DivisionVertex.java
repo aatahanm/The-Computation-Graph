@@ -29,4 +29,9 @@ public class DivisionVertex extends CVertex{
     {
         return "x0 / x1";
     }
+
+    public int getType()
+    {
+        return STATICS.DIVISION_VERTEX;
+    }
 }

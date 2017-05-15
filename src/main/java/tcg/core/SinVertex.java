@@ -28,4 +28,9 @@ public class SinVertex extends CVertex{
     {
         return "sin(x0)";
     }
+
+    public int getType()
+    {
+        return STATICS.SIN_VERTEX;
+    }
 }

@@ -30,4 +30,9 @@ public class SubtractionVertex extends CVertex {
     {
         return "x0 - x1";
     }
+
+    public int getType()
+    {
+        return STATICS.SUBTRACTION_VERTEX;
+    }
 }

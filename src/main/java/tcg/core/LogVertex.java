@@ -28,4 +28,9 @@ public class LogVertex extends CVertex{
     {
         return "ln(x0)";
     }
+
+    public int getType()
+    {
+        return STATICS.LOG_VERTEX;
+    }
 }

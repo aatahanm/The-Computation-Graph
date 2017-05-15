@@ -30,4 +30,9 @@ public class MultiplicationVertex extends CVertex
     {
         return "x0 * x1";
     }
+
+    public int getType()
+    {
+        return STATICS.MULTIPLICATION_VERTEX;
+    }
 }
