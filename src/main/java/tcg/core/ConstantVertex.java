@@ -57,4 +57,9 @@ public class ConstantVertex extends CVertex
     {
         return "{" + consInput.get(0) + "}";
     }
+
+    public int getType()
+    {
+        return STATICS.CONSTANT_VERTEX;
+    }
 }

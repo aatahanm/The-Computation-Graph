@@ -47,4 +47,9 @@ public class CotVertex extends CVertex{
     {
         return "cot(x0)";
     }
+
+    public int getType()
+    {
+        return STATICS.COT_VERTEX;
+    }
 }

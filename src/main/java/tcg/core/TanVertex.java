@@ -47,4 +47,9 @@ public class TanVertex extends CVertex{
     {
         return "tan(x0)";
     }
+
+    public int getType()
+    {
+        return STATICS.TAN_VERTEX;
+    }
 }

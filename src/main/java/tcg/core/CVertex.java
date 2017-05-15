@@ -47,18 +47,6 @@ public abstract class CVertex implements Dsf, Serializable
      * @return type number of a vertex.
      */
     public int getType(){
-        if (this instanceof ConstantVertex)
-            return STATICS.CONSTANT_VERTEX;
-        else if (this instanceof InputVertex)
-            return STATICS.INPUT_VERTEX;
-        else if (this instanceof AdditionVertex)
-            return STATICS.ADDITION_VERTEX;
-        else if (this instanceof MultiplicationVertex)
-            return STATICS.MULTIPLICATION_VERTEX;
-        else if (this instanceof OutputVertex)
-            return STATICS.OUTPUT_VERTEX;
-        else if (this instanceof SigmoidVertex)
-            return STATICS.SIGMOID_VERTEX;
         return -1;
     }
 

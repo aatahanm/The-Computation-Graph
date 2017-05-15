@@ -51,4 +51,9 @@ public class AdditionVertex extends CVertex{
     {
         return "Output for Addition Vertex is: " + calcOutput();
     }
+
+    public int getType()
+    {
+        return STATICS.ADDITION_VERTEX;
+    }
 }

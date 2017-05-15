@@ -156,7 +156,7 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
    private void newJLabelMouseClicked(MouseEvent evt) {
       dispose();
       String projectName = JOptionPane.showInputDialog("Project Name: ");
-      MainWindowJFrame main = new MainWindowJFrame();
+      MainWindowJFrame main = new MainWindowJFrame(0);
       if (projectName == null || projectName.isEmpty())
           new WelcomeWindowJFrame().setVisible(true);
       else {

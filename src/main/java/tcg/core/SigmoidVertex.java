@@ -49,4 +49,9 @@ public class SigmoidVertex extends CVertex{
     {
         return "sgm(x0)";
     }
+
+    public int getType()
+    {
+        return STATICS.SIGMOID_VERTEX;
+    }
 }

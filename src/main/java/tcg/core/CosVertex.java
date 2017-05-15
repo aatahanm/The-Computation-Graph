@@ -47,5 +47,10 @@ public class CosVertex extends CVertex{
     {
         return "cos(x0)";
     }
+
+    public int getType()
+    {
+        return STATICS.COS_VERTEX;
+    }
 }
 

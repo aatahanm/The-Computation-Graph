@@ -47,4 +47,9 @@ public class ExpVertex extends CVertex{
     {
         return "exp(x0)";
     }
+
+    public int getType()
+    {
+        return STATICS.EXP_VERTEX;
+    }
 }
