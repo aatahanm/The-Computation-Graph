@@ -643,6 +643,8 @@ if(tutorial==1) {
 
         public void keyPressed(KeyEvent e)
         {
+            workAreaJPanel.l.isCtrlDown = e.isControlDown();
+
             if (e.isControlDown() && e.getKeyCode() == e.VK_A)
             {
                 System.out.println("Select All");
@@ -777,7 +779,10 @@ if(tutorial==1) {
                 repaint();
             }
         }
-        public void keyReleased(KeyEvent e){}
+        public void keyReleased(KeyEvent e)
+        {
+            workAreaJPanel.l.isCtrlDown = e.isControlDown();
+        }
     }
 
 

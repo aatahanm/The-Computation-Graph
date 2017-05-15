@@ -18,6 +18,7 @@ public class NodeEditor extends JPanel
 {
     GGraph graph;
     GEdge selectedEdge;
+    public Listener l;
     public NodeEditor(CGraph graph)
     {
         this.graph = new GGraph(graph);
@@ -36,7 +37,7 @@ public class NodeEditor extends JPanel
     }
 
     private void init(){
-        Listener l = new Listener();
+        l = new Listener();
         addMouseListener(l);
         addMouseMotionListener(l);
 
@@ -55,9 +56,9 @@ public class NodeEditor extends JPanel
     {
         selectedEdge.setToOrder(order);
     }
-    private class Listener extends MouseAdapter
+    public class Listener extends MouseAdapter
     {
-
+        public boolean isCtrlDown = false;
         GVertex currentVertex;
 
 
@@ -85,7 +86,8 @@ public class NodeEditor extends JPanel
             }
             else
             {
-                deselect();
+                if(!isCtrlDown)
+                    deselect();
                 currentVertex = null;
                 for (GVertex gv : graph.getVertices())
                     if(gv.contains(event.getX(), event.getY()))
@@ -117,7 +119,7 @@ public class NodeEditor extends JPanel
 
         public void mouseDragged (MouseEvent event)
         {
-            if (currentVertex != null) {
+            if (currentVertex != null && !event.isMetaDown()) {
                 currentVertex.setX(event.getX());
                 currentVertex.setY(event.getY());
 
