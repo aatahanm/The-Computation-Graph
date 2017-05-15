@@ -847,7 +847,8 @@ if(tutorial==1) {
                   tooltipBalloon.setTextContents("Okay, now change their value by double clicking on them. Enter one positive one negative value. ");
               } else if (((GButton) e.getSource()).getType() == STATICS.SUBTRACTION_VERTEX) {
                   tooltipBalloon.setTextContents("Now create edges between the input nodes and subtraction node");
-              } else if (graph.getVertices().get(0).getVertex().getInput().get(0) < 0.0
+              } else if (graph.getVertices().size() == 2)
+                  if (graph.getVertices().get(0).getVertex().getInput().get(0) < 0.0
                       || graph.getVertices().get(1).getVertex().getInput().get(0) < 0.0) {
                   if (((GButton) e.getSource()).getType() == STATICS.SUBTRACTION_VERTEX) {
                       tooltipBalloon.setTextContents("Now create edges between the input nodes and subtraction node");
