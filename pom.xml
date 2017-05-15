@@ -24,7 +24,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
                 <configuration>
-                    <mainClass>tcg.tcgGUI.MainWindowJFrame</mainClass>
+                    <mainClass>tcg.tcgGUI.WelcomeWindowJFrame</mainClass>
                 </configuration>
             </plugin>
         </plugins>

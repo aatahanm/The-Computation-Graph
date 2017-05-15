@@ -50,26 +50,18 @@ public class FileUtilities {
         Iterator vkeys = vjson.keys();
         Iterator ekeys = ejson.keys();
         while (vkeys.hasNext()){
-            CVertex currentV = null;
+            CVertex currentV;
             JSONObject currentVertex = (JSONObject) vjson.get((String)(vkeys.next()));
             x = (Integer) currentVertex.get("x");
             y = (Integer) currentVertex.get("y");
             type = (Integer) currentVertex.get("type");
+
             if (type == STATICS.CONSTANT_VERTEX){
                 val = Double.parseDouble(currentVertex.get("val").toString());
                 currentV = new ConstantVertex(val);
             }
-            else if (type == STATICS.INPUT_VERTEX)
-
-                currentV = new InputVertex();
-            else if (type == STATICS.ADDITION_VERTEX)
-                currentV = new AdditionVertex();
-            else if (type == STATICS.MULTIPLICATION_VERTEX)
-                currentV = new MultiplicationVertex();
-            else if (type == STATICS.OUTPUT_VERTEX)
-                currentV = new OutputVertex();
-            else if (type == STATICS.SIGMOID_VERTEX)
-                currentV = new SigmoidVertex();
+            else
+                currentV = (CVertex) STATICS.typeToVertex(type, 0.0);
 
             vertexAl.add(currentV);
             gg.addVertex(x,y,currentV);
