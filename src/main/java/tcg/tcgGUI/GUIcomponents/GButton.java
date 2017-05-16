@@ -5,11 +5,6 @@ import tcg.core.STATICS;
 import javax.swing.*;
 import java.util.ArrayList;
 
-/**
- * {GButton}
- * Author: Yaman Yağız Taşbağ
- * Version: {11.05.2017}
- */
 public class GButton extends JButton
 {
     //properties

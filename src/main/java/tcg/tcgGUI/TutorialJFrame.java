@@ -307,9 +307,6 @@ public class TutorialJFrame extends javax.swing.JFrame {
 
    private void tutorial1JPanelMouseClicked(MouseEvent evt) {
       dispose();
-      MainWindowJFrame main = new MainWindowJFrame();
-      main.setTitle("The Computation Graph - Tutorial #1" );
-      main.setTutorial(true);
       MainWindowJFrame main = new MainWindowJFrame(1);
       main.setTitle("The Computation Graph - Tutorial #1" );
       main.setVisible(true);

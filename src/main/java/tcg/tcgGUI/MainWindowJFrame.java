@@ -419,15 +419,11 @@ if(tutorial==1) {
         jMenuItemInput.setText("Load From Input File");
         jMenuItemInput.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                // try {
-                jMenuItemInputActionPerformed(evt);
-         /*
-            } catch (IOException e) {
-               e.printStackTrace();
-            } catch (JSONException e) {
-               e.printStackTrace();
-
-            }*/
+                try {
+                    jMenuItemInputActionPerformed(evt);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -567,16 +563,22 @@ if(tutorial==1) {
         repaint();
     }
 
-    private void jMenuItemInputActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItemInputActionPerformed
+    private void jMenuItemInputActionPerformed(ActionEvent evt) throws IOException {//GEN-FIRST:event_jMenuItemInputActionPerformed
         int returnValue = inputFromFile.showOpenDialog(this);
-      /*
-      if(returnValue == JFileChooser.APPROVE_OPTION){
-          File tcg.file = inputFromFile.getSelectedFile();
-          FileUtilities text = new FileUtilities(tcg.file);
-          JSONObject json = text.parseToJSON();
-          editor."(json);
-      }
-       */
+        ArrayList<Double> inps = new ArrayList<>();
+        if(returnValue == JFileChooser.APPROVE_OPTION){
+            File inpFile = inputFromFile.getSelectedFile();
+            FileUtilities text = new FileUtilities();
+            inps = text.loadInput(inpFile);
+        }
+        int i = 0;
+        for (Dsf in : graph.getInNodes()){
+            ArrayList<Double> temp = new ArrayList<>();
+            temp.add(inps.get(i));
+            in.setInput(temp);
+            i++;
+        }
+        repaint();
     }
 
 

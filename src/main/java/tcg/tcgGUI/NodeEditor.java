@@ -63,6 +63,7 @@ public class NodeEditor extends JPanel
     {
         selectedEdge.setToOrder(order);
     }
+
     public class Listener extends MouseAdapter
     {
         public boolean isCtrlDown = false;

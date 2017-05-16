@@ -32,6 +32,18 @@ public class CGraph extends DirectedAcyclicGraph<Dsf, CEdge> implements Dsf
         }
     }
 
+    public ArrayList<Dsf> getInNodes(){
+        inNodes = new ArrayList<Dsf>();
+        for ( Dsf v : this) {
+            if (outDegreeOf(v) == 0 && v instanceof OutputVertex)
+                outNodes.add(v);
+            if (inDegreeOf(v) == 0 && v instanceof InputVertex)
+                inNodes.add(v);
+        }
+
+        return inNodes;
+    }
+
     /**
      * Calculate the operations in graph.
      */

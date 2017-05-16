@@ -139,7 +139,7 @@ public class WelcomeWindowJFrame extends javax.swing.JFrame {
       TutorialsJLabel.setBounds(90, 330, 68, 22);
 
       jLabel6.setFont(new Font("Tahoma", 0, 18)); // NOI18N
-      jLabel6.setText("Recent Porjects");
+      jLabel6.setText("Recent Projects");
       welcomeWindowJPanel.add(jLabel6);
       jLabel6.setBounds(190, 200, 121, 22);
       welcomeWindowJPanel.add(welcomeBackgroundJLabel);

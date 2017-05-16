@@ -9,6 +9,7 @@ import tcg.tcgGUI.GUIcomponents.GVertex;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class FileUtilities {
@@ -49,8 +50,6 @@ public class FileUtilities {
         JSONObject ejson = (JSONObject) json.get("edges");
         Iterator vkeys = vjson.keys();
         Iterator ekeys = ejson.keys();
-
-
         while (vkeys.hasNext()){
             CVertex currentV;
             JSONObject currentVertex = (JSONObject) vjson.get((String)(vkeys.next()));
@@ -96,9 +95,24 @@ public class FileUtilities {
         return str;
     }
 
+    public ArrayList<Double> loadInput(File file) throws IOException {
+        ArrayList<Double> res = new ArrayList<>();
+        FileInputStream fstream = new FileInputStream(file);
+        DataInputStream in = new DataInputStream(fstream);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String data = br.readLine();
+        while (data != null)   {
+            String[] tmp = data.split(" ");    //Split space
+            for(String s: tmp)
+                res.add(Double.parseDouble(s));
+            data = br.readLine();
+        }
+        return res;
+    }
+
     public static void writeToFile(JSONObject json, String path) throws JSONException {
         try{
-            PrintWriter writer = new PrintWriter(path, "UTF-8");
+            PrintWriter writer = new PrintWriter(path + ".cgf", "UTF-8");
             writer.println(json.toString());
             writer.close();
         } catch (IOException e) {

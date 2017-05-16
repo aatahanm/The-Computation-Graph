@@ -153,4 +153,8 @@ public class GGraph
         }
         return selected;
     }
+
+    public ArrayList<Dsf> getInNodes(){
+        return graph.getInNodes();
+    }
 }
